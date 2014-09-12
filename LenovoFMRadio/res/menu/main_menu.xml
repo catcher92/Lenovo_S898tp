@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:icon="@drawable/menu_search_manual" android:id="@id/search_manual" android:title="@string/search_manual" />
+    <item android:id="@id/speakerON" android:title="@string/use_headphone" />
+    <item android:icon="@drawable/menu_close" android:id="@id/turn_off" android:title="@string/turn_off" />
+</menu>

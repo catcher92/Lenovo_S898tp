@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen android:title="@string/light"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <Preference android:title="@string/light_show" android:key="light_switch_display" />
+    <CheckBoxPreference android:persistent="false" android:title="@string/coming_call" android:key="light_switch_coming_call" android:summary="@string/open" android:summaryOn="@string/open" android:summaryOff="@string/closed" />
+    <CheckBoxPreference android:persistent="false" android:title="@string/miss_call" android:key="light_switch_miss_call" android:summary="@string/open" android:summaryOn="@string/open" android:summaryOff="@string/closed" />
+    <CheckBoxPreference android:persistent="false" android:title="@string/unread_msg" android:key="light_switch_unread_msg" android:summary="@string/open" android:summaryOn="@string/open" android:summaryOff="@string/closed" />
+    <CheckBoxPreference android:persistent="false" android:title="@string/battery_low_msg" android:key="light_switch_lowbattery" android:summary="@string/open" android:summaryOn="@string/open" android:summaryOff="@string/closed" />
+    <CheckBoxPreference android:persistent="false" android:title="@string/other_app_notify" android:key="light_switch_otherapp" android:summary="@string/other_app_summary" android:summaryOn="@string/other_app_summary" android:summaryOff="@string/other_app_summary" />
+</PreferenceScreen>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@id/sleep_mode" android:title="@string/sleep_mode" />
+    <item android:id="@id/isSpeaker" android:title="@string/use_speaker" />
+    <item android:id="@id/recList" android:title="@string/rec_list" />
+    <item android:id="@id/autoScanChannel" android:title="@string/autoscanchannel" />
+    <item android:icon="@drawable/menu_search_manual" android:id="@id/search_manual" android:title="@string/search_manual_720" />
+    <item android:icon="@drawable/menu_close" android:id="@id/turn_off" android:title="@string/turn_off_720" />
+</menu>

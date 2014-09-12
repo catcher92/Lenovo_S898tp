@@ -1,0 +1,12 @@
+version: 1.5.2
+apkFileName: LenovoLightSettings.apk
+isFrameworkApk: false
+usesFramework:
+  ids:
+  - 1
+sdkInfo:
+  minSdkVersion: '17'
+packageInfo:
+  cur_package: com.lenovo.lightsettings
+  orig_package: com.lenovo.lightsettings
+compressionType: false

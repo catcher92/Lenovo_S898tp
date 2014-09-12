@@ -11,13 +11,33 @@ DALVIK_VM_BUILD := 27
 # Default DENSITY setting is hdpi
 # this depends on the device's resolution
 #-----------------------------------------------------------------------------
-DENSITY := hdpi
+DENSITY := xhdpi
 
 ##############################################################################
 # Default RESOLUTION setting is nothing
 # this used to config the bootanimation
 #-----------------------------------------------------------------------------
 RESOLUTION := 720x1280
+
+##############################################################################
+# Default MINI_SYSTEM is false
+# Cut the useless resource or not
+# 	if MINI_SYSTEM is true, it will cost much more time to build, and of course
+# the size of system size will be reduced.
+#-----------------------------------------------------------------------------
+MINI_SYSTEM := false
+
+##############################################################################
+# Defaul NO_SYSTEM_IMG is true
+# If you want generate an system.img, set it to false
+#-----------------------------------------------------------------------------
+NO_SYSTEM_IMG := true
+
+##############################################################################
+# Default SIGN_OTA is true
+# If your pc's memory is lower than 2GB, you better set it to false
+#-----------------------------------------------------------------------------
+SIGN_OTA := true
 
 ##############################################################################
 # customize weather use prebuilt image or pack from BOOT/RECOVERY directory
@@ -30,27 +50,33 @@ RESOLUTION := 720x1280
 # vendor_modify_images := boot recovery
 
 ##############################################################################
+# customize weather add assert in update-script of ota package
+# set false if you don't need this assert fuction
+#-----------------------------------------------------------------------------
+recovery_ota_assert := false
+
+##############################################################################
 # Directorys which you want to remove in vendor directory
 #-----------------------------------------------------------------------------
-vendor_remove_dirs := app vendor/operator/app
+vendor_remove_dirs := app mobile_toolkit media/audio/notifications 
 
 ##############################################################################
 # Files which you want to remove in vendor directory
 #-----------------------------------------------------------------------------
-# vendor_remove_files := bin/zchgd
+vendor_remove_files := media/video media/bootaudio.mp3 media/shutaudio.mp3 media/poweroff.mp4 media/poweroff_land.mp4 media/start.mp4 fonts/Androidfont.ttf
 
 ##############################################################################
 # Vendor apks you want to use
 #-----------------------------------------------------------------------------
-vendor_saved_apps := Bluetooth FMRadio LenovoFMRadio MtkBt
+vendor_saved_apps := Bluetooth FMRadio MtkBt MIPop SchedulePowerOnOff
 
 ##############################################################################
 # Apks build from current project root directory
 # if the apk is decode from baidu:
 # 1, check if the apk in BAIDU_UPDATE_RES_APPS (you can see it in build/configs/baidu_default.mk)
-# 2, if in, you need to change the resource id to "#type@name#t" or "#type@name#a" by idtoname.py:
+# 2, if in, you need to change the resource id to "#type@name#t" or "#type@name#a" by idtoname:
 #	a, use "apktool d source/system/framework/framework-res.apk other/TMP/framework-res"
-#	b, use "idtoname.py other/TMP/framework-res/res/values/public_master.xml XXXX/smali" 
+#	b, use "idtoname other/TMP/framework-res/res/values/public_master.xml XXXX/smali" 
 #		(XXXX is the directory where you decode baidu's apk to)
 # 3, if not, just decode it
 # 
@@ -60,15 +86,15 @@ vendor_saved_apps := Bluetooth FMRadio LenovoFMRadio MtkBt
 # you need decode FMRadio.apk to the project directory (use apktool d FMRadio.apk) first
 # then you can make it by:   make FMRadio
 #-----------------------------------------------------------------------------
-# vendor_modify_apps := FMRadio
+vendor_modify_apps := mediatek-res LenovoFMRadio DeviceOriginalSettings LenovoLightSettings
 
 ##############################################################################
 # Jars build from current project root directory
 # if the jar is decode from baidu:
 # 1, check if the jar in BAIDU_UPDATE_RES_APPS (you can see it in build/configs/baidu_default.mk)
-# 2, if in, you need to change the resource id to "#type@name#t" or "#type@name#a" by idtoname.py:
+# 2, if in, you need to change the resource id to "#type@name#t" or "#type@name#a" by idtoname:
 #	a, use "apktool d source/system/framework/framework-res.apk other/TMP/framework-res"
-#	b, use "idtoname.py other/TMP/framework-res/res/values/public_master.xml XXXX/smali" 
+#	b, use "idtoname other/TMP/framework-res/res/values/public_master.xml XXXX/smali" 
 #		(XXXX is the directory where you decode baidu's jar to)
 # 3, if not, just decode it
 # 
@@ -78,7 +104,7 @@ vendor_saved_apps := Bluetooth FMRadio LenovoFMRadio MtkBt
 # you need decode android.policy.jar to the project directory (use apktool d android.policy.jar) first
 # then you can make it by:   make android.policy
 #-----------------------------------------------------------------------------
-vendor_modify_jars := framework mediatek-framework mediatek-telephony-common secondary-framework services telephony-common
+vendor_modify_jars := framework mediatek-framework mediatek-telephony-common pm secondary-framework services telephony-common mediatek-common
 
 ##############################################################################
 # Directorys which you want to saved in baidu directory
@@ -88,7 +114,7 @@ vendor_modify_jars := framework mediatek-framework mediatek-telephony-common sec
 ##############################################################################
 # Files which you want to saved in baidu directory
 #-----------------------------------------------------------------------------
-# baidu_saved_files := lib/libwebcore.so
+baidu_saved_files := fonts/Clockopia.ttf
 
 ##############################################################################
 # baidu_remove_apps: those baidu apk you want remove 
@@ -99,27 +125,59 @@ vendor_modify_jars := framework mediatek-framework mediatek-telephony-common sec
 # baidu_modify_apps: which base the baidu's apk
 # just override the res, append *.smali.part
 #-----------------------------------------------------------------------------
-baidu_modify_apps := Phone
+baidu_modify_apps := Phone Settings BaiduCamera
 
 ##############################################################################
 # baidu_modify_jars: which base the baidu's jar
 # just append *.smali.part
 #-----------------------------------------------------------------------------
-baidu_modify_jars := android.policy
+baidu_modify_jars := android.policy framework-yi
 
 ##############################################################################
 # override_property: this property will override the build.prop
 #-----------------------------------------------------------------------------
 
-# hide the soft mainkeys
+# The property decide whether hide the soft mainkeys.
+# If 1, hide the soft mainkeys. If 0, display the soft mainkeys.
+# You should configure the property according to your device.
 # override_property += \
-#    qemu.hw.mainkeys=1
+#     qemu.hw.mainkeys=0
+
+# The property decide whether the device support the phone book index in the sim card.
+# If true, support the phone book index. If false, don't support the phone book index.
+# You should configure the property according to your device.
+# In general, most devices support the phone book index, so the property default value is true.
+# Becareful about the initial number of index, some devices start from 0, while others start from 1.
+override_property += \
+	ro.baidu.romer=cxd541806675 \
+	ro.baidu.default_write.settable=true \
+	persist.sys.emmc=/mnt/sdcard2 \
+	ro.baidu.mountpoint.settable=true \
+	ro.config.rootperm.enable=1 \
+	persist.sys.timezone=Asia/Shanghai \
+	ro.build.user=catcher_1224 \
+	ro.version.type=2 \
+	persist.sys.usb.config=mtp,adb \
+	ro.telephony.default_network=0
 
 ##############################################################################
-# override_property: this property will override the build.prop
+# remove_property: this property will remove from the build.prop
 #-----------------------------------------------------------------------------
 # remove_property += \
-#    dev.defaultwallpaper
+#     dev.defaultwallpaper
+
+
+##############################################################################
+# The FORMAT_PARAM_NUM is used to define format function's parameters number,
+# which was in the META-INF/com/google/android/updater-script.
+#
+# If FORMAT_PARAM_NUM is 4, the format function may like this:
+# format("ext4", "EMMC", "/dev/block/platform/hi_mci.1/by-name/system", "0");
+#
+# Otherwise if FORMAT_PARAM_NUM is 5:
+# format("ext4", "EMMC", "/dev/block/platform/hi_mci.1/by-name/system", "0", "/system");
+#-----------------------------------------------------------------------------
+FORMAT_PARAM_NUM := 4
 
 
 include $(PORT_BUILD)/main.mk

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest android:sharedUserId="android.uid.system" android:versionCode="1000115" android:versionName="1.0.16.140110.c157e97_all(Beta)" package="com.lenovo.lightsettings" coreApp="true"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.READ_SMS" />
+    <uses-permission android:name="android.permission.READ_CALL_LOG" />
+    <uses-permission android:name="android.permission.DEVICE_POWER" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.intent.action.MEDIA_MOUNTED" />
+    <uses-permission android:name="android.intent.action.MEDIA_CHECKING" />
+    <uses-permission android:name="android.intent.action.MEDIA_EJECT" />
+    <uses-permission android:name="android.intent.action.MEDIA_REMOVED" />
+    <application android:theme="@*android:style/Theme.DeviceDefault.Light.DarkActionBar" android:label="@string/light" android:icon="@drawable/icon" android:persistent="true" android:supportsRtl="true">
+        <activity android:theme="@*android:style/Theme.DeviceDefault.Light.DarkActionBar" android:label="@string/light" android:name=".LightSettings" android:clearTaskOnLaunch="true" android:configChanges="keyboardHidden|navigation|orientation">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <action android:name="com.lenovo.settings.LIGHT_SETTINGS" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.MONKEY" />
+            </intent-filter>
+        </activity>
+        <receiver android:name=".LightBroadcastReceiver">
+            <intent-filter android:priority="100">
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+                <action android:name="android.intent.action.ACTION_BOOT_IPO" />
+                <action android:name="android.intent.action.ACTION_SHUTDOWN_IPO" />
+                <action android:name="lightservice_alarm" />
+                <action android:name="ACTION_CALL_TELL_LIGHT_OFF" />
+            </intent-filter>
+        </receiver>
+        <service android:name=".LightService" android:exported="true">
+            <intent-filter>
+                <action android:name="com.lenovo.lightmanager.ILightService" />
+            </intent-filter>
+        </service>
+    </application>
+</manifest>

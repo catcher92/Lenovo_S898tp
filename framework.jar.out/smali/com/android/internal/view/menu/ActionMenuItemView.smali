@@ -12,8 +12,6 @@
 # static fields
 .field private static final MAX_ICON_SIZE:I = 0x20
 
-.field private static final MAX_ICON_SIZE_IDEAUI:I = 0x28
-
 .field private static final TAG:Ljava/lang/String; = "ActionMenuItemView"
 
 
@@ -23,8 +21,6 @@
 .field private mExpandedFormat:Z
 
 .field private mIcon:Landroid/graphics/drawable/Drawable;
-
-.field private mIdeaUI_isInSplit:Z
 
 .field private mItemData:Lcom/android/internal/view/menu/MenuItemImpl;
 
@@ -70,25 +66,18 @@
 .end method
 
 .method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
-    .locals 6
+    .locals 5
     .parameter "context"
     .parameter "attrs"
     .parameter "defStyle"
 
     .prologue
-    const/high16 v5, 0x3f00
-
     const/4 v4, 0x0
 
-    .line 70
+    .line 64
     invoke-direct {p0, p1, p2, p3}, Landroid/widget/TextView;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
 
-    .line 56
-    const/4 v3, 0x1
-
-    iput-boolean v3, p0, Lcom/android/internal/view/menu/ActionMenuItemView;->mIdeaUI_isInSplit:Z
-
-    .line 71
+    .line 65
     invoke-virtual {p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object v2
@@ -121,48 +110,31 @@
     .line 78
     invoke-virtual {v0}, Landroid/content/res/TypedArray;->recycle()V
 
-    .line 80
+    .line 74
     invoke-virtual {v2}, Landroid/content/res/Resources;->getDisplayMetrics()Landroid/util/DisplayMetrics;
 
     move-result-object v3
 
     iget v1, v3, Landroid/util/DisplayMetrics;->density:F
 
-    .line 81
+    .line 75
     .local v1, density:F
     const/high16 v3, 0x4200
 
     mul-float/2addr v3, v1
 
-    add-float/2addr v3, v5
+    const/high16 v4, 0x3f00
+
+    add-float/2addr v3, v4
 
     float-to-int v3, v3
 
     iput v3, p0, Lcom/android/internal/view/menu/ActionMenuItemView;->mMaxIconSize:I
 
-    .line 84
-    invoke-virtual {p1}, Landroid/content/Context;->isIdeaUITheme()Z
-
-    move-result v3
-
-    if-eqz v3, :cond_0
-
-    .line 85
-    const/high16 v3, 0x4220
-
-    mul-float/2addr v3, v1
-
-    add-float/2addr v3, v5
-
-    float-to-int v3, v3
-
-    iput v3, p0, Lcom/android/internal/view/menu/ActionMenuItemView;->mMaxIconSize:I
-
-    .line 89
-    :cond_0
+    .line 77
     invoke-virtual {p0, p0}, Lcom/android/internal/view/menu/ActionMenuItemView;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 90
+    .line 78
     invoke-virtual {p0, p0}, Lcom/android/internal/view/menu/ActionMenuItemView;->setOnLongClickListener(Landroid/view/View$OnLongClickListener;)V
 
     .line 92
@@ -182,18 +154,18 @@
 
     const/4 v2, 0x0
 
-    .line 170
+    .line 145
     iget-object v3, p0, Lcom/android/internal/view/menu/ActionMenuItemView;->mTitle:Ljava/lang/CharSequence;
 
     invoke-static {v3}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     move-result v3
 
-    if-nez v3, :cond_3
+    if-nez v3, :cond_2
 
     move v0, v1
 
-    .line 171
+    .line 146
     .local v0, visible:Z
     :goto_0
     iget-object v3, p0, Lcom/android/internal/view/menu/ActionMenuItemView;->mIcon:Landroid/graphics/drawable/Drawable;
@@ -222,41 +194,27 @@
     :cond_1
     and-int/2addr v0, v2
 
-    .line 175
-    iget-object v1, p0, Lcom/android/internal/view/menu/ActionMenuItemView;->mContext:Landroid/content/Context;
-
-    invoke-virtual {v1}, Landroid/content/Context;->isIdeaUITheme()Z
-
-    move-result v1
-
-    if-eqz v1, :cond_2
-
-    iget-boolean v1, p0, Lcom/android/internal/view/menu/ActionMenuItemView;->mIdeaUI_isInSplit:Z
-
-    if-eqz v1, :cond_2
-
-    .line 182
-    :cond_2
-    if-eqz v0, :cond_4
+    .line 149
+    if-eqz v0, :cond_3
 
     iget-object v1, p0, Lcom/android/internal/view/menu/ActionMenuItemView;->mTitle:Ljava/lang/CharSequence;
 
     :goto_1
     invoke-virtual {p0, v1}, Lcom/android/internal/view/menu/ActionMenuItemView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 183
+    .line 150
     return-void
 
     .end local v0           #visible:Z
-    :cond_3
+    :cond_2
     move v0, v2
 
-    .line 170
+    .line 145
     goto :goto_0
 
-    .line 182
+    .line 149
     .restart local v0       #visible:Z
-    :cond_4
+    :cond_3
     const/4 v1, 0x0
 
     goto :goto_1
@@ -325,47 +283,6 @@
     const/4 v0, 0x0
 
     goto :goto_0
-.end method
-
-.method public ideaUI_hasIconAndText()Z
-    .locals 1
-
-    .prologue
-    .line 231
-    invoke-virtual {p0}, Lcom/android/internal/view/menu/ActionMenuItemView;->hasText()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    iget-object v0, p0, Lcom/android/internal/view/menu/ActionMenuItemView;->mIcon:Landroid/graphics/drawable/Drawable;
-
-    if-eqz v0, :cond_0
-
-    const/4 v0, 0x1
-
-    :goto_0
-    return v0
-
-    :cond_0
-    const/4 v0, 0x0
-
-    goto :goto_0
-.end method
-
-.method public ideaUI_setIsInSplit(Z)V
-    .locals 0
-    .parameter "isInSplit"
-
-    .prologue
-    .line 163
-    iput-boolean p1, p0, Lcom/android/internal/view/menu/ActionMenuItemView;->mIdeaUI_isInSplit:Z
-
-    .line 165
-    invoke-direct {p0}, Lcom/android/internal/view/menu/ActionMenuItemView;->updateTextButtonVisibility()V
-
-    .line 166
-    return-void
 .end method
 
 .method public initialize(Lcom/android/internal/view/menu/MenuItemImpl;I)V
@@ -613,22 +530,11 @@
 
     .line 302
     .local v0, cheatSheet:Landroid/widget/Toast;
-    iget-object v10, p0, Lcom/android/internal/view/menu/ActionMenuItemView;->mContext:Landroid/content/Context;
-
-    invoke-virtual {v10}, Landroid/content/Context;->isIdeaUITheme()Z
-
-    move-result v10
-
-    if-eqz v10, :cond_1
-
     invoke-virtual {v2}, Landroid/graphics/Rect;->height()I
 
     move-result v10
 
-    div-int/lit8 v10, v10, 0x2
-
-    :goto_1
-    if-ge v4, v10, :cond_2
+    if-ge v4, v10, :cond_1
 
     .line 305
     const v10, 0x800035
@@ -644,29 +550,21 @@
     invoke-virtual {v0, v10, v8, v3}, Landroid/widget/Toast;->setGravity(III)V
 
     .line 311
-    :goto_2
+    :goto_1
     invoke-virtual {v0}, Landroid/widget/Toast;->show()V
 
     move v8, v9
 
-    .line 312
+    .line 250
     goto :goto_0
 
-    .line 302
+    .line 247
     :cond_1
-    invoke-virtual {v2}, Landroid/graphics/Rect;->height()I
-
-    move-result v10
-
-    goto :goto_1
-
-    .line 309
-    :cond_2
     const/16 v10, 0x51
 
     invoke-virtual {v0, v10, v8, v3}, Landroid/widget/Toast;->setGravity(III)V
 
-    goto :goto_2
+    goto :goto_1
 .end method
 
 .method protected onMeasure(II)V
@@ -1011,22 +909,12 @@
     .end local v0           #height:I
     .end local v2           #width:I
     :cond_2
-    iget-object v3, p0, Lcom/android/internal/view/menu/ActionMenuItemView;->mContext:Landroid/content/Context;
-
-    invoke-virtual {v3}, Landroid/content/Context;->isIdeaUITheme()Z
-
-    move-result v3
-
-    if-eqz v3, :cond_3
-
-    .line 214
-    :cond_3
     invoke-virtual {p0, p1, v5, v5, v5}, Lcom/android/internal/view/menu/ActionMenuItemView;->setCompoundDrawables(Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;)V
 
-    .line 218
+    .line 171
     invoke-direct {p0}, Lcom/android/internal/view/menu/ActionMenuItemView;->updateTextButtonVisibility()V
 
-    .line 219
+    .line 172
     return-void
 .end method
 

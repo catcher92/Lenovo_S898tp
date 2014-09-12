@@ -12,6 +12,7 @@
         Lcom/android/server/ConnectivityService$SettingsObserver;,
         Lcom/android/server/ConnectivityService$InternalHandler;,
         Lcom/android/server/ConnectivityService$NetworkStateTrackerHandler;,
+	Lcom/android/server/ConnectivityService$BaiduInjector;,
         Lcom/android/server/ConnectivityService$FeatureUser;,
         Lcom/android/server/ConnectivityService$DefaultNetworkFactory;,
         Lcom/android/server/ConnectivityService$NetworkFactory;,
@@ -717,6 +718,8 @@
     move-object/from16 v0, p0
 
     iput-object v2, v0, Lcom/android/server/ConnectivityService;->mContext:Landroid/content/Context;
+
+    invoke-static/range {p1 .. p1}, Lcom/android/server/ConnectivityService$BaiduInjector;->saveContext(Landroid/content/Context;)V
 
     .line 506
     const-string v2, "missing INetworkManagementService"
@@ -7623,6 +7626,8 @@
     const/16 v18, 0x0
 
     invoke-static/range {v16 .. v18}, Landroid/provider/Settings$Secure;->putInt(Landroid/content/ContentResolver;Ljava/lang/String;I)Z
+    
+    invoke-static {v11}, Lcom/android/server/ConnectivityService$BaiduInjector;->setPreferSimSetting(Ljava/lang/Long;)V
 
     goto/16 :goto_0
 
@@ -16643,7 +16648,7 @@
 
     .line 3573
     .restart local v1       #s:Ljava/lang/String;
-    :cond_1
+    :cond_1    
     iget-object v3, p0, Lcom/android/server/ConnectivityService;->mHandler:Lcom/android/server/ConnectivityService$InternalHandler;
 
     iget-object v4, p0, Lcom/android/server/ConnectivityService;->mHandler:Lcom/android/server/ConnectivityService$InternalHandler;
@@ -17590,6 +17595,11 @@
 
     .line 1902
     :cond_6
+    
+    invoke-static {v0}, Lcom/android/server/ConnectivityService$BaiduInjector;->getDefaultSlot(I)I
+    
+    move-result v0       
+    
     iget-object v5, p0, Lcom/android/server/ConnectivityService;->mHandler:Lcom/android/server/ConnectivityService$InternalHandler;
 
     iget-object v6, p0, Lcom/android/server/ConnectivityService;->mHandler:Lcom/android/server/ConnectivityService$InternalHandler;
@@ -17936,6 +17946,8 @@
     const-string v2, "mobile_data"
 
     invoke-static {v1, v2, v5}, Landroid/provider/Settings$Secure;->putInt(Landroid/content/ContentResolver;Ljava/lang/String;I)Z
+    
+    invoke-static {v0}, Lcom/android/server/ConnectivityService$BaiduInjector;->setPreferSimSetting(Ljava/lang/Long;)V    
 
     .line 4870
     sget v1, Lcom/android/server/ConnectivityService;->preDataSlotId:I

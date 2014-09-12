@@ -151,39 +151,6 @@
     iput-object v1, v0, Landroid/app/Notification;->bigContentView:Landroid/widget/RemoteViews;
 
     .line 1905
-    iget-object v1, v0, Landroid/app/Notification;->tickerView:Landroid/widget/RemoteViews;
-
-    if-eqz v1, :cond_1
-
-    .line 1906
-    iget-object v1, v0, Landroid/app/Notification;->tickerView:Landroid/widget/RemoteViews;
-
-    invoke-virtual {v1}, Landroid/widget/RemoteViews;->setNotification()V
-
-    .line 1908
-    :cond_1
-    iget-object v1, v0, Landroid/app/Notification;->contentView:Landroid/widget/RemoteViews;
-
-    if-eqz v1, :cond_2
-
-    .line 1909
-    iget-object v1, v0, Landroid/app/Notification;->contentView:Landroid/widget/RemoteViews;
-
-    invoke-virtual {v1}, Landroid/widget/RemoteViews;->setNotification()V
-
-    .line 1911
-    :cond_2
-    iget-object v1, v0, Landroid/app/Notification;->bigContentView:Landroid/widget/RemoteViews;
-
-    if-eqz v1, :cond_3
-
-    .line 1912
-    iget-object v1, v0, Landroid/app/Notification;->bigContentView:Landroid/widget/RemoteViews;
-
-    invoke-virtual {v1}, Landroid/widget/RemoteViews;->setNotification()V
-
-    .line 1915
-    :cond_3
     return-object v0
 .end method
 

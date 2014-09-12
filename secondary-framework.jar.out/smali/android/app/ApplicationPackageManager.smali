@@ -6,7 +6,8 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Landroid/app/ApplicationPackageManager$ResourceName;
+        Landroid/app/ApplicationPackageManager$ResourceName;,
+        Landroid/app/ApplicationPackageManager$BaiduInjector;
     }
 .end annotation
 
@@ -125,350 +126,54 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .locals 5
+    .locals 1
 
     .prologue
-    const/16 v4, 0x1c
-
-    const/4 v3, -0x1
-
-    .line 1609
+    .line 1390
     new-instance v0, Ljava/lang/Object;
 
-    invoke-direct/range {v0 .. v0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
 
     sput-object v0, Landroid/app/ApplicationPackageManager;->sSync:Ljava/lang/Object;
 
-    .line 1610
+    .line 1391
     new-instance v0, Ljava/util/HashMap;
 
     invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
 
     sput-object v0, Landroid/app/ApplicationPackageManager;->sIconCache:Ljava/util/HashMap;
 
-    .line 1612
+    .line 1393
     new-instance v0, Ljava/util/HashMap;
 
     invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
 
     sput-object v0, Landroid/app/ApplicationPackageManager;->sStringCache:Ljava/util/HashMap;
 
-    .line 1616
-    new-instance v0, Ljava/util/HashMap;
-
-    invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
-
-    sput-object v0, Landroid/app/ApplicationPackageManager;->sLenovoIconCache:Ljava/util/HashMap;
-
-    .line 1625
-    const/4 v0, 0x0
-
-    sput-object v0, Landroid/app/ApplicationPackageManager;->default_SystemIcon_ResourceName:Landroid/app/ApplicationPackageManager$ResourceName;
-
-    .line 1638
-    new-array v0, v4, [Ljava/lang/String;
-
-    const/4 v1, 0x0
-
-    const-string v2, "com.mediatek.bluetooth"
-
-    aput-object v2, v0, v1
-
-    const/4 v1, 0x1
-
-    const-string v2, "com.android.bluetooth"
-
-    aput-object v2, v0, v1
-
-    const/4 v1, 0x2
-
-    const-string v2, "com.android.providers.telephony"
-
-    aput-object v2, v0, v1
-
-    const/4 v1, 0x3
-
-    const-string v2, "com.android.phone"
-
-    aput-object v2, v0, v1
-
-    const/4 v1, 0x4
-
-    const-string v2, "com.android.providers.contacts"
-
-    aput-object v2, v0, v1
-
-    const/4 v1, 0x5
-
-    const-string v2, "com.lenovo.ideawallpaper"
-
-    aput-object v2, v0, v1
-
-    const/4 v1, 0x6
-
-    const-string v2, "com.lenovo.bootshut.ThemeRes2"
-
-    aput-object v2, v0, v1
-
-    const/4 v1, 0x7
-
-    const-string v2, "com.lenovo.bootshut.ThemeRes1"
-
-    aput-object v2, v0, v1
-
-    const/16 v1, 0x8
-
-    const-string v2, "com.lenovo.setupwizard"
-
-    aput-object v2, v0, v1
-
-    const/16 v1, 0x9
-
-    const-string v2, "com.lenovo.lsf.pay.phone"
-
-    aput-object v2, v0, v1
-
-    const/16 v1, 0xa
-
-    const-string v2, "com.lenovo.bootshut.lenovodefault"
-
-    aput-object v2, v0, v1
-
-    const/16 v1, 0xb
-
-    const-string v2, "com.lenovo.ue.service"
-
-    aput-object v2, v0, v1
-
-    const/16 v1, 0xc
-
-    const-string v2, "com.lenovo.rescopy"
-
-    aput-object v2, v0, v1
-
-    const/16 v1, 0xd
-
-    const-string v2, "com.mediatek.CellConnService"
-
-    aput-object v2, v0, v1
-
-    const/16 v1, 0xe
-
-    const-string v2, "com.android.provision"
-
-    aput-object v2, v0, v1
-
-    const/16 v1, 0xf
-
-    const-string v2, "com.lenovo.factorymode"
-
-    aput-object v2, v0, v1
-
-    const/16 v1, 0x10
-
-    const-string v2, "com.lenovo.smart"
-
-    aput-object v2, v0, v1
-
-    const/16 v1, 0x11
-
-    const-string v2, "com.lenovo.smartrotation"
-
-    aput-object v2, v0, v1
-
-    const/16 v1, 0x12
-
-    const-string v2, "com.mediatek.apst.target"
-
-    aput-object v2, v0, v1
-
-    const/16 v1, 0x13
-
-    const-string v2, "com.mediatek.thermalmanager"
-
-    aput-object v2, v0, v1
-
-    const/16 v1, 0x14
-
-    const-string v2, "com.lenovo.optimize"
-
-    aput-object v2, v0, v1
-
-    const/16 v1, 0x15
-
-    const-string v2, "com.lenovo.clearBuildInSDcard"
-
-    aput-object v2, v0, v1
-
-    const/16 v1, 0x16
-
-    const-string v2, "com.lenovo.defautpackage"
-
-    aput-object v2, v0, v1
-
-    const/16 v1, 0x17
-
-    const-string v2, "com.lenovo.lenovoweathertheme"
-
-    aput-object v2, v0, v1
-
-    const/16 v1, 0x18
-
-    const-string v2, "com.lenovo.weatherserver"
-
-    aput-object v2, v0, v1
-
-    const/16 v1, 0x19
-
-    const-string v2, "com.android.providers.downloads.ui"
-
-    aput-object v2, v0, v1
-
-    const/16 v1, 0x1a
-
-    const-string v2, "android"
-
-    aput-object v2, v0, v1
-
-    const/16 v1, 0x1b
-
-    const-string v2, "com.android.systemui"
-
-    aput-object v2, v0, v1
-
-    sput-object v0, Landroid/app/ApplicationPackageManager;->SYSTEM_ICON_TRANSLATE_PACKAGE_NAME_LISTS:[Ljava/lang/String;
-
-    .line 1705
-    new-array v0, v4, [I
-
-    fill-array-data v0, :array_0
-
-    sput-object v0, Landroid/app/ApplicationPackageManager;->SYSTEM_ICON_TRANSLATE_ICON_ID_LISTS:[I
-
-    .line 1777
-    sput v3, Landroid/app/ApplicationPackageManager;->sIconWidth:I
-
-    .line 1778
-    sput v3, Landroid/app/ApplicationPackageManager;->sIconHeight:I
-
-    .line 1779
-    sput v3, Landroid/app/ApplicationPackageManager;->sIconSWidth:I
-
-    .line 1780
-    sput v3, Landroid/app/ApplicationPackageManager;->sIconSHeight:I
-
-    .line 1788
-    const-string v0, "com.lenovo.launcher"
-
-    sput-object v0, Landroid/app/ApplicationPackageManager;->sCurrent_Launch_Theme:Ljava/lang/String;
-
-    .line 1789
-    const-string v0, "com.lenovo.launcher"
-
-    sput-object v0, Landroid/app/ApplicationPackageManager;->sOldCurrent_Launch_Theme:Ljava/lang/String;
-
     return-void
-
-    .line 1705
-    :array_0
-    .array-data 0x4
-        0x56t 0x6t 0x8t 0x1t
-        0x56t 0x6t 0x8t 0x1t
-        0x5ct 0x6t 0x8t 0x1t
-        0x5ct 0x6t 0x8t 0x1t
-        0x58t 0x6t 0x8t 0x1t
-        0x59t 0x6t 0x8t 0x1t
-        0x59t 0x6t 0x8t 0x1t
-        0x59t 0x6t 0x8t 0x1t
-        0x59t 0x6t 0x8t 0x1t
-        0x59t 0x6t 0x8t 0x1t
-        0x59t 0x6t 0x8t 0x1t
-        0x59t 0x6t 0x8t 0x1t
-        0x59t 0x6t 0x8t 0x1t
-        0x59t 0x6t 0x8t 0x1t
-        0x59t 0x6t 0x8t 0x1t
-        0x59t 0x6t 0x8t 0x1t
-        0x59t 0x6t 0x8t 0x1t
-        0x59t 0x6t 0x8t 0x1t
-        0x59t 0x6t 0x8t 0x1t
-        0x59t 0x6t 0x8t 0x1t
-        0x59t 0x6t 0x8t 0x1t
-        0x59t 0x6t 0x8t 0x1t
-        0x59t 0x6t 0x8t 0x1t
-        0x59t 0x6t 0x8t 0x1t
-        0x59t 0x6t 0x8t 0x1t
-        0x5at 0x6t 0x8t 0x1t
-        0x5ft 0x6t 0x8t 0x1t
-        0xfft 0xfft 0xfft 0xfft
-    .end array-data
 .end method
 
 .method constructor <init>(Landroid/app/ContextImpl;Landroid/content/pm/IPackageManager;)V
-    .locals 3
+    .locals 1
     .parameter "context"
     .parameter "pm"
 
     .prologue
-    const/4 v2, 0x0
-
-    .line 1047
+    .line 876
     invoke-direct {p0}, Landroid/content/pm/PackageManager;-><init>()V
 
-    .line 1026
+    .line 856
     const/4 v0, -0x1
 
     iput v0, p0, Landroid/app/ApplicationPackageManager;->mCachedSafeMode:I
 
-    .line 1632
-    iput-object v2, p0, Landroid/app/ApplicationPackageManager;->hashmap_system_consistent_icon:Ljava/util/HashMap;
-
-    .line 1771
-    const/4 v0, 0x3
-
-    new-array v0, v0, [Landroid/graphics/Bitmap;
-
-    const/4 v1, 0x0
-
-    aput-object v2, v0, v1
-
-    const/4 v1, 0x1
-
-    aput-object v2, v0, v1
-
-    const/4 v1, 0x2
-
-    aput-object v2, v0, v1
-
-    iput-object v0, p0, Landroid/app/ApplicationPackageManager;->mThemeBgBitmap:[Landroid/graphics/Bitmap;
-
-    .line 1772
-    new-instance v0, Landroid/graphics/Canvas;
-
-    invoke-direct {v0}, Landroid/graphics/Canvas;-><init>()V
-
-    iput-object v0, p0, Landroid/app/ApplicationPackageManager;->sCanvas:Landroid/graphics/Canvas;
-
-    .line 1773
-    new-instance v0, Landroid/graphics/Paint;
-
-    invoke-direct {v0}, Landroid/graphics/Paint;-><init>()V
-
-    iput-object v0, p0, Landroid/app/ApplicationPackageManager;->sIconPaint:Landroid/graphics/Paint;
-
-    .line 1774
-    new-instance v0, Landroid/graphics/Rect;
-
-    invoke-direct {v0}, Landroid/graphics/Rect;-><init>()V
-
-    iput-object v0, p0, Landroid/app/ApplicationPackageManager;->sOldBounds:Landroid/graphics/Rect;
-
-    .line 1048
+    .line 877
     iput-object p1, p0, Landroid/app/ApplicationPackageManager;->mContext:Landroid/app/ContextImpl;
 
-    .line 1049
+    .line 878
     iput-object p2, p0, Landroid/app/ApplicationPackageManager;->mPM:Landroid/content/pm/IPackageManager;
 
-    .line 1050
+    .line 879
     return-void
 .end method
 
@@ -476,34 +181,29 @@
     .locals 2
 
     .prologue
-    .line 1039
+    .line 869
     sget-object v1, Landroid/app/ApplicationPackageManager;->sSync:Ljava/lang/Object;
 
     monitor-enter v1
 
-    .line 1040
+    .line 870
     :try_start_0
     sget-object v0, Landroid/app/ApplicationPackageManager;->sIconCache:Ljava/util/HashMap;
 
     invoke-virtual {v0}, Ljava/util/HashMap;->clear()V
 
-    .line 1041
-    sget-object v0, Landroid/app/ApplicationPackageManager;->sLenovoIconCache:Ljava/util/HashMap;
-
-    invoke-virtual {v0}, Ljava/util/HashMap;->clear()V
-
-    .line 1042
+    .line 871
     sget-object v0, Landroid/app/ApplicationPackageManager;->sStringCache:Ljava/util/HashMap;
 
     invoke-virtual {v0}, Ljava/util/HashMap;->clear()V
 
-    .line 1043
+    .line 872
     monitor-exit v1
 
-    .line 1044
+    .line 873
     return-void
 
-    .line 1043
+    .line 872
     :catchall_0
     move-exception v0
 
@@ -512,1707 +212,6 @@
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     throw v0
-.end method
-
-.method private createBitmap(Landroid/graphics/drawable/Drawable;IILandroid/content/res/Resources;)Landroid/graphics/Bitmap;
-    .locals 15
-    .parameter "drawable"
-    .parameter "width"
-    .parameter "height"
-    .parameter "res"
-
-    .prologue
-    .line 1955
-    iget-object v11, p0, Landroid/app/ApplicationPackageManager;->sCanvas:Landroid/graphics/Canvas;
-
-    monitor-enter v11
-
-    .line 1957
-    if-nez p1, :cond_0
-
-    .line 1958
-    const/4 v2, 0x0
-
-    :try_start_0
-    monitor-exit v11
-
-    .line 1998
-    :goto_0
-    return-object v2
-
-    .line 1961
-    :cond_0
-    move-object/from16 v0, p1
-
-    instance-of v10, v0, Landroid/graphics/drawable/PaintDrawable;
-
-    if-eqz v10, :cond_4
-
-    .line 1962
-    move-object/from16 v0, p1
-
-    check-cast v0, Landroid/graphics/drawable/PaintDrawable;
-
-    move-object v6, v0
-
-    .line 1963
-    .local v6, painter:Landroid/graphics/drawable/PaintDrawable;
-    move/from16 v0, p2
-
-    invoke-virtual {v6, v0}, Landroid/graphics/drawable/PaintDrawable;->setIntrinsicWidth(I)V
-
-    .line 1964
-    move/from16 v0, p3
-
-    invoke-virtual {v6, v0}, Landroid/graphics/drawable/PaintDrawable;->setIntrinsicHeight(I)V
-
-    .line 1973
-    .end local v6           #painter:Landroid/graphics/drawable/PaintDrawable;
-    :cond_1
-    :goto_1
-    invoke-virtual/range {p1 .. p1}, Landroid/graphics/drawable/Drawable;->getIntrinsicWidth()I
-
-    move-result v8
-
-    .line 1974
-    .local v8, sourceWidth:I
-    invoke-virtual/range {p1 .. p1}, Landroid/graphics/drawable/Drawable;->getIntrinsicHeight()I
-
-    move-result v7
-
-    .line 1976
-    .local v7, sourceHeight:I
-    if-gtz p2, :cond_2
-
-    .line 1977
-    move/from16 p2, v8
-
-    .line 1980
-    :cond_2
-    if-gtz p3, :cond_3
-
-    .line 1981
-    move/from16 p3, v7
-
-    .line 1984
-    :cond_3
-    sget-object v10, Landroid/graphics/Bitmap$Config;->ARGB_8888:Landroid/graphics/Bitmap$Config;
-
-    move/from16 v0, p2
-
-    move/from16 v1, p3
-
-    invoke-static {v0, v1, v10}, Landroid/graphics/Bitmap;->createBitmap(IILandroid/graphics/Bitmap$Config;)Landroid/graphics/Bitmap;
-
-    move-result-object v2
-
-    .line 1986
-    .local v2, bitmap:Landroid/graphics/Bitmap;
-    iget-object v4, p0, Landroid/app/ApplicationPackageManager;->sCanvas:Landroid/graphics/Canvas;
-
-    .line 1987
-    .local v4, canvas:Landroid/graphics/Canvas;
-    invoke-virtual {v4, v2}, Landroid/graphics/Canvas;->setBitmap(Landroid/graphics/Bitmap;)V
-
-    .line 1989
-    const/4 v5, 0x0
-
-    .line 1990
-    .local v5, left:I
-    const/4 v9, 0x0
-
-    .line 1992
-    .local v9, top:I
-    iget-object v10, p0, Landroid/app/ApplicationPackageManager;->sOldBounds:Landroid/graphics/Rect;
-
-    invoke-virtual/range {p1 .. p1}, Landroid/graphics/drawable/Drawable;->getBounds()Landroid/graphics/Rect;
-
-    move-result-object v12
-
-    invoke-virtual {v10, v12}, Landroid/graphics/Rect;->set(Landroid/graphics/Rect;)V
-
-    .line 1993
-    const/4 v10, 0x0
-
-    const/4 v12, 0x0
-
-    add-int/lit8 v13, p2, 0x0
-
-    add-int/lit8 v14, p3, 0x0
-
-    move-object/from16 v0, p1
-
-    invoke-virtual {v0, v10, v12, v13, v14}, Landroid/graphics/drawable/Drawable;->setBounds(IIII)V
-
-    .line 1994
-    move-object/from16 v0, p1
-
-    invoke-virtual {v0, v4}, Landroid/graphics/drawable/Drawable;->draw(Landroid/graphics/Canvas;)V
-
-    .line 1995
-    iget-object v10, p0, Landroid/app/ApplicationPackageManager;->sOldBounds:Landroid/graphics/Rect;
-
-    move-object/from16 v0, p1
-
-    invoke-virtual {v0, v10}, Landroid/graphics/drawable/Drawable;->setBounds(Landroid/graphics/Rect;)V
-
-    .line 1996
-    const/4 v10, 0x0
-
-    invoke-virtual {v4, v10}, Landroid/graphics/Canvas;->setBitmap(Landroid/graphics/Bitmap;)V
-
-    .line 1998
-    monitor-exit v11
-
-    goto :goto_0
-
-    .line 1999
-    .end local v2           #bitmap:Landroid/graphics/Bitmap;
-    .end local v4           #canvas:Landroid/graphics/Canvas;
-    .end local v5           #left:I
-    .end local v7           #sourceHeight:I
-    .end local v8           #sourceWidth:I
-    .end local v9           #top:I
-    :catchall_0
-    move-exception v10
-
-    monitor-exit v11
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    throw v10
-
-    .line 1965
-    :cond_4
-    :try_start_1
-    move-object/from16 v0, p1
-
-    instance-of v10, v0, Landroid/graphics/drawable/BitmapDrawable;
-
-    if-eqz v10, :cond_1
-
-    .line 1967
-    move-object/from16 v0, p1
-
-    check-cast v0, Landroid/graphics/drawable/BitmapDrawable;
-
-    move-object v3, v0
-
-    .line 1968
-    .local v3, bitmapDrawable:Landroid/graphics/drawable/BitmapDrawable;
-    invoke-virtual {v3}, Landroid/graphics/drawable/BitmapDrawable;->getBitmap()Landroid/graphics/Bitmap;
-
-    move-result-object v2
-
-    .line 1969
-    .restart local v2       #bitmap:Landroid/graphics/Bitmap;
-    invoke-virtual {v2}, Landroid/graphics/Bitmap;->getDensity()I
-
-    move-result v10
-
-    if-nez v10, :cond_1
-
-    .line 1970
-    invoke-virtual/range {p4 .. p4}, Landroid/content/res/Resources;->getDisplayMetrics()Landroid/util/DisplayMetrics;
-
-    move-result-object v10
-
-    invoke-virtual {v3, v10}, Landroid/graphics/drawable/BitmapDrawable;->setTargetDensity(Landroid/util/DisplayMetrics;)V
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
-
-    goto :goto_1
-.end method
-
-.method private createIconBitmap(Landroid/graphics/drawable/Drawable;ILandroid/content/res/Resources;)Landroid/graphics/Bitmap;
-    .locals 7
-    .parameter "icon"
-    .parameter "index"
-    .parameter "res"
-
-    .prologue
-    const/4 v1, 0x0
-
-    .line 1886
-    const/4 v0, -0x2
-
-    if-ne p2, v0, :cond_0
-
-    .line 1887
-    invoke-direct {p0, p3}, Landroid/app/ApplicationPackageManager;->getThemeIconBg(Landroid/content/res/Resources;)[Landroid/graphics/Bitmap;
-
-    move-result-object v6
-
-    .line 1888
-    .local v6, iconBg:[Landroid/graphics/Bitmap;
-    const/4 v0, 0x0
-
-    aget-object v2, v6, v0
-
-    const/4 v0, 0x1
-
-    aget-object v3, v6, v0
-
-    const/4 v0, 0x2
-
-    aget-object v4, v6, v0
-
-    move-object v0, p0
-
-    move-object v1, p1
-
-    move-object v5, p3
-
-    invoke-direct/range {v0 .. v5}, Landroid/app/ApplicationPackageManager;->createIconBitmap(Landroid/graphics/drawable/Drawable;Landroid/graphics/Bitmap;Landroid/graphics/Bitmap;Landroid/graphics/Bitmap;Landroid/content/res/Resources;)Landroid/graphics/Bitmap;
-
-    move-result-object v0
-
-    .line 1890
-    .end local v6           #iconBg:[Landroid/graphics/Bitmap;
-    :goto_0
-    return-object v0
-
-    :cond_0
-    invoke-direct {p0, p1, v1, v1, p3}, Landroid/app/ApplicationPackageManager;->createIconBitmap(Landroid/graphics/drawable/Drawable;Landroid/graphics/Bitmap;Landroid/graphics/Bitmap;Landroid/content/res/Resources;)Landroid/graphics/Bitmap;
-
-    move-result-object v0
-
-    goto :goto_0
-.end method
-
-.method private createIconBitmap(Landroid/graphics/drawable/Drawable;Landroid/graphics/Bitmap;Landroid/graphics/Bitmap;Landroid/content/res/Resources;)Landroid/graphics/Bitmap;
-    .locals 15
-    .parameter "icon"
-    .parameter "bg"
-    .parameter "fg"
-    .parameter "res"
-
-    .prologue
-    .line 1895
-    iget-object v12, p0, Landroid/app/ApplicationPackageManager;->sCanvas:Landroid/graphics/Canvas;
-
-    monitor-enter v12
-
-    .line 1896
-    :try_start_0
-    sget v11, Landroid/app/ApplicationPackageManager;->sIconWidth:I
-
-    const/4 v13, -0x1
-
-    if-ne v11, v13, :cond_0
-
-    .line 1897
-    invoke-direct {p0}, Landroid/app/ApplicationPackageManager;->initStatics()V
-
-    .line 1900
-    :cond_0
-    sget v10, Landroid/app/ApplicationPackageManager;->sIconSWidth:I
-
-    .line 1901
-    .local v10, width:I
-    sget v4, Landroid/app/ApplicationPackageManager;->sIconSHeight:I
-
-    .line 1902
-    .local v4, height:I
-    if-nez p2, :cond_1
-
-    if-nez p3, :cond_1
-
-    .line 1903
-    sget v10, Landroid/app/ApplicationPackageManager;->sIconWidth:I
-
-    .line 1904
-    sget v4, Landroid/app/ApplicationPackageManager;->sIconHeight:I
-
-    .line 1907
-    :cond_1
-    move-object/from16 v0, p1
-
-    instance-of v11, v0, Landroid/graphics/drawable/PaintDrawable;
-
-    if-eqz v11, :cond_5
-
-    .line 1908
-    move-object/from16 v0, p1
-
-    check-cast v0, Landroid/graphics/drawable/PaintDrawable;
-
-    move-object v6, v0
-
-    .line 1909
-    .local v6, painter:Landroid/graphics/drawable/PaintDrawable;
-    invoke-virtual {v6, v10}, Landroid/graphics/drawable/PaintDrawable;->setIntrinsicWidth(I)V
-
-    .line 1910
-    invoke-virtual {v6, v4}, Landroid/graphics/drawable/PaintDrawable;->setIntrinsicHeight(I)V
-
-    .line 1921
-    .end local v6           #painter:Landroid/graphics/drawable/PaintDrawable;
-    :cond_2
-    :goto_0
-    sget v8, Landroid/app/ApplicationPackageManager;->sIconWidth:I
-
-    .line 1923
-    .local v8, textureWidth:I
-    sget v7, Landroid/app/ApplicationPackageManager;->sIconHeight:I
-
-    .line 1926
-    .local v7, textureHeight:I
-    sget-object v11, Landroid/graphics/Bitmap$Config;->ARGB_8888:Landroid/graphics/Bitmap$Config;
-
-    invoke-static {v8, v7, v11}, Landroid/graphics/Bitmap;->createBitmap(IILandroid/graphics/Bitmap$Config;)Landroid/graphics/Bitmap;
-
-    move-result-object v1
-
-    .line 1928
-    .local v1, bitmap:Landroid/graphics/Bitmap;
-    iget-object v3, p0, Landroid/app/ApplicationPackageManager;->sCanvas:Landroid/graphics/Canvas;
-
-    .line 1929
-    .local v3, canvas:Landroid/graphics/Canvas;
-    invoke-virtual {v3, v1}, Landroid/graphics/Canvas;->setBitmap(Landroid/graphics/Bitmap;)V
-
-    .line 1931
-    sub-int v11, v8, v10
-
-    div-int/lit8 v5, v11, 0x2
-
-    .line 1932
-    .local v5, left:I
-    sub-int v11, v7, v4
-
-    div-int/lit8 v9, v11, 0x2
-
-    .line 1934
-    .local v9, top:I
-    if-eqz p2, :cond_3
-
-    .line 1935
-    const/4 v11, 0x0
-
-    const/4 v13, 0x0
-
-    const/4 v14, 0x0
-
-    move-object/from16 v0, p2
-
-    invoke-virtual {v3, v0, v11, v13, v14}, Landroid/graphics/Canvas;->drawBitmap(Landroid/graphics/Bitmap;FFLandroid/graphics/Paint;)V
-
-    .line 1938
-    :cond_3
-    iget-object v11, p0, Landroid/app/ApplicationPackageManager;->sOldBounds:Landroid/graphics/Rect;
-
-    invoke-virtual/range {p1 .. p1}, Landroid/graphics/drawable/Drawable;->getBounds()Landroid/graphics/Rect;
-
-    move-result-object v13
-
-    invoke-virtual {v11, v13}, Landroid/graphics/Rect;->set(Landroid/graphics/Rect;)V
-
-    .line 1939
-    add-int v11, v5, v10
-
-    add-int v13, v9, v4
-
-    move-object/from16 v0, p1
-
-    invoke-virtual {v0, v5, v9, v11, v13}, Landroid/graphics/drawable/Drawable;->setBounds(IIII)V
-
-    .line 1940
-    move-object/from16 v0, p1
-
-    invoke-virtual {v0, v3}, Landroid/graphics/drawable/Drawable;->draw(Landroid/graphics/Canvas;)V
-
-    .line 1941
-    iget-object v11, p0, Landroid/app/ApplicationPackageManager;->sOldBounds:Landroid/graphics/Rect;
-
-    move-object/from16 v0, p1
-
-    invoke-virtual {v0, v11}, Landroid/graphics/drawable/Drawable;->setBounds(Landroid/graphics/Rect;)V
-
-    .line 1943
-    if-eqz p3, :cond_4
-
-    .line 1944
-    const/4 v11, 0x0
-
-    const/4 v13, 0x0
-
-    const/4 v14, 0x0
-
-    move-object/from16 v0, p3
-
-    invoke-virtual {v3, v0, v11, v13, v14}, Landroid/graphics/Canvas;->drawBitmap(Landroid/graphics/Bitmap;FFLandroid/graphics/Paint;)V
-
-    .line 1947
-    :cond_4
-    const/4 v11, 0x0
-
-    invoke-virtual {v3, v11}, Landroid/graphics/Canvas;->setBitmap(Landroid/graphics/Bitmap;)V
-
-    .line 1949
-    monitor-exit v12
-
-    return-object v1
-
-    .line 1911
-    .end local v1           #bitmap:Landroid/graphics/Bitmap;
-    .end local v3           #canvas:Landroid/graphics/Canvas;
-    .end local v5           #left:I
-    .end local v7           #textureHeight:I
-    .end local v8           #textureWidth:I
-    .end local v9           #top:I
-    :cond_5
-    move-object/from16 v0, p1
-
-    instance-of v11, v0, Landroid/graphics/drawable/BitmapDrawable;
-
-    if-eqz v11, :cond_2
-
-    .line 1913
-    move-object/from16 v0, p1
-
-    check-cast v0, Landroid/graphics/drawable/BitmapDrawable;
-
-    move-object v2, v0
-
-    .line 1914
-    .local v2, bitmapDrawable:Landroid/graphics/drawable/BitmapDrawable;
-    invoke-virtual {v2}, Landroid/graphics/drawable/BitmapDrawable;->getBitmap()Landroid/graphics/Bitmap;
-
-    move-result-object v1
-
-    .line 1915
-    .restart local v1       #bitmap:Landroid/graphics/Bitmap;
-    invoke-virtual {v1}, Landroid/graphics/Bitmap;->getDensity()I
-
-    move-result v11
-
-    if-nez v11, :cond_2
-
-    .line 1916
-    invoke-virtual/range {p4 .. p4}, Landroid/content/res/Resources;->getDisplayMetrics()Landroid/util/DisplayMetrics;
-
-    move-result-object v11
-
-    invoke-virtual {v2, v11}, Landroid/graphics/drawable/BitmapDrawable;->setTargetDensity(Landroid/util/DisplayMetrics;)V
-
-    goto :goto_0
-
-    .line 1950
-    .end local v1           #bitmap:Landroid/graphics/Bitmap;
-    .end local v2           #bitmapDrawable:Landroid/graphics/drawable/BitmapDrawable;
-    .end local v4           #height:I
-    .end local v10           #width:I
-    :catchall_0
-    move-exception v11
-
-    monitor-exit v12
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    throw v11
-.end method
-
-.method private createIconBitmap(Landroid/graphics/drawable/Drawable;Landroid/graphics/Bitmap;Landroid/graphics/Bitmap;Landroid/graphics/Bitmap;Landroid/content/res/Resources;)Landroid/graphics/Bitmap;
-    .locals 26
-    .parameter "icon"
-    .parameter "bg"
-    .parameter "fg"
-    .parameter "mask"
-    .parameter "res"
-
-    .prologue
-    .line 2003
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Landroid/app/ApplicationPackageManager;->sCanvas:Landroid/graphics/Canvas;
-
-    move-object/from16 v23, v0
-
-    monitor-enter v23
-
-    .line 2004
-    :try_start_0
-    sget v22, Landroid/app/ApplicationPackageManager;->sIconWidth:I
-
-    const/16 v24, -0x1
-
-    move/from16 v0, v22
-
-    move/from16 v1, v24
-
-    if-ne v0, v1, :cond_0
-
-    .line 2005
-    invoke-direct/range {p0 .. p0}, Landroid/app/ApplicationPackageManager;->initStatics()V
-
-    .line 2008
-    :cond_0
-    sget v21, Landroid/app/ApplicationPackageManager;->sIconSWidth:I
-
-    .line 2009
-    .local v21, width:I
-    sget v10, Landroid/app/ApplicationPackageManager;->sIconSHeight:I
-
-    .line 2011
-    .local v10, height:I
-    if-nez p1, :cond_11
-
-    .line 2012
-    const v22, 0x1080093
-
-    move-object/from16 v0, p5
-
-    move/from16 v1, v22
-
-    invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_1
-
-    move-result-object p1
-
-    move-object/from16 v11, p1
-
-    .line 2014
-    .end local p1
-    .local v11, icon:Landroid/graphics/drawable/Drawable;
-    :goto_0
-    :try_start_1
-    instance-of v0, v11, Landroid/graphics/drawable/PaintDrawable;
-
-    move/from16 v22, v0
-
-    if-eqz v22, :cond_c
-
-    .line 2015
-    move-object v0, v11
-
-    check-cast v0, Landroid/graphics/drawable/PaintDrawable;
-
-    move-object v14, v0
-
-    .line 2016
-    .local v14, painter:Landroid/graphics/drawable/PaintDrawable;
-    move/from16 v0, v21
-
-    invoke-virtual {v14, v0}, Landroid/graphics/drawable/PaintDrawable;->setIntrinsicWidth(I)V
-
-    .line 2017
-    invoke-virtual {v14, v10}, Landroid/graphics/drawable/PaintDrawable;->setIntrinsicHeight(I)V
-
-    .line 2026
-    .end local v14           #painter:Landroid/graphics/drawable/PaintDrawable;
-    :cond_1
-    :goto_1
-    invoke-virtual {v11}, Landroid/graphics/drawable/Drawable;->getIntrinsicWidth()I
-
-    move-result v17
-
-    .line 2027
-    .local v17, sourceWidth:I
-    invoke-virtual {v11}, Landroid/graphics/drawable/Drawable;->getIntrinsicHeight()I
-
-    move-result v16
-
-    .line 2028
-    .local v16, sourceHeight:I
-    if-lez v17, :cond_10
-
-    if-lez v16, :cond_10
-
-    .line 2029
-    move/from16 v0, v17
-
-    int-to-float v0, v0
-
-    move/from16 v22, v0
-
-    move/from16 v0, v16
-
-    int-to-float v0, v0
-
-    move/from16 v24, v0
-
-    div-float v15, v22, v24
-
-    .line 2030
-    .local v15, ratio:F
-    move/from16 v0, v17
-
-    move/from16 v1, v16
-
-    if-le v0, v1, :cond_d
-
-    .line 2031
-    move/from16 v0, v21
-
-    int-to-float v0, v0
-
-    move/from16 v22, v0
-
-    div-float v22, v22, v15
-
-    move/from16 v0, v22
-
-    float-to-int v10, v0
-
-    .line 2035
-    :cond_2
-    :goto_2
-    const/4 v13, 0x0
-
-    .line 2036
-    .local v13, lessBitmap:Landroid/graphics/Bitmap;
-    instance-of v0, v11, Landroid/graphics/drawable/BitmapDrawable;
-
-    move/from16 v22, v0
-
-    if-eqz v22, :cond_e
-
-    .line 2037
-    move-object v0, v11
-
-    check-cast v0, Landroid/graphics/drawable/BitmapDrawable;
-
-    move-object/from16 v22, v0
-
-    invoke-virtual/range {v22 .. v22}, Landroid/graphics/drawable/BitmapDrawable;->getBitmap()Landroid/graphics/Bitmap;
-
-    move-result-object v22
-
-    const/16 v24, 0x0
-
-    move-object/from16 v0, p0
-
-    move-object/from16 v1, v22
-
-    move/from16 v2, v21
-
-    move/from16 v3, v24
-
-    invoke-direct {v0, v1, v2, v10, v3}, Landroid/app/ApplicationPackageManager;->lessenBitmap(Landroid/graphics/Bitmap;IIZ)Landroid/graphics/Bitmap;
-
-    move-result-object v13
-
-    .line 2038
-    new-instance p1, Landroid/graphics/drawable/BitmapDrawable;
-
-    move-object/from16 v0, p1
-
-    move-object/from16 v1, p5
-
-    invoke-direct {v0, v1, v13}, Landroid/graphics/drawable/BitmapDrawable;-><init>(Landroid/content/res/Resources;Landroid/graphics/Bitmap;)V
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
-
-    .line 2046
-    .end local v11           #icon:Landroid/graphics/drawable/Drawable;
-    .end local v13           #lessBitmap:Landroid/graphics/Bitmap;
-    .end local v15           #ratio:F
-    .restart local p1
-    :goto_3
-    :try_start_2
-    sget v19, Landroid/app/ApplicationPackageManager;->sIconWidth:I
-
-    .line 2048
-    .local v19, textureWidth:I
-    sget v18, Landroid/app/ApplicationPackageManager;->sIconHeight:I
-
-    .line 2051
-    .local v18, textureHeight:I
-    sget-object v22, Landroid/graphics/Bitmap$Config;->ARGB_8888:Landroid/graphics/Bitmap$Config;
-
-    move/from16 v0, v19
-
-    move/from16 v1, v18
-
-    move-object/from16 v2, v22
-
-    invoke-static {v0, v1, v2}, Landroid/graphics/Bitmap;->createBitmap(IILandroid/graphics/Bitmap$Config;)Landroid/graphics/Bitmap;
-
-    move-result-object v5
-
-    .line 2052
-    .local v5, bitmap:Landroid/graphics/Bitmap;
-    move-object/from16 v0, p0
-
-    iget-object v8, v0, Landroid/app/ApplicationPackageManager;->sCanvas:Landroid/graphics/Canvas;
-
-    .line 2053
-    .local v8, canvas:Landroid/graphics/Canvas;
-    invoke-virtual {v8, v5}, Landroid/graphics/Canvas;->setBitmap(Landroid/graphics/Bitmap;)V
-
-    .line 2055
-    sub-int v22, v19, v21
-
-    div-int/lit8 v12, v22, 0x2
-
-    .line 2056
-    .local v12, left:I
-    sub-int v22, v18, v10
-
-    div-int/lit8 v20, v22, 0x2
-
-    .line 2057
-    .local v20, top:I
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Landroid/app/ApplicationPackageManager;->sOldBounds:Landroid/graphics/Rect;
-
-    move-object/from16 v22, v0
-
-    invoke-virtual/range {p1 .. p1}, Landroid/graphics/drawable/Drawable;->getBounds()Landroid/graphics/Rect;
-
-    move-result-object v24
-
-    move-object/from16 v0, v22
-
-    move-object/from16 v1, v24
-
-    invoke-virtual {v0, v1}, Landroid/graphics/Rect;->set(Landroid/graphics/Rect;)V
-
-    .line 2058
-    add-int v22, v12, v21
-
-    add-int v24, v20, v10
-
-    move-object/from16 v0, p1
-
-    move/from16 v1, v20
-
-    move/from16 v2, v22
-
-    move/from16 v3, v24
-
-    invoke-virtual {v0, v12, v1, v2, v3}, Landroid/graphics/drawable/Drawable;->setBounds(IIII)V
-    :try_end_2
-    .catchall {:try_start_2 .. :try_end_2} :catchall_1
-
-    .line 2062
-    :try_start_3
-    move-object/from16 v0, p1
-
-    instance-of v0, v0, Landroid/graphics/drawable/GradientDrawable;
-
-    move/from16 v22, v0
-
-    if-eqz v22, :cond_f
-
-    .line 2063
-    move-object/from16 v0, p1
-
-    check-cast v0, Landroid/graphics/drawable/GradientDrawable;
-
-    move-object/from16 v22, v0
-
-    invoke-virtual/range {v22 .. v22}, Landroid/graphics/drawable/GradientDrawable;->getCurrent()Landroid/graphics/drawable/Drawable;
-
-    move-result-object v4
-
-    check-cast v4, Landroid/graphics/drawable/BitmapDrawable;
-    :try_end_3
-    .catchall {:try_start_3 .. :try_end_3} :catchall_1
-    .catch Ljava/lang/Exception; {:try_start_3 .. :try_end_3} :catch_0
-
-    .line 2072
-    .local v4, bd:Landroid/graphics/drawable/BitmapDrawable;
-    :goto_4
-    :try_start_4
-    invoke-virtual {v4}, Landroid/graphics/drawable/BitmapDrawable;->getBitmap()Landroid/graphics/Bitmap;
-
-    move-result-object v7
-
-    .line 2073
-    .local v7, bm:Landroid/graphics/Bitmap;
-    int-to-float v0, v12
-
-    move/from16 v22, v0
-
-    move/from16 v0, v20
-
-    int-to-float v0, v0
-
-    move/from16 v24, v0
-
-    const/16 v25, 0x0
-
-    move/from16 v0, v22
-
-    move/from16 v1, v24
-
-    move-object/from16 v2, v25
-
-    invoke-virtual {v8, v7, v0, v1, v2}, Landroid/graphics/Canvas;->drawBitmap(Landroid/graphics/Bitmap;FFLandroid/graphics/Paint;)V
-
-    .line 2074
-    if-eqz p4, :cond_5
-
-    .line 2075
-    invoke-virtual/range {p4 .. p4}, Landroid/graphics/Bitmap;->getWidth()I
-
-    move-result v22
-
-    move/from16 v0, v22
-
-    move/from16 v1, v19
-
-    if-ne v0, v1, :cond_3
-
-    invoke-virtual/range {p4 .. p4}, Landroid/graphics/Bitmap;->getHeight()I
-
-    move-result v22
-
-    move/from16 v0, v22
-
-    move/from16 v1, v18
-
-    if-eq v0, v1, :cond_4
-
-    .line 2076
-    :cond_3
-    const/16 v22, 0x1
-
-    move-object/from16 v0, p4
-
-    move/from16 v1, v19
-
-    move/from16 v2, v18
-
-    move/from16 v3, v22
-
-    invoke-static {v0, v1, v2, v3}, Landroid/graphics/Bitmap;->createScaledBitmap(Landroid/graphics/Bitmap;IIZ)Landroid/graphics/Bitmap;
-
-    move-result-object p4
-
-    .line 2078
-    :cond_4
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Landroid/app/ApplicationPackageManager;->sIconPaint:Landroid/graphics/Paint;
-
-    move-object/from16 v22, v0
-
-    new-instance v24, Landroid/graphics/PorterDuffXfermode;
-
-    sget-object v25, Landroid/graphics/PorterDuff$Mode;->DST_IN:Landroid/graphics/PorterDuff$Mode;
-
-    invoke-direct/range {v24 .. v25}, Landroid/graphics/PorterDuffXfermode;-><init>(Landroid/graphics/PorterDuff$Mode;)V
-
-    move-object/from16 v0, v22
-
-    move-object/from16 v1, v24
-
-    invoke-virtual {v0, v1}, Landroid/graphics/Paint;->setXfermode(Landroid/graphics/Xfermode;)Landroid/graphics/Xfermode;
-
-    .line 2079
-    const/16 v22, 0x0
-
-    const/16 v24, 0x0
-
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Landroid/app/ApplicationPackageManager;->sIconPaint:Landroid/graphics/Paint;
-
-    move-object/from16 v25, v0
-
-    move-object/from16 v0, p4
-
-    move/from16 v1, v22
-
-    move/from16 v2, v24
-
-    move-object/from16 v3, v25
-
-    invoke-virtual {v8, v0, v1, v2, v3}, Landroid/graphics/Canvas;->drawBitmap(Landroid/graphics/Bitmap;FFLandroid/graphics/Paint;)V
-
-    .line 2081
-    :cond_5
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Landroid/app/ApplicationPackageManager;->sOldBounds:Landroid/graphics/Rect;
-
-    move-object/from16 v22, v0
-
-    move-object/from16 v0, p1
-
-    move-object/from16 v1, v22
-
-    invoke-virtual {v0, v1}, Landroid/graphics/drawable/Drawable;->setBounds(Landroid/graphics/Rect;)V
-
-    .line 2082
-    if-eqz p2, :cond_8
-
-    .line 2083
-    invoke-virtual/range {p2 .. p2}, Landroid/graphics/Bitmap;->getWidth()I
-
-    move-result v22
-
-    move/from16 v0, v22
-
-    move/from16 v1, v19
-
-    if-ne v0, v1, :cond_6
-
-    invoke-virtual/range {p2 .. p2}, Landroid/graphics/Bitmap;->getHeight()I
-
-    move-result v22
-
-    move/from16 v0, v22
-
-    move/from16 v1, v18
-
-    if-eq v0, v1, :cond_7
-
-    .line 2084
-    :cond_6
-    const/16 v22, 0x1
-
-    move-object/from16 v0, p2
-
-    move/from16 v1, v19
-
-    move/from16 v2, v18
-
-    move/from16 v3, v22
-
-    invoke-static {v0, v1, v2, v3}, Landroid/graphics/Bitmap;->createScaledBitmap(Landroid/graphics/Bitmap;IIZ)Landroid/graphics/Bitmap;
-
-    move-result-object p2
-
-    .line 2086
-    :cond_7
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Landroid/app/ApplicationPackageManager;->sIconPaint:Landroid/graphics/Paint;
-
-    move-object/from16 v22, v0
-
-    new-instance v24, Landroid/graphics/PorterDuffXfermode;
-
-    sget-object v25, Landroid/graphics/PorterDuff$Mode;->DST_OVER:Landroid/graphics/PorterDuff$Mode;
-
-    invoke-direct/range {v24 .. v25}, Landroid/graphics/PorterDuffXfermode;-><init>(Landroid/graphics/PorterDuff$Mode;)V
-
-    move-object/from16 v0, v22
-
-    move-object/from16 v1, v24
-
-    invoke-virtual {v0, v1}, Landroid/graphics/Paint;->setXfermode(Landroid/graphics/Xfermode;)Landroid/graphics/Xfermode;
-
-    .line 2087
-    const/16 v22, 0x0
-
-    const/16 v24, 0x0
-
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Landroid/app/ApplicationPackageManager;->sIconPaint:Landroid/graphics/Paint;
-
-    move-object/from16 v25, v0
-
-    move-object/from16 v0, p2
-
-    move/from16 v1, v22
-
-    move/from16 v2, v24
-
-    move-object/from16 v3, v25
-
-    invoke-virtual {v8, v0, v1, v2, v3}, Landroid/graphics/Canvas;->drawBitmap(Landroid/graphics/Bitmap;FFLandroid/graphics/Paint;)V
-
-    .line 2089
-    :cond_8
-    if-eqz p3, :cond_b
-
-    .line 2090
-    invoke-virtual/range {p3 .. p3}, Landroid/graphics/Bitmap;->getWidth()I
-
-    move-result v22
-
-    move/from16 v0, v22
-
-    move/from16 v1, v19
-
-    if-ne v0, v1, :cond_9
-
-    invoke-virtual/range {p3 .. p3}, Landroid/graphics/Bitmap;->getHeight()I
-
-    move-result v22
-
-    move/from16 v0, v22
-
-    move/from16 v1, v18
-
-    if-eq v0, v1, :cond_a
-
-    .line 2091
-    :cond_9
-    const/16 v22, 0x1
-
-    move-object/from16 v0, p3
-
-    move/from16 v1, v19
-
-    move/from16 v2, v18
-
-    move/from16 v3, v22
-
-    invoke-static {v0, v1, v2, v3}, Landroid/graphics/Bitmap;->createScaledBitmap(Landroid/graphics/Bitmap;IIZ)Landroid/graphics/Bitmap;
-
-    move-result-object p3
-
-    .line 2093
-    :cond_a
-    const/16 v22, 0x0
-
-    const/16 v24, 0x0
-
-    const/16 v25, 0x0
-
-    move-object/from16 v0, p3
-
-    move/from16 v1, v22
-
-    move/from16 v2, v24
-
-    move-object/from16 v3, v25
-
-    invoke-virtual {v8, v0, v1, v2, v3}, Landroid/graphics/Canvas;->drawBitmap(Landroid/graphics/Bitmap;FFLandroid/graphics/Paint;)V
-
-    .line 2095
-    :cond_b
-    const/16 v22, 0x0
-
-    move-object/from16 v0, v22
-
-    invoke-virtual {v8, v0}, Landroid/graphics/Canvas;->setBitmap(Landroid/graphics/Bitmap;)V
-
-    .line 2097
-    monitor-exit v23
-    :try_end_4
-    .catchall {:try_start_4 .. :try_end_4} :catchall_1
-
-    .end local v4           #bd:Landroid/graphics/drawable/BitmapDrawable;
-    .end local v5           #bitmap:Landroid/graphics/Bitmap;
-    .end local v7           #bm:Landroid/graphics/Bitmap;
-    :goto_5
-    return-object v5
-
-    .line 2018
-    .end local v8           #canvas:Landroid/graphics/Canvas;
-    .end local v12           #left:I
-    .end local v16           #sourceHeight:I
-    .end local v17           #sourceWidth:I
-    .end local v18           #textureHeight:I
-    .end local v19           #textureWidth:I
-    .end local v20           #top:I
-    .end local p1
-    .restart local v11       #icon:Landroid/graphics/drawable/Drawable;
-    :cond_c
-    :try_start_5
-    instance-of v0, v11, Landroid/graphics/drawable/BitmapDrawable;
-
-    move/from16 v22, v0
-
-    if-eqz v22, :cond_1
-
-    .line 2020
-    move-object v0, v11
-
-    check-cast v0, Landroid/graphics/drawable/BitmapDrawable;
-
-    move-object v6, v0
-
-    .line 2021
-    .local v6, bitmapDrawable:Landroid/graphics/drawable/BitmapDrawable;
-    invoke-virtual {v6}, Landroid/graphics/drawable/BitmapDrawable;->getBitmap()Landroid/graphics/Bitmap;
-
-    move-result-object v5
-
-    .line 2022
-    .restart local v5       #bitmap:Landroid/graphics/Bitmap;
-    invoke-virtual {v5}, Landroid/graphics/Bitmap;->getDensity()I
-
-    move-result v22
-
-    if-nez v22, :cond_1
-
-    .line 2023
-    invoke-virtual/range {p5 .. p5}, Landroid/content/res/Resources;->getDisplayMetrics()Landroid/util/DisplayMetrics;
-
-    move-result-object v22
-
-    move-object/from16 v0, v22
-
-    invoke-virtual {v6, v0}, Landroid/graphics/drawable/BitmapDrawable;->setTargetDensity(Landroid/util/DisplayMetrics;)V
-    :try_end_5
-    .catchall {:try_start_5 .. :try_end_5} :catchall_0
-
-    goto/16 :goto_1
-
-    .line 2098
-    .end local v5           #bitmap:Landroid/graphics/Bitmap;
-    .end local v6           #bitmapDrawable:Landroid/graphics/drawable/BitmapDrawable;
-    :catchall_0
-    move-exception v22
-
-    move-object/from16 p1, v11
-
-    .end local v10           #height:I
-    .end local v11           #icon:Landroid/graphics/drawable/Drawable;
-    .end local v21           #width:I
-    .restart local p1
-    :goto_6
-    :try_start_6
-    monitor-exit v23
-    :try_end_6
-    .catchall {:try_start_6 .. :try_end_6} :catchall_1
-
-    throw v22
-
-    .line 2032
-    .end local p1
-    .restart local v10       #height:I
-    .restart local v11       #icon:Landroid/graphics/drawable/Drawable;
-    .restart local v15       #ratio:F
-    .restart local v16       #sourceHeight:I
-    .restart local v17       #sourceWidth:I
-    .restart local v21       #width:I
-    :cond_d
-    move/from16 v0, v16
-
-    move/from16 v1, v17
-
-    if-le v0, v1, :cond_2
-
-    .line 2033
-    int-to-float v0, v10
-
-    move/from16 v22, v0
-
-    mul-float v22, v22, v15
-
-    move/from16 v0, v22
-
-    float-to-int v0, v0
-
-    move/from16 v21, v0
-
-    goto/16 :goto_2
-
-    .line 2040
-    .restart local v13       #lessBitmap:Landroid/graphics/Bitmap;
-    :cond_e
-    :try_start_7
-    move-object/from16 v0, p0
-
-    invoke-direct {v0, v11}, Landroid/app/ApplicationPackageManager;->drawableToBitmap(Landroid/graphics/drawable/Drawable;)Landroid/graphics/Bitmap;
-
-    move-result-object v22
-
-    const/16 v24, 0x0
-
-    move-object/from16 v0, p0
-
-    move-object/from16 v1, v22
-
-    move/from16 v2, v21
-
-    move/from16 v3, v24
-
-    invoke-direct {v0, v1, v2, v10, v3}, Landroid/app/ApplicationPackageManager;->lessenBitmap(Landroid/graphics/Bitmap;IIZ)Landroid/graphics/Bitmap;
-
-    move-result-object v13
-
-    .line 2041
-    new-instance p1, Landroid/graphics/drawable/BitmapDrawable;
-
-    move-object/from16 v0, p1
-
-    move-object/from16 v1, p5
-
-    invoke-direct {v0, v1, v13}, Landroid/graphics/drawable/BitmapDrawable;-><init>(Landroid/content/res/Resources;Landroid/graphics/Bitmap;)V
-    :try_end_7
-    .catchall {:try_start_7 .. :try_end_7} :catchall_0
-
-    .end local v11           #icon:Landroid/graphics/drawable/Drawable;
-    .restart local p1
-    goto/16 :goto_3
-
-    .line 2065
-    .end local v13           #lessBitmap:Landroid/graphics/Bitmap;
-    .end local v15           #ratio:F
-    .restart local v5       #bitmap:Landroid/graphics/Bitmap;
-    .restart local v8       #canvas:Landroid/graphics/Canvas;
-    .restart local v12       #left:I
-    .restart local v18       #textureHeight:I
-    .restart local v19       #textureWidth:I
-    .restart local v20       #top:I
-    :cond_f
-    :try_start_8
-    move-object/from16 v0, p1
-
-    check-cast v0, Landroid/graphics/drawable/BitmapDrawable;
-
-    move-object v4, v0
-    :try_end_8
-    .catchall {:try_start_8 .. :try_end_8} :catchall_1
-    .catch Ljava/lang/Exception; {:try_start_8 .. :try_end_8} :catch_0
-
-    .restart local v4       #bd:Landroid/graphics/drawable/BitmapDrawable;
-    goto/16 :goto_4
-
-    .line 2067
-    .end local v4           #bd:Landroid/graphics/drawable/BitmapDrawable;
-    :catch_0
-    move-exception v9
-
-    .line 2068
-    .local v9, e:Ljava/lang/Exception;
-    :try_start_9
-    invoke-virtual {v9}, Ljava/lang/Exception;->printStackTrace()V
-
-    .line 2069
-    const/4 v5, 0x0
-
-    monitor-exit v23
-    :try_end_9
-    .catchall {:try_start_9 .. :try_end_9} :catchall_1
-
-    goto :goto_5
-
-    .line 2098
-    .end local v5           #bitmap:Landroid/graphics/Bitmap;
-    .end local v8           #canvas:Landroid/graphics/Canvas;
-    .end local v9           #e:Ljava/lang/Exception;
-    .end local v10           #height:I
-    .end local v12           #left:I
-    .end local v16           #sourceHeight:I
-    .end local v17           #sourceWidth:I
-    .end local v18           #textureHeight:I
-    .end local v19           #textureWidth:I
-    .end local v20           #top:I
-    .end local v21           #width:I
-    :catchall_1
-    move-exception v22
-
-    goto :goto_6
-
-    .end local p1
-    .restart local v10       #height:I
-    .restart local v11       #icon:Landroid/graphics/drawable/Drawable;
-    .restart local v16       #sourceHeight:I
-    .restart local v17       #sourceWidth:I
-    .restart local v21       #width:I
-    :cond_10
-    move-object/from16 p1, v11
-
-    .end local v11           #icon:Landroid/graphics/drawable/Drawable;
-    .restart local p1
-    goto/16 :goto_3
-
-    .end local v16           #sourceHeight:I
-    .end local v17           #sourceWidth:I
-    :cond_11
-    move-object/from16 v11, p1
-
-    .end local p1
-    .restart local v11       #icon:Landroid/graphics/drawable/Drawable;
-    goto/16 :goto_0
-.end method
-
-.method private drawableToBitmap(Landroid/graphics/drawable/Drawable;)Landroid/graphics/Bitmap;
-    .locals 2
-    .parameter "drawable"
-
-    .prologue
-    .line 2134
-    instance-of v0, p1, Landroid/graphics/drawable/BitmapDrawable;
-
-    if-eqz v0, :cond_0
-
-    .line 2135
-    check-cast p1, Landroid/graphics/drawable/BitmapDrawable;
-
-    .end local p1
-    invoke-virtual {p1}, Landroid/graphics/drawable/BitmapDrawable;->getBitmap()Landroid/graphics/Bitmap;
-
-    move-result-object v0
-
-    .line 2137
-    :goto_0
-    return-object v0
-
-    .restart local p1
-    :cond_0
-    invoke-virtual {p1}, Landroid/graphics/drawable/Drawable;->getIntrinsicWidth()I
-
-    move-result v0
-
-    invoke-virtual {p1}, Landroid/graphics/drawable/Drawable;->getIntrinsicHeight()I
-
-    move-result v1
-
-    invoke-direct {p0, p1, v0, v1}, Landroid/app/ApplicationPackageManager;->drawableToBitmap(Landroid/graphics/drawable/Drawable;II)Landroid/graphics/Bitmap;
-
-    move-result-object v0
-
-    goto :goto_0
-.end method
-
-.method private drawableToBitmap(Landroid/graphics/drawable/Drawable;II)Landroid/graphics/Bitmap;
-    .locals 7
-    .parameter "drawable"
-    .parameter "width"
-    .parameter "height"
-
-    .prologue
-    .line 2143
-    const/4 v0, 0x0
-
-    .line 2146
-    .local v0, bitmap:Landroid/graphics/Bitmap;
-    const/4 v4, 0x1
-
-    const/4 v5, 0x1
-
-    :try_start_0
-    invoke-virtual {p1}, Landroid/graphics/drawable/Drawable;->getOpacity()I
-
-    move-result v3
-
-    const/4 v6, -0x1
-
-    if-eq v3, v6, :cond_0
-
-    sget-object v3, Landroid/graphics/Bitmap$Config;->ARGB_8888:Landroid/graphics/Bitmap$Config;
-
-    :goto_0
-    invoke-static {v4, v5, v3}, Landroid/graphics/Bitmap;->createBitmap(IILandroid/graphics/Bitmap$Config;)Landroid/graphics/Bitmap;
-
-    move-result-object v0
-
-    .line 2152
-    const/4 v3, 0x1
-
-    invoke-static {v0, p2, p3, v3}, Landroid/graphics/Bitmap;->createScaledBitmap(Landroid/graphics/Bitmap;IIZ)Landroid/graphics/Bitmap;
-
-    move-result-object v0
-
-    .line 2156
-    new-instance v1, Landroid/graphics/Canvas;
-
-    invoke-direct {v1, v0}, Landroid/graphics/Canvas;-><init>(Landroid/graphics/Bitmap;)V
-
-    .line 2158
-    .local v1, canvas:Landroid/graphics/Canvas;
-    const/4 v3, 0x0
-
-    const/4 v4, 0x0
-
-    invoke-virtual {p1, v3, v4, p2, p3}, Landroid/graphics/drawable/Drawable;->setBounds(IIII)V
-
-    .line 2161
-    invoke-virtual {p1, v1}, Landroid/graphics/drawable/Drawable;->draw(Landroid/graphics/Canvas;)V
-
-    .line 2167
-    .end local v1           #canvas:Landroid/graphics/Canvas;
-    :goto_1
-    return-object v0
-
-    .line 2146
-    :cond_0
-    sget-object v3, Landroid/graphics/Bitmap$Config;->RGB_565:Landroid/graphics/Bitmap$Config;
-    :try_end_0
-    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
-
-    goto :goto_0
-
-    .line 2162
-    :catch_0
-    move-exception v2
-
-    .line 2164
-    .local v2, e:Ljava/lang/Exception;
-    invoke-virtual {v2}, Ljava/lang/Exception;->printStackTrace()V
-
-    goto :goto_1
-.end method
-
-.method private findDrawableByResourceName(Ljava/lang/String;Landroid/content/res/Resources;)Landroid/graphics/drawable/Drawable;
-    .locals 5
-    .parameter "name"
-    .parameter "res"
-
-    .prologue
-    const/4 v0, 0x0
-
-    .line 1828
-    if-nez p2, :cond_1
-
-    .line 1845
-    :cond_0
-    :goto_0
-    return-object v0
-
-    .line 1834
-    :cond_1
-    :try_start_0
-    const-string v3, "drawable"
-
-    invoke-direct {p0}, Landroid/app/ApplicationPackageManager;->getCurrentLaunchTheme()Ljava/lang/String;
-
-    move-result-object v4
-
-    invoke-virtual {p2, p1, v3, v4}, Landroid/content/res/Resources;->getIdentifier(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)I
-
-    move-result v2
-
-    .line 1835
-    .local v2, resID:I
-    if-eqz v2, :cond_0
-
-    .line 1838
-    invoke-virtual {p2}, Landroid/content/res/Resources;->getDisplayMetrics()Landroid/util/DisplayMetrics;
-
-    move-result-object v3
-
-    iget v3, v3, Landroid/util/DisplayMetrics;->densityDpi:I
-
-    invoke-virtual {p2, v2, v3}, Landroid/content/res/Resources;->getDrawableForDensity(II)Landroid/graphics/drawable/Drawable;
-    :try_end_0
-    .catch Landroid/content/res/Resources$NotFoundException; {:try_start_0 .. :try_end_0} :catch_0
-    .catch Ljava/lang/OutOfMemoryError; {:try_start_0 .. :try_end_0} :catch_1
-
-    move-result-object v0
-
-    .line 1839
-    .local v0, drawable:Landroid/graphics/drawable/Drawable;
-    goto :goto_0
-
-    .line 1840
-    .end local v0           #drawable:Landroid/graphics/drawable/Drawable;
-    .end local v2           #resID:I
-    :catch_0
-    move-exception v1
-
-    .line 1841
-    .local v1, e:Landroid/content/res/Resources$NotFoundException;
-    invoke-virtual {v1}, Landroid/content/res/Resources$NotFoundException;->printStackTrace()V
-
-    goto :goto_0
-
-    .line 1842
-    .end local v1           #e:Landroid/content/res/Resources$NotFoundException;
-    :catch_1
-    move-exception v1
-
-    .line 1843
-    .local v1, e:Ljava/lang/OutOfMemoryError;
-    invoke-virtual {v1}, Ljava/lang/OutOfMemoryError;->printStackTrace()V
-
-    goto :goto_0
-.end method
-
-.method private getAndroidNoShapeDrawable(Ljava/lang/String;ILandroid/content/pm/ApplicationInfo;)Landroid/graphics/drawable/Drawable;
-    .locals 8
-    .parameter "packageName"
-    .parameter "resid"
-    .parameter "appInfo"
-
-    .prologue
-    const/4 v4, 0x0
-
-    .line 758
-    new-instance v2, Landroid/app/ApplicationPackageManager$ResourceName;
-
-    invoke-direct {v2, p1, p2}, Landroid/app/ApplicationPackageManager$ResourceName;-><init>(Ljava/lang/String;I)V
-
-    .line 759
-    .local v2, name:Landroid/app/ApplicationPackageManager$ResourceName;
-    invoke-direct {p0, v2}, Landroid/app/ApplicationPackageManager;->getCachedIcon(Landroid/app/ApplicationPackageManager$ResourceName;)Landroid/graphics/drawable/Drawable;
-
-    move-result-object v0
-
-    .line 760
-    .local v0, dr:Landroid/graphics/drawable/Drawable;
-    if-eqz v0, :cond_0
-
-    move-object v4, v0
-
-    .line 800
-    :goto_0
-    return-object v4
-
-    .line 763
-    :cond_0
-    if-nez p3, :cond_1
-
-    .line 765
-    const/4 v5, 0x0
-
-    :try_start_0
-    invoke-virtual {p0, p1, v5}, Landroid/app/ApplicationPackageManager;->getApplicationInfo(Ljava/lang/String;I)Landroid/content/pm/ApplicationInfo;
-    :try_end_0
-    .catch Landroid/content/pm/PackageManager$NameNotFoundException; {:try_start_0 .. :try_end_0} :catch_0
-
-    move-result-object p3
-
-    .line 771
-    :cond_1
-    :try_start_1
-    invoke-virtual {p0, p3}, Landroid/app/ApplicationPackageManager;->getResourcesForApplication(Landroid/content/pm/ApplicationInfo;)Landroid/content/res/Resources;
-
-    move-result-object v3
-
-    .line 772
-    .local v3, r:Landroid/content/res/Resources;
-    invoke-virtual {v3, p2}, Landroid/content/res/Resources;->getAndroidDrawable(I)Landroid/graphics/drawable/Drawable;
-    :try_end_1
-    .catch Landroid/content/pm/PackageManager$NameNotFoundException; {:try_start_1 .. :try_end_1} :catch_1
-    .catch Landroid/content/res/Resources$NotFoundException; {:try_start_1 .. :try_end_1} :catch_2
-    .catch Ljava/lang/RuntimeException; {:try_start_1 .. :try_end_1} :catch_3
-
-    move-result-object v0
-
-    move-object v4, v0
-
-    .line 786
-    goto :goto_0
-
-    .line 766
-    .end local v3           #r:Landroid/content/res/Resources;
-    :catch_0
-    move-exception v1
-
-    .line 767
-    .local v1, e:Landroid/content/pm/PackageManager$NameNotFoundException;
-    goto :goto_0
-
-    .line 787
-    .end local v1           #e:Landroid/content/pm/PackageManager$NameNotFoundException;
-    :catch_1
-    move-exception v1
-
-    .line 788
-    .restart local v1       #e:Landroid/content/pm/PackageManager$NameNotFoundException;
-    const-string v5, "PackageManager"
-
-    new-instance v6, Ljava/lang/StringBuilder;
-
-    invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v7, "Failure retrieving resources for"
-
-    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v6
-
-    iget-object v7, p3, Landroid/content/pm/ApplicationInfo;->packageName:Ljava/lang/String;
-
-    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v6
-
-    invoke-virtual {v6}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v6
-
-    invoke-static {v5, v6}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
-
-    goto :goto_0
-
-    .line 790
-    .end local v1           #e:Landroid/content/pm/PackageManager$NameNotFoundException;
-    :catch_2
-    move-exception v1
-
-    .line 791
-    .local v1, e:Landroid/content/res/Resources$NotFoundException;
-    const-string v5, "PackageManager"
-
-    new-instance v6, Ljava/lang/StringBuilder;
-
-    invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v7, "Failure retrieving resources for"
-
-    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v6
-
-    iget-object v7, p3, Landroid/content/pm/ApplicationInfo;->packageName:Ljava/lang/String;
-
-    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v6
-
-    const-string v7, ": "
-
-    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v6
-
-    invoke-virtual {v1}, Landroid/content/res/Resources$NotFoundException;->getMessage()Ljava/lang/String;
-
-    move-result-object v7
-
-    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v6
-
-    invoke-virtual {v6}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v6
-
-    invoke-static {v5, v6}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
-
-    goto :goto_0
-
-    .line 793
-    .end local v1           #e:Landroid/content/res/Resources$NotFoundException;
-    :catch_3
-    move-exception v1
-
-    .line 796
-    .local v1, e:Ljava/lang/RuntimeException;
-    const-string v5, "PackageManager"
-
-    new-instance v6, Ljava/lang/StringBuilder;
-
-    invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v7, "Failure retrieving icon 0x"
-
-    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v6
-
-    invoke-static {p2}, Ljava/lang/Integer;->toHexString(I)Ljava/lang/String;
-
-    move-result-object v7
-
-    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v6
-
-    const-string v7, " in package "
-
-    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v6
-
-    invoke-virtual {v6, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v6
-
-    invoke-virtual {v6}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v6
-
-    invoke-static {v5, v6, v1}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
-
-    goto/16 :goto_0
 .end method
 
 .method private getCachedIcon(Landroid/app/ApplicationPackageManager$ResourceName;)Landroid/graphics/drawable/Drawable;
@@ -2363,259 +362,6 @@
     throw v2
 .end method
 
-.method private getCurrentLaunchTheme()Ljava/lang/String;
-    .locals 1
-
-    .prologue
-    .line 1803
-    sget-object v0, Landroid/app/ApplicationPackageManager;->sCurrent_Launch_Theme:Ljava/lang/String;
-
-    return-object v0
-.end method
-
-.method private getHashmapSystemIcon()Ljava/util/HashMap;
-    .locals 4
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "()",
-            "Ljava/util/HashMap",
-            "<",
-            "Ljava/lang/String;",
-            "Ljava/lang/Integer;",
-            ">;"
-        }
-    .end annotation
-
-    .prologue
-    .line 879
-    iget-object v1, p0, Landroid/app/ApplicationPackageManager;->hashmap_system_consistent_icon:Ljava/util/HashMap;
-
-    if-eqz v1, :cond_0
-
-    iget-object v1, p0, Landroid/app/ApplicationPackageManager;->hashmap_system_consistent_icon:Ljava/util/HashMap;
-
-    .line 886
-    :goto_0
-    return-object v1
-
-    .line 880
-    :cond_0
-    new-instance v1, Ljava/util/HashMap;
-
-    invoke-direct {v1}, Ljava/util/HashMap;-><init>()V
-
-    iput-object v1, p0, Landroid/app/ApplicationPackageManager;->hashmap_system_consistent_icon:Ljava/util/HashMap;
-
-    .line 881
-    const/4 v0, 0x0
-
-    .local v0, index:I
-    :goto_1
-    sget-object v1, Landroid/app/ApplicationPackageManager;->SYSTEM_ICON_TRANSLATE_ICON_ID_LISTS:[I
-
-    array-length v1, v1
-
-    if-ge v0, v1, :cond_1
-
-    .line 882
-    iget-object v1, p0, Landroid/app/ApplicationPackageManager;->hashmap_system_consistent_icon:Ljava/util/HashMap;
-
-    sget-object v2, Landroid/app/ApplicationPackageManager;->SYSTEM_ICON_TRANSLATE_PACKAGE_NAME_LISTS:[Ljava/lang/String;
-
-    aget-object v2, v2, v0
-
-    sget-object v3, Landroid/app/ApplicationPackageManager;->SYSTEM_ICON_TRANSLATE_ICON_ID_LISTS:[I
-
-    aget v3, v3, v0
-
-    invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v3
-
-    invoke-virtual {v1, v2, v3}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    .line 881
-    add-int/lit8 v0, v0, 0x1
-
-    goto :goto_1
-
-    .line 885
-    :cond_1
-    const-string v1, "jiayh2"
-
-    const-string v2, "getHashmapSystemIcon creat new"
-
-    invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 886
-    iget-object v1, p0, Landroid/app/ApplicationPackageManager;->hashmap_system_consistent_icon:Ljava/util/HashMap;
-
-    goto :goto_0
-.end method
-
-.method private getLenovoCachedIcon(Landroid/app/ApplicationPackageManager$ResourceName;)Landroid/graphics/drawable/Drawable;
-    .locals 4
-    .parameter "name"
-
-    .prologue
-    .line 1087
-    sget-object v3, Landroid/app/ApplicationPackageManager;->sSync:Ljava/lang/Object;
-
-    monitor-enter v3
-
-    .line 1088
-    :try_start_0
-    sget-object v2, Landroid/app/ApplicationPackageManager;->sLenovoIconCache:Ljava/util/HashMap;
-
-    invoke-virtual {v2, p1}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v1
-
-    check-cast v1, Ljava/lang/ref/WeakReference;
-
-    .line 1091
-    .local v1, wr:Ljava/lang/ref/WeakReference;,"Ljava/lang/ref/WeakReference<Landroid/graphics/drawable/Drawable$ConstantState;>;"
-    if-eqz v1, :cond_1
-
-    .line 1092
-    invoke-virtual {v1}, Ljava/lang/ref/WeakReference;->get()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Landroid/graphics/drawable/Drawable$ConstantState;
-
-    .line 1093
-    .local v0, state:Landroid/graphics/drawable/Drawable$ConstantState;
-    if-eqz v0, :cond_0
-
-    .line 1103
-    invoke-virtual {v0}, Landroid/graphics/drawable/Drawable$ConstantState;->newDrawable()Landroid/graphics/drawable/Drawable;
-
-    move-result-object v2
-
-    monitor-exit v3
-
-    .line 1109
-    .end local v0           #state:Landroid/graphics/drawable/Drawable$ConstantState;
-    :goto_0
-    return-object v2
-
-    .line 1106
-    .restart local v0       #state:Landroid/graphics/drawable/Drawable$ConstantState;
-    :cond_0
-    sget-object v2, Landroid/app/ApplicationPackageManager;->sLenovoIconCache:Ljava/util/HashMap;
-
-    invoke-virtual {v2, p1}, Ljava/util/HashMap;->remove(Ljava/lang/Object;)Ljava/lang/Object;
-
-    .line 1108
-    .end local v0           #state:Landroid/graphics/drawable/Drawable$ConstantState;
-    :cond_1
-    monitor-exit v3
-
-    .line 1109
-    const/4 v2, 0x0
-
-    goto :goto_0
-
-    .line 1108
-    .end local v1           #wr:Ljava/lang/ref/WeakReference;,"Ljava/lang/ref/WeakReference<Landroid/graphics/drawable/Drawable$ConstantState;>;"
-    :catchall_0
-    move-exception v2
-
-    monitor-exit v3
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    throw v2
-.end method
-
-.method private getShapeBitmap(Landroid/graphics/drawable/Drawable;Landroid/content/res/Resources;)Landroid/graphics/Bitmap;
-    .locals 2
-    .parameter "drawable"
-    .parameter "res"
-
-    .prologue
-    .line 1823
-    const/4 v1, -0x2
-
-    invoke-direct {p0, p1, v1, p2}, Landroid/app/ApplicationPackageManager;->createIconBitmap(Landroid/graphics/drawable/Drawable;ILandroid/content/res/Resources;)Landroid/graphics/Bitmap;
-
-    move-result-object v0
-
-    .line 1824
-    .local v0, b:Landroid/graphics/Bitmap;
-    return-object v0
-.end method
-
-.method private getShapeDrawable(Landroid/graphics/drawable/Drawable;Landroid/content/pm/PackageManager;)Landroid/graphics/drawable/Drawable;
-    .locals 5
-    .parameter "drawable"
-    .parameter "pm"
-
-    .prologue
-    .line 1808
-    invoke-direct {p0}, Landroid/app/ApplicationPackageManager;->setCurrentLaunchTheme()V
-
-    .line 1809
-    const/4 v3, 0x0
-
-    .line 1811
-    .local v3, res:Landroid/content/res/Resources;
-    :try_start_0
-    invoke-direct {p0}, Landroid/app/ApplicationPackageManager;->getCurrentLaunchTheme()Ljava/lang/String;
-
-    move-result-object v4
-
-    invoke-virtual {p2, v4}, Landroid/content/pm/PackageManager;->getResourcesForApplication(Ljava/lang/String;)Landroid/content/res/Resources;
-    :try_end_0
-    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
-
-    move-result-object v3
-
-    .line 1817
-    invoke-direct {p0, p1, v3}, Landroid/app/ApplicationPackageManager;->getShapeBitmap(Landroid/graphics/drawable/Drawable;Landroid/content/res/Resources;)Landroid/graphics/Bitmap;
-
-    move-result-object v0
-
-    .line 1818
-    .local v0, b:Landroid/graphics/Bitmap;
-    new-instance v1, Landroid/graphics/drawable/BitmapDrawable;
-
-    invoke-direct {v1, v3, v0}, Landroid/graphics/drawable/BitmapDrawable;-><init>(Landroid/content/res/Resources;Landroid/graphics/Bitmap;)V
-
-    .line 1819
-    .end local v0           #b:Landroid/graphics/Bitmap;
-    :goto_0
-    return-object v1
-
-    .line 1812
-    :catch_0
-    move-exception v2
-
-    .line 1813
-    .local v2, e:Ljava/lang/Exception;
-    invoke-virtual {v2}, Ljava/lang/Exception;->printStackTrace()V
-
-    .line 1814
-    const/4 v1, 0x0
-
-    goto :goto_0
-.end method
-
-.method private getThemeIconBg(Landroid/content/res/Resources;)[Landroid/graphics/Bitmap;
-    .locals 1
-    .parameter "res"
-
-    .prologue
-    .line 1880
-    invoke-direct {p0, p1}, Landroid/app/ApplicationPackageManager;->readyThemeIconBg(Landroid/content/res/Resources;)V
-
-    .line 1881
-    iget-object v0, p0, Landroid/app/ApplicationPackageManager;->mThemeBgBitmap:[Landroid/graphics/Bitmap;
-
-    return-object v0
-.end method
-
 .method static handlePackageBroadcast(I[Ljava/lang/String;Z)V
     .locals 10
     .parameter "cmd"
@@ -2623,30 +369,30 @@
     .parameter "hasPkgInfo"
 
     .prologue
-    .line 1121
+    .line 915
     const/4 v2, 0x0
 
-    .line 1122
+    .line 916
     .local v2, immediateGc:Z
     const/4 v8, 0x1
 
     if-ne p0, v8, :cond_0
 
-    .line 1123
+    .line 917
     const/4 v2, 0x1
 
-    .line 1125
+    .line 919
     :cond_0
-    if-eqz p1, :cond_9
+    if-eqz p1, :cond_7
 
     array-length v8, p1
 
-    if-lez v8, :cond_9
+    if-lez v8, :cond_7
 
-    .line 1126
+    .line 920
     const/4 v5, 0x0
 
-    .line 1127
+    .line 921
     .local v5, needCleanup:Z
     move-object v0, p1
 
@@ -2658,17 +404,17 @@
 
     .local v1, i$:I
     :goto_0
-    if-ge v1, v4, :cond_7
+    if-ge v1, v4, :cond_5
 
     aget-object v7, v0, v1
 
-    .line 1128
+    .line 922
     .local v7, ssp:Ljava/lang/String;
     sget-object v9, Landroid/app/ApplicationPackageManager;->sSync:Ljava/lang/Object;
 
     monitor-enter v9
 
-    .line 1129
+    .line 923
     :try_start_0
     sget-object v8, Landroid/app/ApplicationPackageManager;->sIconCache:Ljava/util/HashMap;
 
@@ -2678,7 +424,7 @@
 
     if-lez v8, :cond_2
 
-    .line 1130
+    .line 924
     sget-object v8, Landroid/app/ApplicationPackageManager;->sIconCache:Ljava/util/HashMap;
 
     invoke-virtual {v8}, Ljava/util/HashMap;->keySet()Ljava/util/Set;
@@ -2689,7 +435,7 @@
 
     move-result-object v3
 
-    .line 1131
+    .line 925
     .local v3, it:Ljava/util/Iterator;,"Ljava/util/Iterator<Landroid/app/ApplicationPackageManager$ResourceName;>;"
     :cond_1
     :goto_1
@@ -2699,14 +445,14 @@
 
     if-eqz v8, :cond_2
 
-    .line 1132
+    .line 926
     invoke-interface {v3}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object v6
 
     check-cast v6, Landroid/app/ApplicationPackageManager$ResourceName;
 
-    .line 1133
+    .line 927
     .local v6, nm:Landroid/app/ApplicationPackageManager$ResourceName;
     iget-object v8, v6, Landroid/app/ApplicationPackageManager$ResourceName;->packageName:Ljava/lang/String;
 
@@ -2716,19 +462,19 @@
 
     if-eqz v8, :cond_1
 
-    .line 1135
+    .line 929
     invoke-interface {v3}, Ljava/util/Iterator;->remove()V
 
-    .line 1136
+    .line 930
     const/4 v5, 0x1
 
     goto :goto_1
 
-    .line 1141
+    .line 934
     .end local v3           #it:Ljava/util/Iterator;,"Ljava/util/Iterator<Landroid/app/ApplicationPackageManager$ResourceName;>;"
     .end local v6           #nm:Landroid/app/ApplicationPackageManager$ResourceName;
     :cond_2
-    sget-object v8, Landroid/app/ApplicationPackageManager;->sLenovoIconCache:Ljava/util/HashMap;
+    sget-object v8, Landroid/app/ApplicationPackageManager;->sStringCache:Ljava/util/HashMap;
 
     invoke-virtual {v8}, Ljava/util/HashMap;->size()I
 
@@ -2736,8 +482,8 @@
 
     if-lez v8, :cond_4
 
-    .line 1142
-    sget-object v8, Landroid/app/ApplicationPackageManager;->sLenovoIconCache:Ljava/util/HashMap;
+    .line 935
+    sget-object v8, Landroid/app/ApplicationPackageManager;->sStringCache:Ljava/util/HashMap;
 
     invoke-virtual {v8}, Ljava/util/HashMap;->keySet()Ljava/util/Set;
 
@@ -2747,7 +493,7 @@
 
     move-result-object v3
 
-    .line 1143
+    .line 936
     .restart local v3       #it:Ljava/util/Iterator;,"Ljava/util/Iterator<Landroid/app/ApplicationPackageManager$ResourceName;>;"
     :cond_3
     :goto_2
@@ -2757,14 +503,14 @@
 
     if-eqz v8, :cond_4
 
-    .line 1144
+    .line 937
     invoke-interface {v3}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object v6
 
     check-cast v6, Landroid/app/ApplicationPackageManager$ResourceName;
 
-    .line 1145
+    .line 938
     .restart local v6       #nm:Landroid/app/ApplicationPackageManager$ResourceName;
     iget-object v8, v6, Landroid/app/ApplicationPackageManager$ResourceName;->packageName:Ljava/lang/String;
 
@@ -2774,84 +520,26 @@
 
     if-eqz v8, :cond_3
 
-    .line 1147
+    .line 940
     invoke-interface {v3}, Ljava/util/Iterator;->remove()V
 
-    .line 1148
+    .line 941
     const/4 v5, 0x1
 
     goto :goto_2
 
-    .line 1153
+    .line 945
     .end local v3           #it:Ljava/util/Iterator;,"Ljava/util/Iterator<Landroid/app/ApplicationPackageManager$ResourceName;>;"
     .end local v6           #nm:Landroid/app/ApplicationPackageManager$ResourceName;
     :cond_4
-    sget-object v8, Landroid/app/ApplicationPackageManager;->sStringCache:Ljava/util/HashMap;
-
-    invoke-virtual {v8}, Ljava/util/HashMap;->size()I
-
-    move-result v8
-
-    if-lez v8, :cond_6
-
-    .line 1154
-    sget-object v8, Landroid/app/ApplicationPackageManager;->sStringCache:Ljava/util/HashMap;
-
-    invoke-virtual {v8}, Ljava/util/HashMap;->keySet()Ljava/util/Set;
-
-    move-result-object v8
-
-    invoke-interface {v8}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
-
-    move-result-object v3
-
-    .line 1155
-    .restart local v3       #it:Ljava/util/Iterator;,"Ljava/util/Iterator<Landroid/app/ApplicationPackageManager$ResourceName;>;"
-    :cond_5
-    :goto_3
-    invoke-interface {v3}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v8
-
-    if-eqz v8, :cond_6
-
-    .line 1156
-    invoke-interface {v3}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v6
-
-    check-cast v6, Landroid/app/ApplicationPackageManager$ResourceName;
-
-    .line 1157
-    .restart local v6       #nm:Landroid/app/ApplicationPackageManager$ResourceName;
-    iget-object v8, v6, Landroid/app/ApplicationPackageManager$ResourceName;->packageName:Ljava/lang/String;
-
-    invoke-virtual {v8, v7}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v8
-
-    if-eqz v8, :cond_5
-
-    .line 1159
-    invoke-interface {v3}, Ljava/util/Iterator;->remove()V
-
-    .line 1160
-    const/4 v5, 0x1
-
-    goto :goto_3
-
-    .line 1164
-    .end local v3           #it:Ljava/util/Iterator;,"Ljava/util/Iterator<Landroid/app/ApplicationPackageManager$ResourceName;>;"
-    .end local v6           #nm:Landroid/app/ApplicationPackageManager$ResourceName;
-    :cond_6
     monitor-exit v9
 
-    .line 1127
+    .line 921
     add-int/lit8 v1, v1, 0x1
 
-    goto/16 :goto_0
+    goto :goto_0
 
-    .line 1164
+    .line 945
     :catchall_0
     move-exception v8
 
@@ -2861,218 +549,46 @@
 
     throw v8
 
-    .line 1166
+    .line 947
     .end local v7           #ssp:Ljava/lang/String;
-    :cond_7
-    if-nez v5, :cond_8
+    :cond_5
+    if-nez v5, :cond_6
 
-    if-eqz p2, :cond_9
+    if-eqz p2, :cond_7
 
-    .line 1167
-    :cond_8
-    if-eqz v2, :cond_a
+    .line 948
+    :cond_6
+    if-eqz v2, :cond_8
 
-    .line 1169
+    .line 950
     invoke-static {}, Ljava/lang/Runtime;->getRuntime()Ljava/lang/Runtime;
 
     move-result-object v8
 
     invoke-virtual {v8}, Ljava/lang/Runtime;->gc()V
 
-    .line 1175
+    .line 956
     .end local v0           #arr$:[Ljava/lang/String;
     .end local v1           #i$:I
     .end local v4           #len$:I
     .end local v5           #needCleanup:Z
-    :cond_9
-    :goto_4
+    :cond_7
+    :goto_3
     return-void
 
-    .line 1171
+    .line 952
     .restart local v0       #arr$:[Ljava/lang/String;
     .restart local v1       #i$:I
     .restart local v4       #len$:I
     .restart local v5       #needCleanup:Z
-    :cond_a
+    :cond_8
     invoke-static {}, Landroid/app/ActivityThread;->currentActivityThread()Landroid/app/ActivityThread;
 
     move-result-object v8
 
     invoke-virtual {v8}, Landroid/app/ActivityThread;->scheduleGcIdler()V
 
-    goto :goto_4
-.end method
-
-.method private initStatics()V
-    .locals 4
-
-    .prologue
-    .line 2104
-    iget-object v1, p0, Landroid/app/ApplicationPackageManager;->mContext:Landroid/app/ContextImpl;
-
-    invoke-virtual {v1}, Landroid/app/ContextImpl;->getResources()Landroid/content/res/Resources;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Landroid/content/res/Resources;->getDisplayMetrics()Landroid/util/DisplayMetrics;
-
-    move-result-object v0
-
-    .line 2105
-    .local v0, dm:Landroid/util/DisplayMetrics;
-    const/high16 v1, 0x4270
-
-    iget v2, v0, Landroid/util/DisplayMetrics;->density:F
-
-    mul-float/2addr v1, v2
-
-    float-to-int v1, v1
-
-    sput v1, Landroid/app/ApplicationPackageManager;->sIconHeight:I
-
-    sput v1, Landroid/app/ApplicationPackageManager;->sIconWidth:I
-
-    .line 2106
-    const/high16 v1, 0x4240
-
-    iget v2, v0, Landroid/util/DisplayMetrics;->density:F
-
-    mul-float/2addr v1, v2
-
-    float-to-int v1, v1
-
-    sput v1, Landroid/app/ApplicationPackageManager;->sIconSHeight:I
-
-    sput v1, Landroid/app/ApplicationPackageManager;->sIconSWidth:I
-
-    .line 2107
-    const-string v1, "jiayh2"
-
-    new-instance v2, Ljava/lang/StringBuilder;
-
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v3, "PM getshape initStatics sIconWidth="
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    sget v3, Landroid/app/ApplicationPackageManager;->sIconWidth:I
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    const-string v3, ", sIconSWidth="
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    sget v3, Landroid/app/ApplicationPackageManager;->sIconSWidth:I
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 2109
-    return-void
-.end method
-
-.method private lessenBitmap(Landroid/graphics/Bitmap;IIZ)Landroid/graphics/Bitmap;
-    .locals 10
-    .parameter "src"
-    .parameter "destWidth"
-    .parameter "destHeight"
-    .parameter "needRecycle"
-
-    .prologue
-    const/4 v1, 0x0
-
-    .line 2112
-    if-nez p1, :cond_1
-
-    .line 2113
-    const/4 v7, 0x0
-
-    .line 2130
-    :cond_0
-    :goto_0
-    return-object v7
-
-    .line 2114
-    :cond_1
-    invoke-virtual {p1}, Landroid/graphics/Bitmap;->getWidth()I
-
-    move-result v3
-
-    .line 2115
-    .local v3, w:I
-    invoke-virtual {p1}, Landroid/graphics/Bitmap;->getHeight()I
-
-    move-result v4
-
-    .line 2117
-    .local v4, h:I
-    int-to-float v0, p2
-
-    int-to-float v2, v3
-
-    div-float v9, v0, v2
-
-    .line 2118
-    .local v9, scaleWidth:F
-    int-to-float v0, p3
-
-    int-to-float v2, v4
-
-    div-float v8, v0, v2
-
-    .line 2120
-    .local v8, scaleHeight:F
-    new-instance v5, Landroid/graphics/Matrix;
-
-    invoke-direct {v5}, Landroid/graphics/Matrix;-><init>()V
-
-    .line 2121
-    .local v5, m:Landroid/graphics/Matrix;
-    invoke-virtual {v5, v9, v8}, Landroid/graphics/Matrix;->postScale(FF)Z
-
-    .line 2123
-    const/4 v6, 0x1
-
-    move-object v0, p1
-
-    move v2, v1
-
-    invoke-static/range {v0 .. v6}, Landroid/graphics/Bitmap;->createBitmap(Landroid/graphics/Bitmap;IIIILandroid/graphics/Matrix;Z)Landroid/graphics/Bitmap;
-
-    move-result-object v7
-
-    .line 2125
-    .local v7, resizeBitmap:Landroid/graphics/Bitmap;
-    if-eqz p4, :cond_0
-
-    invoke-virtual {p1}, Landroid/graphics/Bitmap;->isRecycled()Z
-
-    move-result v0
-
-    if-nez v0, :cond_0
-
-    .line 2126
-    invoke-virtual {p1}, Landroid/graphics/Bitmap;->recycle()V
-
-    .line 2127
-    const/4 p1, 0x0
-
-    goto :goto_0
+    goto :goto_3
 .end method
 
 .method private putCachedIcon(Landroid/app/ApplicationPackageManager$ResourceName;Landroid/graphics/drawable/Drawable;)V
@@ -3153,222 +669,6 @@
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     throw v0
-.end method
-
-.method private putLenovoCachedIcon(Landroid/app/ApplicationPackageManager$ResourceName;Landroid/graphics/drawable/Drawable;)V
-    .locals 4
-    .parameter "name"
-    .parameter "dr"
-
-    .prologue
-    .line 1113
-    sget-object v1, Landroid/app/ApplicationPackageManager;->sSync:Ljava/lang/Object;
-
-    monitor-enter v1
-
-    .line 1114
-    :try_start_0
-    sget-object v0, Landroid/app/ApplicationPackageManager;->sLenovoIconCache:Ljava/util/HashMap;
-
-    new-instance v2, Ljava/lang/ref/WeakReference;
-
-    invoke-virtual {p2}, Landroid/graphics/drawable/Drawable;->getConstantState()Landroid/graphics/drawable/Drawable$ConstantState;
-
-    move-result-object v3
-
-    invoke-direct {v2, v3}, Ljava/lang/ref/WeakReference;-><init>(Ljava/lang/Object;)V
-
-    invoke-virtual {v0, p1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    .line 1116
-    monitor-exit v1
-
-    .line 1117
-    return-void
-
-    .line 1116
-    :catchall_0
-    move-exception v0
-
-    monitor-exit v1
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    throw v0
-.end method
-
-.method private readyThemeIconBg(Landroid/content/res/Resources;)V
-    .locals 10
-    .parameter "res"
-
-    .prologue
-    const/4 v9, 0x2
-
-    const/4 v8, 0x1
-
-    const/4 v7, 0x0
-
-    const/4 v6, 0x0
-
-    .line 1850
-    iget-object v4, p0, Landroid/app/ApplicationPackageManager;->mThemeBgBitmap:[Landroid/graphics/Bitmap;
-
-    if-eqz v4, :cond_0
-
-    iget-object v4, p0, Landroid/app/ApplicationPackageManager;->mThemeBgBitmap:[Landroid/graphics/Bitmap;
-
-    aget-object v4, v4, v6
-
-    if-eqz v4, :cond_0
-
-    sget-object v4, Landroid/app/ApplicationPackageManager;->sCurrent_Launch_Theme:Ljava/lang/String;
-
-    sget-object v5, Landroid/app/ApplicationPackageManager;->sOldCurrent_Launch_Theme:Ljava/lang/String;
-
-    invoke-virtual {v4, v5}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v4
-
-    if-eqz v4, :cond_0
-
-    .line 1877
-    :goto_0
-    return-void
-
-    .line 1854
-    :cond_0
-    if-nez p1, :cond_1
-
-    .line 1855
-    iget-object v4, p0, Landroid/app/ApplicationPackageManager;->mThemeBgBitmap:[Landroid/graphics/Bitmap;
-
-    aput-object v7, v4, v6
-
-    .line 1856
-    iget-object v4, p0, Landroid/app/ApplicationPackageManager;->mThemeBgBitmap:[Landroid/graphics/Bitmap;
-
-    aput-object v7, v4, v8
-
-    .line 1857
-    iget-object v4, p0, Landroid/app/ApplicationPackageManager;->mThemeBgBitmap:[Landroid/graphics/Bitmap;
-
-    aput-object v7, v4, v9
-
-    .line 1859
-    :cond_1
-    const-string v1, "theme_appbg"
-
-    .line 1860
-    .local v1, themeIconBgName:Ljava/lang/String;
-    const-string v2, "theme_appfg"
-
-    .line 1861
-    .local v2, themeIconFgName:Ljava/lang/String;
-    const-string v3, "theme_appmask"
-
-    .line 1863
-    .local v3, themeIconMaskName:Ljava/lang/String;
-    invoke-direct {p0, v1, p1}, Landroid/app/ApplicationPackageManager;->findDrawableByResourceName(Ljava/lang/String;Landroid/content/res/Resources;)Landroid/graphics/drawable/Drawable;
-
-    move-result-object v0
-
-    .line 1865
-    .local v0, drawable:Landroid/graphics/drawable/Drawable;
-    if-nez v0, :cond_2
-
-    .line 1866
-    iget-object v4, p0, Landroid/app/ApplicationPackageManager;->mThemeBgBitmap:[Landroid/graphics/Bitmap;
-
-    aput-object v7, v4, v6
-
-    .line 1867
-    iget-object v4, p0, Landroid/app/ApplicationPackageManager;->mThemeBgBitmap:[Landroid/graphics/Bitmap;
-
-    aput-object v7, v4, v8
-
-    .line 1868
-    iget-object v4, p0, Landroid/app/ApplicationPackageManager;->mThemeBgBitmap:[Landroid/graphics/Bitmap;
-
-    aput-object v7, v4, v9
-
-    .line 1876
-    :goto_1
-    sget-object v4, Landroid/app/ApplicationPackageManager;->sCurrent_Launch_Theme:Ljava/lang/String;
-
-    sput-object v4, Landroid/app/ApplicationPackageManager;->sOldCurrent_Launch_Theme:Ljava/lang/String;
-
-    goto :goto_0
-
-    .line 1870
-    :cond_2
-    iget-object v4, p0, Landroid/app/ApplicationPackageManager;->mThemeBgBitmap:[Landroid/graphics/Bitmap;
-
-    invoke-direct {p0, v0, v6, v6, p1}, Landroid/app/ApplicationPackageManager;->createBitmap(Landroid/graphics/drawable/Drawable;IILandroid/content/res/Resources;)Landroid/graphics/Bitmap;
-
-    move-result-object v5
-
-    aput-object v5, v4, v6
-
-    .line 1871
-    invoke-direct {p0, v2, p1}, Landroid/app/ApplicationPackageManager;->findDrawableByResourceName(Ljava/lang/String;Landroid/content/res/Resources;)Landroid/graphics/drawable/Drawable;
-
-    move-result-object v0
-
-    .line 1872
-    iget-object v4, p0, Landroid/app/ApplicationPackageManager;->mThemeBgBitmap:[Landroid/graphics/Bitmap;
-
-    invoke-direct {p0, v0, v6, v6, p1}, Landroid/app/ApplicationPackageManager;->createBitmap(Landroid/graphics/drawable/Drawable;IILandroid/content/res/Resources;)Landroid/graphics/Bitmap;
-
-    move-result-object v5
-
-    aput-object v5, v4, v8
-
-    .line 1873
-    invoke-direct {p0, v3, p1}, Landroid/app/ApplicationPackageManager;->findDrawableByResourceName(Ljava/lang/String;Landroid/content/res/Resources;)Landroid/graphics/drawable/Drawable;
-
-    move-result-object v0
-
-    .line 1874
-    iget-object v4, p0, Landroid/app/ApplicationPackageManager;->mThemeBgBitmap:[Landroid/graphics/Bitmap;
-
-    invoke-direct {p0, v0, v6, v6, p1}, Landroid/app/ApplicationPackageManager;->createBitmap(Landroid/graphics/drawable/Drawable;IILandroid/content/res/Resources;)Landroid/graphics/Bitmap;
-
-    move-result-object v5
-
-    aput-object v5, v4, v9
-
-    goto :goto_1
-.end method
-
-.method private setCurrentLaunchTheme()V
-    .locals 2
-
-    .prologue
-    .line 1794
-    const-string v1, "persist.sys.ideadesk_theme_name"
-
-    invoke-static {v1}, Landroid/os/SystemProperties;->get(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v0
-
-    .line 1796
-    .local v0, theme:Ljava/lang/String;
-    if-eqz v0, :cond_0
-
-    sget-object v1, Landroid/app/ApplicationPackageManager;->sCurrent_Launch_Theme:Ljava/lang/String;
-
-    invoke-virtual {v1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v1
-
-    if-nez v1, :cond_0
-
-    .line 1798
-    sput-object v0, Landroid/app/ApplicationPackageManager;->sCurrent_Launch_Theme:Ljava/lang/String;
-
-    .line 1800
-    :cond_0
-    return-void
 .end method
 
 
@@ -4200,87 +1500,6 @@
     throw v1
 .end method
 
-.method public getAndroidDrawable(Ljava/lang/String;ILandroid/content/pm/ApplicationInfo;)Landroid/graphics/drawable/Drawable;
-    .locals 5
-    .parameter "packageName"
-    .parameter "resid"
-    .parameter "appInfo"
-
-    .prologue
-    .line 733
-    new-instance v1, Landroid/app/ApplicationPackageManager$ResourceName;
-
-    invoke-direct {v1, p1, p2}, Landroid/app/ApplicationPackageManager$ResourceName;-><init>(Ljava/lang/String;I)V
-
-    .line 734
-    .local v1, name:Landroid/app/ApplicationPackageManager$ResourceName;
-    invoke-direct {p0, v1}, Landroid/app/ApplicationPackageManager;->getLenovoCachedIcon(Landroid/app/ApplicationPackageManager$ResourceName;)Landroid/graphics/drawable/Drawable;
-
-    move-result-object v0
-
-    .line 735
-    .local v0, dr:Landroid/graphics/drawable/Drawable;
-    if-eqz v0, :cond_0
-
-    move-object v2, v0
-
-    .line 746
-    :goto_0
-    return-object v2
-
-    .line 738
-    :cond_0
-    invoke-direct {p0, p1, p2, p3}, Landroid/app/ApplicationPackageManager;->getAndroidNoShapeDrawable(Ljava/lang/String;ILandroid/content/pm/ApplicationInfo;)Landroid/graphics/drawable/Drawable;
-
-    move-result-object v2
-
-    invoke-direct {p0, v2, p0}, Landroid/app/ApplicationPackageManager;->getShapeDrawable(Landroid/graphics/drawable/Drawable;Landroid/content/pm/PackageManager;)Landroid/graphics/drawable/Drawable;
-
-    move-result-object v0
-
-    .line 740
-    if-nez v0, :cond_1
-
-    .line 741
-    const-string v2, "ApplicationPackageManager"
-
-    new-instance v3, Ljava/lang/StringBuilder;
-
-    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v4, "getAndroidDrawable this icon maybe not draw shape by cavas and use getDrawable to get packageName:::"
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    invoke-virtual {v3, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-static {v2, v3}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 742
-    invoke-virtual {p0, p1, p2, p3}, Landroid/app/ApplicationPackageManager;->getDrawable(Ljava/lang/String;ILandroid/content/pm/ApplicationInfo;)Landroid/graphics/drawable/Drawable;
-
-    move-result-object v2
-
-    goto :goto_0
-
-    .line 745
-    :cond_1
-    invoke-direct {p0, v1, v0}, Landroid/app/ApplicationPackageManager;->putLenovoCachedIcon(Landroid/app/ApplicationPackageManager$ResourceName;Landroid/graphics/drawable/Drawable;)V
-
-    move-object v2, v0
-
-    .line 746
-    goto :goto_0
-.end method
-
 .method public getApplicationEnabledSetting(Ljava/lang/String;)I
     .locals 2
     .parameter "packageName"
@@ -4499,75 +1718,21 @@
 .end method
 
 .method public getDefaultActivityIcon()Landroid/graphics/drawable/Drawable;
-    .locals 5
+    .locals 2
 
     .prologue
-    .line 914
-    sget-object v2, Landroid/app/ApplicationPackageManager;->default_SystemIcon_ResourceName:Landroid/app/ApplicationPackageManager$ResourceName;
-
-    .line 915
-    .local v2, name:Landroid/app/ApplicationPackageManager$ResourceName;
-    if-nez v2, :cond_0
-
-    .line 916
-    new-instance v2, Landroid/app/ApplicationPackageManager$ResourceName;
-
-    .end local v2           #name:Landroid/app/ApplicationPackageManager$ResourceName;
-    const-string v3, "DEFAULT_ICON_DEFAULT_PACKAGE_NAME"
-
-    const/4 v4, 0x0
-
-    invoke-direct {v2, v3, v4}, Landroid/app/ApplicationPackageManager$ResourceName;-><init>(Ljava/lang/String;I)V
-
-    .line 917
-    .restart local v2       #name:Landroid/app/ApplicationPackageManager$ResourceName;
-    sput-object v2, Landroid/app/ApplicationPackageManager;->default_SystemIcon_ResourceName:Landroid/app/ApplicationPackageManager$ResourceName;
-
-    .line 919
-    :cond_0
-    invoke-direct {p0, v2}, Landroid/app/ApplicationPackageManager;->getLenovoCachedIcon(Landroid/app/ApplicationPackageManager$ResourceName;)Landroid/graphics/drawable/Drawable;
-
-    move-result-object v0
-
-    .line 920
-    .local v0, dr:Landroid/graphics/drawable/Drawable;
-    if-eqz v0, :cond_1
-
-    move-object v1, v0
-
-    .line 928
-    .end local v0           #dr:Landroid/graphics/drawable/Drawable;
-    .local v1, dr:Landroid/graphics/drawable/Drawable;
-    :goto_0
-    return-object v1
-
-    .line 923
-    .end local v1           #dr:Landroid/graphics/drawable/Drawable;
-    .restart local v0       #dr:Landroid/graphics/drawable/Drawable;
-    :cond_1
+    .line 762
     invoke-static {}, Landroid/content/res/Resources;->getSystem()Landroid/content/res/Resources;
 
-    move-result-object v3
+    move-result-object v0
 
-    const v4, 0x1080093
+    const v1, #android:drawable@sym_def_app_icon#t
 
-    invoke-virtual {v3, v4}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
+    invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
     move-result-object v0
 
-    .line 925
-    if-eqz v0, :cond_2
-
-    .line 926
-    invoke-direct {p0, v2, v0}, Landroid/app/ApplicationPackageManager;->putLenovoCachedIcon(Landroid/app/ApplicationPackageManager$ResourceName;Landroid/graphics/drawable/Drawable;)V
-
-    :cond_2
-    move-object v1, v0
-
-    .line 928
-    .end local v0           #dr:Landroid/graphics/drawable/Drawable;
-    .restart local v1       #dr:Landroid/graphics/drawable/Drawable;
-    goto :goto_0
+    return-object v0
 .end method
 
 .method public getDrawable(Ljava/lang/String;ILandroid/content/pm/ApplicationInfo;)Landroid/graphics/drawable/Drawable;
@@ -4614,20 +1779,17 @@
 
     move-result-object p3
 
-    .line 695
     :cond_1
     :try_start_1
     invoke-virtual {p0, p3}, Landroid/app/ApplicationPackageManager;->getResourcesForApplication(Landroid/content/pm/ApplicationInfo;)Landroid/content/res/Resources;
 
     move-result-object v3
 
-    .line 696
     .local v3, r:Landroid/content/res/Resources;
-    invoke-virtual {v3, p2}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
+    invoke-static {p3, p1, p2, v3}, Landroid/app/ApplicationPackageManager$BaiduInjector;->multiTheme_getDrawableLocal(Landroid/content/pm/ApplicationInfo;Ljava/lang/String;ILandroid/content/res/Resources;)Landroid/graphics/drawable/Drawable;
 
     move-result-object v0
 
-    .line 709
     invoke-direct {p0, v2, v0}, Landroid/app/ApplicationPackageManager;->putCachedIcon(Landroid/app/ApplicationPackageManager$ResourceName;Landroid/graphics/drawable/Drawable;)V
     :try_end_1
     .catch Landroid/content/pm/PackageManager$NameNotFoundException; {:try_start_1 .. :try_end_1} :catch_1
@@ -5182,292 +2344,11 @@
 
     iget-object v3, v3, Landroid/content/pm/ResolveInfo;->activityInfo:Landroid/content/pm/ActivityInfo;
 
-    iget-object v3, v3, Landroid/content/pm/ComponentInfo;->name:Ljava/lang/String;
+    iget-object v3, v3, Landroid/content/pm/ActivityInfo;->name:Ljava/lang/String;
 
     invoke-virtual {v0, v4, v3}, Landroid/content/Intent;->setClassName(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
     goto :goto_0
-.end method
-
-.method public getLenovoDrawable(Ljava/lang/String;ILandroid/content/pm/ApplicationInfo;)Landroid/graphics/drawable/Drawable;
-    .locals 9
-    .parameter "packageName"
-    .parameter "resid"
-    .parameter "appInfo"
-
-    .prologue
-    const/4 v6, 0x0
-
-    .line 808
-    new-instance v2, Landroid/app/ApplicationPackageManager$ResourceName;
-
-    invoke-direct {v2, p1, p2}, Landroid/app/ApplicationPackageManager$ResourceName;-><init>(Ljava/lang/String;I)V
-
-    .line 810
-    .local v2, name:Landroid/app/ApplicationPackageManager$ResourceName;
-    invoke-direct {p0, v2}, Landroid/app/ApplicationPackageManager;->getLenovoCachedIcon(Landroid/app/ApplicationPackageManager$ResourceName;)Landroid/graphics/drawable/Drawable;
-
-    move-result-object v0
-
-    .line 811
-    .local v0, dr:Landroid/graphics/drawable/Drawable;
-    if-eqz v0, :cond_0
-
-    move-object v5, v0
-
-    .line 867
-    :goto_0
-    return-object v5
-
-    .line 814
-    :cond_0
-    if-nez p3, :cond_1
-
-    .line 816
-    const/4 v5, 0x0
-
-    :try_start_0
-    invoke-virtual {p0, p1, v5}, Landroid/app/ApplicationPackageManager;->getApplicationInfo(Ljava/lang/String;I)Landroid/content/pm/ApplicationInfo;
-    :try_end_0
-    .catch Landroid/content/pm/PackageManager$NameNotFoundException; {:try_start_0 .. :try_end_0} :catch_0
-
-    move-result-object p3
-
-    .line 822
-    :cond_1
-    :try_start_1
-    invoke-virtual {p0, p3}, Landroid/app/ApplicationPackageManager;->getResourcesForApplication(Landroid/content/pm/ApplicationInfo;)Landroid/content/res/Resources;
-
-    move-result-object v3
-
-    .line 824
-    .local v3, r:Landroid/content/res/Resources;
-    if-eqz p1, :cond_3
-
-    invoke-direct {p0}, Landroid/app/ApplicationPackageManager;->getHashmapSystemIcon()Ljava/util/HashMap;
-
-    move-result-object v5
-
-    invoke-virtual {v5, p1}, Ljava/util/HashMap;->containsKey(Ljava/lang/Object;)Z
-
-    move-result v5
-
-    if-eqz v5, :cond_3
-
-    .line 826
-    invoke-direct {p0}, Landroid/app/ApplicationPackageManager;->getHashmapSystemIcon()Ljava/util/HashMap;
-
-    move-result-object v5
-
-    invoke-virtual {v5, p1}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v5
-
-    check-cast v5, Ljava/lang/Integer;
-
-    invoke-virtual {v5}, Ljava/lang/Integer;->intValue()I
-
-    move-result v4
-
-    .line 827
-    .local v4, saveresid:I
-    const/4 v5, -0x1
-
-    if-ne v4, v5, :cond_2
-
-    .line 828
-    invoke-virtual {v3, p2}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
-
-    move-result-object v0
-
-    .line 832
-    :goto_1
-    if-eqz v0, :cond_3
-
-    .line 833
-    invoke-direct {p0, v2, v0}, Landroid/app/ApplicationPackageManager;->putLenovoCachedIcon(Landroid/app/ApplicationPackageManager$ResourceName;Landroid/graphics/drawable/Drawable;)V
-
-    move-object v5, v0
-
-    .line 834
-    goto :goto_0
-
-    .line 817
-    .end local v3           #r:Landroid/content/res/Resources;
-    .end local v4           #saveresid:I
-    :catch_0
-    move-exception v1
-
-    .local v1, e:Landroid/content/pm/PackageManager$NameNotFoundException;
-    move-object v5, v6
-
-    .line 818
-    goto :goto_0
-
-    .line 830
-    .end local v1           #e:Landroid/content/pm/PackageManager$NameNotFoundException;
-    .restart local v3       #r:Landroid/content/res/Resources;
-    .restart local v4       #saveresid:I
-    :cond_2
-    invoke-virtual {v3, v4}, Landroid/content/res/Resources;->getAndroidDrawable(I)Landroid/graphics/drawable/Drawable;
-
-    move-result-object v0
-
-    goto :goto_1
-
-    .line 838
-    .end local v4           #saveresid:I
-    :cond_3
-    invoke-virtual {v3, p2}, Landroid/content/res/Resources;->getLenovoDrawable(I)Landroid/graphics/drawable/Drawable;
-    :try_end_1
-    .catch Landroid/content/pm/PackageManager$NameNotFoundException; {:try_start_1 .. :try_end_1} :catch_1
-    .catch Landroid/content/res/Resources$NotFoundException; {:try_start_1 .. :try_end_1} :catch_2
-    .catch Ljava/lang/RuntimeException; {:try_start_1 .. :try_end_1} :catch_3
-
-    move-result-object v0
-
-    .line 840
-    if-nez v0, :cond_4
-
-    move-object v5, v6
-
-    .line 842
-    goto :goto_0
-
-    :cond_4
-    move-object v5, v0
-
-    .line 853
-    goto :goto_0
-
-    .line 854
-    .end local v3           #r:Landroid/content/res/Resources;
-    :catch_1
-    move-exception v1
-
-    .line 855
-    .restart local v1       #e:Landroid/content/pm/PackageManager$NameNotFoundException;
-    const-string v5, "PackageManager"
-
-    new-instance v7, Ljava/lang/StringBuilder;
-
-    invoke-direct {v7}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v8, "Failure retrieving resources for"
-
-    invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v7
-
-    iget-object v8, p3, Landroid/content/pm/ApplicationInfo;->packageName:Ljava/lang/String;
-
-    invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v7
-
-    invoke-virtual {v7}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v7
-
-    invoke-static {v5, v7}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
-
-    .end local v1           #e:Landroid/content/pm/PackageManager$NameNotFoundException;
-    :goto_2
-    move-object v5, v6
-
-    .line 867
-    goto :goto_0
-
-    .line 857
-    :catch_2
-    move-exception v1
-
-    .line 858
-    .local v1, e:Landroid/content/res/Resources$NotFoundException;
-    const-string v5, "PackageManager"
-
-    new-instance v7, Ljava/lang/StringBuilder;
-
-    invoke-direct {v7}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v8, "Failure retrieving resources for"
-
-    invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v7
-
-    iget-object v8, p3, Landroid/content/pm/ApplicationInfo;->packageName:Ljava/lang/String;
-
-    invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v7
-
-    const-string v8, ": "
-
-    invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v7
-
-    invoke-virtual {v1}, Landroid/content/res/Resources$NotFoundException;->getMessage()Ljava/lang/String;
-
-    move-result-object v8
-
-    invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v7
-
-    invoke-virtual {v7}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v7
-
-    invoke-static {v5, v7}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
-
-    goto :goto_2
-
-    .line 860
-    .end local v1           #e:Landroid/content/res/Resources$NotFoundException;
-    :catch_3
-    move-exception v1
-
-    .line 863
-    .local v1, e:Ljava/lang/RuntimeException;
-    const-string v5, "PackageManager"
-
-    new-instance v7, Ljava/lang/StringBuilder;
-
-    invoke-direct {v7}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v8, "Failure retrieving icon 0x"
-
-    invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v7
-
-    invoke-static {p2}, Ljava/lang/Integer;->toHexString(I)Ljava/lang/String;
-
-    move-result-object v8
-
-    invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v7
-
-    const-string v8, " in package "
-
-    invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v7
-
-    invoke-virtual {v7, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v7
-
-    invoke-virtual {v7}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v7
-
-    invoke-static {v5, v7, v1}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
-
-    goto :goto_2
 .end method
 
 .method public getNameForUid(I)Ljava/lang/String;
@@ -6019,7 +2900,7 @@
 
     move-result-object v0
 
-    iget-object v0, v0, Landroid/content/pm/ComponentInfo;->applicationInfo:Landroid/content/pm/ApplicationInfo;
+    iget-object v0, v0, Landroid/content/pm/ActivityInfo;->applicationInfo:Landroid/content/pm/ApplicationInfo;
 
     invoke-virtual {p0, v0}, Landroid/app/ApplicationPackageManager;->getResourcesForApplication(Landroid/content/pm/ApplicationInfo;)Landroid/content/res/Resources;
 
@@ -6047,7 +2928,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_0
+    if-eqz v1, :cond_1
 
     .line 983
     iget-object v1, p0, Landroid/app/ApplicationPackageManager;->mContext:Landroid/app/ContextImpl;
@@ -6063,11 +2944,11 @@
     move-result-object v0
 
     .line 993
-    :goto_0
+    :cond_0
     return-object v0
 
     .line 985
-    :cond_0
+    :cond_1
     iget-object v1, p0, Landroid/app/ApplicationPackageManager;->mContext:Landroid/app/ContextImpl;
 
     iget-object v2, v1, Landroid/app/ContextImpl;->mMainThread:Landroid/app/ActivityThread;
@@ -6078,11 +2959,11 @@
 
     move-result v3
 
-    if-ne v1, v3, :cond_1
+    if-ne v1, v3, :cond_2
 
     iget-object v1, p1, Landroid/content/pm/ApplicationInfo;->sourceDir:Ljava/lang/String;
 
-    :goto_1
+    :goto_0
     const/4 v3, 0x0
 
     const/4 v4, 0x0
@@ -6095,27 +2976,11 @@
 
     move-result-object v0
 
-    .line 988
+    .line 822
     .local v0, r:Landroid/content/res/Resources;
-    if-eqz v0, :cond_2
+    if-nez v0, :cond_0
 
-    .line 991
-    iget-object v1, p1, Landroid/content/pm/ApplicationInfo;->packageName:Ljava/lang/String;
-
-    invoke-virtual {v0, v1}, Landroid/content/res/Resources;->setContextPackageName(Ljava/lang/String;)V
-
-    goto :goto_0
-
-    .line 985
-    .end local v0           #r:Landroid/content/res/Resources;
-    :cond_1
-    iget-object v1, p1, Landroid/content/pm/ApplicationInfo;->publicSourceDir:Ljava/lang/String;
-
-    goto :goto_1
-
-    .line 995
-    .restart local v0       #r:Landroid/content/res/Resources;
-    :cond_2
+    .line 825
     new-instance v1, Landroid/content/pm/PackageManager$NameNotFoundException;
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -6141,6 +3006,12 @@
     invoke-direct {v1, v2}, Landroid/content/pm/PackageManager$NameNotFoundException;-><init>(Ljava/lang/String;)V
 
     throw v1
+    .line 819
+    .end local v0           #r:Landroid/content/res/Resources;
+    :cond_2
+    iget-object v1, p1, Landroid/content/pm/ApplicationInfo;->publicSourceDir:Ljava/lang/String;
+
+    goto :goto_0
 .end method
 
 .method public getResourcesForApplication(Ljava/lang/String;)Landroid/content/res/Resources;

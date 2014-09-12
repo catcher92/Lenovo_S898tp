@@ -60,7 +60,7 @@
     iget-object v0, p0, Landroid/view/VolumePanel$2;->this$0:Landroid/view/VolumePanel;
 
     #calls: Landroid/view/VolumePanel;->forceTimeout()V
-    invoke-static {v0}, Landroid/view/VolumePanel;->access$100(Landroid/view/VolumePanel;)V
+    invoke-static {v0}, Landroid/view/VolumePanel;->access$300(Landroid/view/VolumePanel;)V
 
     .line 439
     const/4 v0, 0x1

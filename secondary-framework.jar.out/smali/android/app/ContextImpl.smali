@@ -6,6 +6,7 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
+        Landroid/app/ContextImpl$BaiduApplicationContentResolver;,
         Landroid/app/ContextImpl$ApplicationContentResolver;,
         Landroid/app/ContextImpl$StaticServiceFetcher;,
         Landroid/app/ContextImpl$ServiceFetcher;
@@ -112,10 +113,10 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .locals 3
+    .locals 2
 
     .prologue
-    const/4 v2, 0x0
+    const/4 v1, 0x0
 
     .line 215
     new-instance v0, Ljava/util/HashMap;
@@ -125,7 +126,7 @@
     sput-object v0, Landroid/app/ContextImpl;->sSharedPrefs:Ljava/util/HashMap;
 
     .line 243
-    new-array v0, v2, [Ljava/lang/String;
+    new-array v0, v1, [Ljava/lang/String;
 
     sput-object v0, Landroid/app/ContextImpl;->EMPTY_FILE_LIST:[Ljava/lang/String;
 
@@ -137,7 +138,7 @@
     sput-object v0, Landroid/app/ContextImpl;->SYSTEM_SERVICE_MAP:Ljava/util/HashMap;
 
     .line 311
-    sput v2, Landroid/app/ContextImpl;->sNextPerContextServiceCacheIndex:I
+    sput v1, Landroid/app/ContextImpl;->sNextPerContextServiceCacheIndex:I
 
     .line 322
     new-instance v0, Landroid/app/ContextImpl$1;
@@ -550,11 +551,6 @@
     invoke-static {v0, v1}, Landroid/app/ContextImpl;->registerService(Ljava/lang/String;Landroid/app/ContextImpl$ServiceFetcher;)V
 
     .line 2124
-    sput-boolean v2, Landroid/app/ContextImpl;->mIsCts:Z
-
-    .line 2125
-    sput-boolean v2, Landroid/app/ContextImpl;->mbJudged:Z
-
     return-void
 .end method
 
@@ -584,7 +580,7 @@
     .line 233
     new-instance v0, Ljava/lang/Object;
 
-    invoke-direct/range {v0 .. v0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
 
     iput-object v0, p0, Landroid/app/ContextImpl;->mSync:Ljava/lang/Object;
 
@@ -629,7 +625,7 @@
     .line 233
     new-instance v0, Ljava/lang/Object;
 
-    invoke-direct/range {v0 .. v0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
 
     iput-object v0, p0, Landroid/app/ContextImpl;->mSync:Ljava/lang/Object;
 
@@ -678,29 +674,7 @@
     .line 1976
     iput-object p0, p0, Landroid/app/ContextImpl;->mOuterContext:Landroid/content/Context;
 
-    .line 1978
-    iget-object v0, p0, Landroid/app/ContextImpl;->mResources:Landroid/content/res/Resources;
-
-    if-eqz v0, :cond_0
-
-    iget-object v0, p0, Landroid/app/ContextImpl;->mPackageInfo:Landroid/app/LoadedApk;
-
-    if-eqz v0, :cond_0
-
-    .line 1979
-    iget-object v0, p0, Landroid/app/ContextImpl;->mResources:Landroid/content/res/Resources;
-
-    iget-object v1, p0, Landroid/app/ContextImpl;->mPackageInfo:Landroid/app/LoadedApk;
-
-    iget-object v1, v1, Landroid/app/LoadedApk;->mPackageName:Ljava/lang/String;
-
-    invoke-virtual {v0, v1}, Landroid/content/res/Resources;->setContextPackageName(Ljava/lang/String;)V
-
-    .line 1983
-    :cond_0
-    invoke-static {p0}, Landroid/content/res/Resources;->createLaunchIconThemeIfNeeded(Landroid/content/Context;)V
-
-    .line 1996
+    .line 1964
     return-void
 .end method
 
@@ -1339,6 +1313,17 @@
     invoke-direct {v0, v1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
     throw v0
+.end method
+
+.method static refreshFontCache()V
+    .locals 0
+
+    .prologue
+    invoke-static {}, Landroid/graphics/Canvas;->freeCaches()V
+
+    invoke-static {}, Landroid/graphics/Canvas;->freeTextLayoutCaches()V
+
+    return-void
 .end method
 
 .method private registerReceiverInternal(Landroid/content/BroadcastReceiver;ILandroid/content/IntentFilter;Ljava/lang/String;Landroid/os/Handler;Landroid/content/Context;)Landroid/content/Intent;
@@ -4197,30 +4182,6 @@
     return v0
 .end method
 
-.method public getThemeSafely()Landroid/content/res/Resources$Theme;
-    .locals 1
-
-    .prologue
-    .line 2164
-    iget v0, p0, Landroid/app/ContextImpl;->mThemeResource:I
-
-    if-nez v0, :cond_0
-
-    .line 2166
-    const/4 v0, 0x0
-
-    .line 2169
-    :goto_0
-    return-object v0
-
-    :cond_0
-    invoke-virtual {p0}, Landroid/app/ContextImpl;->getTheme()Landroid/content/res/Resources$Theme;
-
-    move-result-object v0
-
-    goto :goto_0
-.end method
-
 .method public getUserId()I
     .locals 1
 
@@ -4361,7 +4322,7 @@
     iput-object p1, p0, Landroid/app/ContextImpl;->mPackageInfo:Landroid/app/LoadedApk;
 
     .line 2005
-    if-eqz p5, :cond_2
+    if-eqz p5, :cond_1
 
     .end local p5
     :goto_0
@@ -4422,48 +4383,25 @@
 
     iput-object v0, p0, Landroid/app/ContextImpl;->mResources:Landroid/content/res/Resources;
 
-    .line 2019
     :cond_0
     iput-object p3, p0, Landroid/app/ContextImpl;->mMainThread:Landroid/app/ActivityThread;
 
-    .line 2020
     iput-object p2, p0, Landroid/app/ContextImpl;->mActivityToken:Landroid/os/IBinder;
 
-    .line 2021
-    new-instance v0, Landroid/app/ContextImpl$ApplicationContentResolver;
+    new-instance v0, Landroid/app/ContextImpl$BaiduApplicationContentResolver;
 
-    invoke-direct {v0, p0, p3, p6}, Landroid/app/ContextImpl$ApplicationContentResolver;-><init>(Landroid/content/Context;Landroid/app/ActivityThread;Landroid/os/UserHandle;)V
+    invoke-direct {v0, p0, p3, p6}, Landroid/app/ContextImpl$BaiduApplicationContentResolver;-><init>(Landroid/content/Context;Landroid/app/ActivityThread;Landroid/os/UserHandle;)V
 
     iput-object v0, p0, Landroid/app/ContextImpl;->mContentResolver:Landroid/app/ContextImpl$ApplicationContentResolver;
 
-    .line 2022
     iput-object p6, p0, Landroid/app/ContextImpl;->mUser:Landroid/os/UserHandle;
 
-    .line 2025
-    iget-object v0, p0, Landroid/app/ContextImpl;->mResources:Landroid/content/res/Resources;
-
-    if-eqz v0, :cond_1
-
-    iget-object v0, p0, Landroid/app/ContextImpl;->mPackageInfo:Landroid/app/LoadedApk;
-
-    if-eqz v0, :cond_1
-
-    .line 2026
-    iget-object v0, p0, Landroid/app/ContextImpl;->mResources:Landroid/content/res/Resources;
-
-    iget-object v1, p0, Landroid/app/ContextImpl;->mPackageInfo:Landroid/app/LoadedApk;
-
-    iget-object v1, v1, Landroid/app/LoadedApk;->mPackageName:Ljava/lang/String;
-
-    invoke-virtual {v0, v1}, Landroid/content/res/Resources;->setContextPackageName(Ljava/lang/String;)V
-
-    .line 2034
-    :cond_1
+    .line 1991
     return-void
 
-    .line 2005
+    .line 1973
     .restart local p5
-    :cond_2
+    :cond_1
     iget-object p5, p1, Landroid/app/LoadedApk;->mPackageName:Ljava/lang/String;
 
     goto :goto_0
@@ -4478,97 +4416,23 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 2037
     iput-object v0, p0, Landroid/app/ContextImpl;->mPackageInfo:Landroid/app/LoadedApk;
 
-    .line 2038
     iput-object v0, p0, Landroid/app/ContextImpl;->mBasePackageName:Ljava/lang/String;
 
-    .line 2039
     iput-object p1, p0, Landroid/app/ContextImpl;->mResources:Landroid/content/res/Resources;
 
-    .line 2040
     iput-object p2, p0, Landroid/app/ContextImpl;->mMainThread:Landroid/app/ActivityThread;
 
-    .line 2041
-    new-instance v0, Landroid/app/ContextImpl$ApplicationContentResolver;
+    new-instance v0, Landroid/app/ContextImpl$BaiduApplicationContentResolver;
 
-    invoke-direct {v0, p0, p2, p3}, Landroid/app/ContextImpl$ApplicationContentResolver;-><init>(Landroid/content/Context;Landroid/app/ActivityThread;Landroid/os/UserHandle;)V
+    invoke-direct {v0, p0, p2, p3}, Landroid/app/ContextImpl$BaiduApplicationContentResolver;-><init>(Landroid/content/Context;Landroid/app/ActivityThread;Landroid/os/UserHandle;)V
 
     iput-object v0, p0, Landroid/app/ContextImpl;->mContentResolver:Landroid/app/ContextImpl$ApplicationContentResolver;
 
-    .line 2042
     iput-object p3, p0, Landroid/app/ContextImpl;->mUser:Landroid/os/UserHandle;
 
-    .line 2043
     return-void
-.end method
-
-.method public isCts()Z
-    .locals 2
-
-    .prologue
-    .line 2135
-    invoke-static {p0}, Landroid/content/res/Resources;->createSystemThemeIfNeeded(Landroid/content/Context;)V
-
-    .line 2143
-    iget-object v0, p0, Landroid/app/ContextImpl;->mPackageInfo:Landroid/app/LoadedApk;
-
-    if-eqz v0, :cond_0
-
-    iget-object v0, p0, Landroid/app/ContextImpl;->mResources:Landroid/content/res/Resources;
-
-    if-eqz v0, :cond_0
-
-    iget-object v0, p0, Landroid/app/ContextImpl;->mResources:Landroid/content/res/Resources;
-
-    invoke-virtual {v0}, Landroid/content/res/Resources;->isContextPackageNameNull()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    .line 2144
-    iget-object v0, p0, Landroid/app/ContextImpl;->mResources:Landroid/content/res/Resources;
-
-    iget-object v1, p0, Landroid/app/ContextImpl;->mPackageInfo:Landroid/app/LoadedApk;
-
-    iget-object v1, v1, Landroid/app/LoadedApk;->mPackageName:Ljava/lang/String;
-
-    invoke-virtual {v0, v1}, Landroid/content/res/Resources;->setContextPackageName(Ljava/lang/String;)V
-
-    .line 2147
-    :cond_0
-    invoke-static {p0}, Landroid/content/res/Resources;->createLaunchIconThemeIfNeeded(Landroid/content/Context;)V
-
-    .line 2153
-    sget-boolean v0, Landroid/app/ContextImpl;->mbJudged:Z
-
-    if-nez v0, :cond_1
-
-    .line 2154
-    const/4 v0, 0x1
-
-    sput-boolean v0, Landroid/app/ContextImpl;->mbJudged:Z
-
-    .line 2156
-    iget-object v0, p0, Landroid/app/ContextImpl;->mPackageInfo:Landroid/app/LoadedApk;
-
-    invoke-virtual {p0}, Landroid/app/ContextImpl;->getPackageName()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-static {v0, v1}, Lcom/lenovo/ideaui/hook/IdeaUI_HookContextImpl;->isCts(Landroid/app/LoadedApk;Ljava/lang/String;)Z
-
-    move-result v0
-
-    sput-boolean v0, Landroid/app/ContextImpl;->mIsCts:Z
-
-    .line 2159
-    :cond_1
-    sget-boolean v0, Landroid/app/ContextImpl;->mIsCts:Z
-
-    return v0
 .end method
 
 .method public isRestricted()Z

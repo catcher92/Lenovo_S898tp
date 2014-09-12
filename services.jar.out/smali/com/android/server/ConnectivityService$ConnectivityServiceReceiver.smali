@@ -354,6 +354,8 @@
 
     invoke-static {v9, v11, v12}, Landroid/provider/Settings$Secure;->putInt(Landroid/content/ContentResolver;Ljava/lang/String;I)Z
 
+    invoke-static {v2}, Lcom/android/server/ConnectivityService$BaiduInjector;->setPreferSimSetting(Ljava/lang/Long;)V
+
     .line 4578
     invoke-static {}, Lcom/android/server/ConnectivityService;->access$3500()I
 

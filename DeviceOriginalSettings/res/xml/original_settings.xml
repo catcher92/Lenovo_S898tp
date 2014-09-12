@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
+    <PreferenceCategory android:title="原厂设置选项">
+        <Preference android:title="@string/lenovo_light_settings_title" android:key="dolby_mobile_settings" android:summary="@string/lenovo_light_settings_summary">
+            <intent android:targetPackage="com.lenovo.lightsettings" android:action="android.intent.action.MAIN" android:targetClass="com.lenovo.lightsettings.LightSettings" />
+        </Preference>
+        <Preference android:title="@string/schedulepoweronoff_settings" android:key="schedulepoweronoff_settings" android:summary=" 进入定时开关机">
+            <intent android:targetPackage="com.mediatek.schpwronoff" android:action="android.intent.action.MAIN" android:targetClass="com.mediatek.schpwronoff.AlarmClock" />
+        </Preference>
+        <Preference android:title="@string/character_settings" android:key="character_settings" android:summary="联想特色设置选项">
+            <intent android:targetPackage="com.baidu.deviceoriginalsettings" android:action="android.intent.action.MAIN" android:targetClass="com.baidu.deviceoriginalsettings.CharacterSettings" />
+        </Preference>        
+    </PreferenceCategory>
+    <PreferenceCategory android:title="附加设置选项">
+        <Preference android:title="@string/camera_sound_switch" android:key="camera_sound_switch" android:summary="开启/关闭拍照、截屏声音">
+            <intent android:targetPackage="com.baidu.deviceoriginalsettings" android:action="android.intent.action.MAIN" android:targetClass="com.baidu.deviceoriginalsettings.CameraSound" />
+        </Preference>
+        <Preference android:title="@string/mipop" android:key="mipop" android:summary="屏幕助手">
+            <intent android:targetPackage="com.android.mipop" android:action="android.intent.action.MAIN" android:targetClass="com.android.mipop.MIPopActivity" />
+        </Preference>		
+    </PreferenceCategory>	
+    <PreferenceCategory android:title="关于">
+        <Preference android:title="ROM作者信息" android:summary="欢迎使用行云开发组无耻的大叔适配的百度云ROM，点击访问本人微博">
+            <intent android:action="android.intent.action.VIEW" android:data="http://weibo.com/541806675" />
+        </Preference>
+    </PreferenceCategory>
+</PreferenceScreen>

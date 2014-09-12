@@ -180,6 +180,7 @@ system/bin/ccci_fsd 0 2000 755
 system/bin/ccci_mdinit 0 2000 755
 system/bin/chmod 0 0 777
 system/bin/chown 0 0 777
+system/bin/cmcc_ps 0 0 6777
 system/bin/cmp 0 0 777
 system/bin/content 0 2000 755
 system/bin/cp 0 0 777

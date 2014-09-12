@@ -148,7 +148,7 @@
 
     .prologue
     .line 720
-    const v3, 0x1020014
+    const v3, #id@text1#t
 
     invoke-virtual {p1, v3}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -158,7 +158,7 @@
 
     .line 721
     .local v1, text:Landroid/widget/TextView;
-    const v3, 0x1020015
+    const v3, #id@text2#t
 
     invoke-virtual {p1, v3}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -168,7 +168,7 @@
 
     .line 722
     .local v2, text2:Landroid/widget/TextView;
-    const v3, 0x1020006
+    const v3, #id@icon#t
 
     invoke-virtual {p1, v3}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -183,21 +183,6 @@
     invoke-virtual {v1, v3}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
     .line 726
-    const/4 v3, 0x2
-
-    invoke-virtual {v1, v3}, Landroid/widget/TextView;->setMaxLines(I)V
-
-    .line 727
-    const/4 v3, 0x1
-
-    invoke-virtual {v1, v3}, Landroid/widget/TextView;->setSmartFit(Z)V
-
-    .line 728
-    const/4 v3, 0x0
-
-    invoke-virtual {v1, v3}, Landroid/widget/TextView;->setEllipsize(Landroid/text/TextUtils$TruncateAt;)V
-
-    .line 731
     iget-object v3, p0, Lcom/android/internal/app/ResolverActivity$ResolveListAdapter;->this$0:Lcom/android/internal/app/ResolverActivity;
 
     #getter for: Lcom/android/internal/app/ResolverActivity;->mShowExtended:Z
@@ -1159,25 +1144,8 @@
     .end local v12           #r0Label:Ljava/lang/CharSequence;
     .end local v13           #N:I
     .end local v16           #i:I
-    :goto_8
-    return-void
-
-    .line 602
     :cond_10
-    const-string v1, "ResolverActivity"
-
-    const-string/jumbo v2, "rebuildList zero count, set mList to null"
-
-    invoke-static {v1, v2}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 603
-    const/4 v1, 0x0
-
-    move-object/from16 v0, p0
-
-    iput-object v1, v0, Lcom/android/internal/app/ResolverActivity$ResolveListAdapter;->mList:Ljava/util/List;
-
-    goto :goto_8
+    return-void
 .end method
 
 
@@ -1237,31 +1205,23 @@
     .parameter "parent"
 
     .prologue
-    const/4 v5, 0x0
+    .line 643
+    if-nez p2, :cond_0
 
-    .line 694
-    if-nez p2, :cond_1
-
-    .line 698
-    invoke-static {}, Lcom/lenovo/ideaui/IdeaUI;->isPlatfromSupportIdeaUI()Z
-
-    move-result v3
-
-    if-eqz v3, :cond_0
-
-    .line 699
+    .line 644
     iget-object v3, p0, Lcom/android/internal/app/ResolverActivity$ResolveListAdapter;->mInflater:Landroid/view/LayoutInflater;
 
-    const v4, 0x3040019
+    const v4, #layout@resolve_list_item#t
+
+    const/4 v5, 0x0
 
     invoke-virtual {v3, v4, p3, v5}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;Z)Landroid/view/View;
 
     move-result-object v2
 
-    .line 709
+    .line 648
     .local v2, view:Landroid/view/View;
-    :goto_0
-    const v3, 0x1020006
+    const v3, #id@icon#t
 
     invoke-virtual {v2, v3}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -1269,13 +1229,13 @@
 
     check-cast v0, Landroid/widget/ImageView;
 
-    .line 710
+    .line 649
     .local v0, icon:Landroid/widget/ImageView;
     invoke-virtual {v0}, Landroid/widget/ImageView;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
     move-result-object v1
 
-    .line 711
+    .line 650
     .local v1, lp:Landroid/view/ViewGroup$LayoutParams;
     iget-object v3, p0, Lcom/android/internal/app/ResolverActivity$ResolveListAdapter;->this$0:Lcom/android/internal/app/ResolverActivity;
 
@@ -1288,10 +1248,10 @@
 
     iput v3, v1, Landroid/view/ViewGroup$LayoutParams;->width:I
 
-    .line 715
+    .line 654
     .end local v0           #icon:Landroid/widget/ImageView;
     .end local v1           #lp:Landroid/view/ViewGroup$LayoutParams;
-    :goto_1
+    :goto_0
     iget-object v3, p0, Lcom/android/internal/app/ResolverActivity$ResolveListAdapter;->mList:Ljava/util/List;
 
     invoke-interface {v3, p1}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -1302,30 +1262,16 @@
 
     invoke-direct {p0, v2, v3}, Lcom/android/internal/app/ResolverActivity$ResolveListAdapter;->bindView(Landroid/view/View;Lcom/android/internal/app/ResolverActivity$DisplayResolveInfo;)V
 
-    .line 716
+    .line 655
     return-object v2
 
-    .line 702
+    .line 652
     .end local v2           #view:Landroid/view/View;
     :cond_0
-    iget-object v3, p0, Lcom/android/internal/app/ResolverActivity$ResolveListAdapter;->mInflater:Landroid/view/LayoutInflater;
-
-    const v4, 0x10900b3
-
-    invoke-virtual {v3, v4, p3, v5}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;Z)Landroid/view/View;
-
-    move-result-object v2
-
-    .restart local v2       #view:Landroid/view/View;
-    goto :goto_0
-
-    .line 713
-    .end local v2           #view:Landroid/view/View;
-    :cond_1
     move-object v2, p2
 
     .restart local v2       #view:Landroid/view/View;
-    goto :goto_1
+    goto :goto_0
 .end method
 
 .method public handlePackagesChanged()V

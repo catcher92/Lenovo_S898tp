@@ -246,40 +246,15 @@
     .prologue
     .line 221
     :try_start_0
-    iget-object v3, p1, Landroid/content/pm/ResolveInfo;->activityInfo:Landroid/content/pm/ActivityInfo;
+    iget-object v3, p1, Landroid/content/pm/ResolveInfo;->resolvePackageName:Ljava/lang/String;
 
     if-eqz v3, :cond_1
 
-    .line 222
-    iget-object v3, p1, Landroid/content/pm/ResolveInfo;->activityInfo:Landroid/content/pm/ActivityInfo;
-
-    iget-object v4, p0, Lcom/android/internal/app/ResolverActivity;->mPm:Landroid/content/pm/PackageManager;
-
-    invoke-virtual {v3, v4}, Landroid/content/pm/ActivityInfo;->loadIcon(Landroid/content/pm/PackageManager;)Landroid/graphics/drawable/Drawable;
-
-    move-result-object v0
-
-    .line 223
-    .local v0, dr:Landroid/graphics/drawable/Drawable;
-    if-eqz v0, :cond_1
-
-    .line 244
-    .end local v0           #dr:Landroid/graphics/drawable/Drawable;
-    :cond_0
-    :goto_0
-    return-object v0
-
-    .line 228
-    :cond_1
-    iget-object v3, p1, Landroid/content/pm/ResolveInfo;->resolvePackageName:Ljava/lang/String;
-
-    if-eqz v3, :cond_2
-
     iget v3, p1, Landroid/content/pm/ResolveInfo;->icon:I
 
-    if-eqz v3, :cond_2
+    if-eqz v3, :cond_1
 
-    .line 229
+    .line 196
     iget-object v3, p0, Lcom/android/internal/app/ResolverActivity;->mPm:Landroid/content/pm/PackageManager;
 
     iget-object v4, p1, Landroid/content/pm/ResolveInfo;->resolvePackageName:Ljava/lang/String;
@@ -294,20 +269,25 @@
 
     move-result-object v0
 
-    .line 230
-    .restart local v0       #dr:Landroid/graphics/drawable/Drawable;
-    if-nez v0, :cond_0
+    .line 197
+    .local v0, dr:Landroid/graphics/drawable/Drawable;
+    if-eqz v0, :cond_1
 
-    .line 234
+    .line 211
     .end local v0           #dr:Landroid/graphics/drawable/Drawable;
-    :cond_2
+    :cond_0
+    :goto_0
+    return-object v0
+
+    .line 201
+    :cond_1
     invoke-virtual {p1}, Landroid/content/pm/ResolveInfo;->getIconResource()I
 
     move-result v2
 
     .line 235
     .local v2, iconRes:I
-    if-eqz v2, :cond_3
+    if-eqz v2, :cond_2
 
     .line 236
     iget-object v3, p0, Lcom/android/internal/app/ResolverActivity;->mPm:Landroid/content/pm/PackageManager;
@@ -333,7 +313,7 @@
     .line 244
     .end local v0           #dr:Landroid/graphics/drawable/Drawable;
     .end local v2           #iconRes:I
-    :cond_3
+    :cond_2
     :goto_1
     iget-object v3, p0, Lcom/android/internal/app/ResolverActivity;->mPm:Landroid/content/pm/PackageManager;
 
@@ -376,7 +356,7 @@
 
     move-result v2
 
-    const v1, 0x102035b
+    const v1, #id@button_always#t
 
     if-ne v0, v1, :cond_0
 
@@ -414,7 +394,7 @@
 
     move-result-object v0
 
-    const v1, 0x10403cd
+    const v1, #string@whichApplication#t
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getText(I)Ljava/lang/CharSequence;
 
@@ -460,19 +440,11 @@
     .prologue
     .line 122
     .local p5, rList:Ljava/util/List;,"Ljava/util/List<Landroid/content/pm/ResolveInfo;>;"
-    invoke-static {}, Lcom/lenovo/ideaui/IdeaUI;->isPlatfromSupportIdeaUI()Z
-
-    move-result v1
-
-    if-eqz v1, :cond_2
-
-    .line 123
-    const v1, 0x3030314
+    const v1, #style@Theme.DeviceDefault.Light.Dialog.Alert#t
 
     invoke-virtual {p0, v1}, Lcom/android/internal/app/ResolverActivity;->setTheme(I)V
 
     .line 129
-    :goto_0
     invoke-super {p0, p1}, Lcom/android/internal/app/AlertActivity;->onCreate(Landroid/os/Bundle;)V
 
     .line 131
@@ -494,7 +466,7 @@
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 136
-    :goto_1
+    :goto_0
     invoke-virtual {p0}, Lcom/android/internal/app/ResolverActivity;->getPackageManager()Landroid/content/pm/PackageManager;
 
     move-result-object v1
@@ -511,7 +483,7 @@
 
     move-result-object v1
 
-    const v2, 0x10e0037
+    const v2, #integer@config_maxResolverActivityColumns#t
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getInteger(I)I
 
@@ -611,7 +583,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_3
+    if-eqz v1, :cond_2
 
     .line 157
     :cond_0
@@ -619,21 +591,13 @@
 
     .line 199
     :cond_1
-    :goto_2
+    :goto_1
     return-void
 
     .line 125
     .end local v8           #am:Landroid/app/ActivityManager;
     .end local v9           #ap:Lcom/android/internal/app/AlertController$AlertParams;
     .end local v11           #count:I
-    :cond_2
-    const v1, 0x103030f
-
-    invoke-virtual {p0, v1}, Lcom/android/internal/app/ResolverActivity;->setTheme(I)V
-
-    goto :goto_0
-
-    .line 133
     :catch_0
     move-exception v12
 
@@ -643,24 +607,24 @@
 
     iput v1, p0, Lcom/android/internal/app/ResolverActivity;->mLaunchedFromUid:I
 
-    goto :goto_1
+    goto :goto_0
 
-    .line 159
+    .line 140
     .end local v12           #e:Landroid/os/RemoteException;
     .restart local v8       #am:Landroid/app/ActivityManager;
     .restart local v9       #ap:Lcom/android/internal/app/AlertController$AlertParams;
     .restart local v11       #count:I
-    :cond_3
+    :cond_2
     const/4 v1, 0x1
 
-    if-le v11, v1, :cond_6
+    if-le v11, v1, :cond_4
 
-    .line 160
+    .line 141
     invoke-virtual {p0}, Lcom/android/internal/app/ResolverActivity;->getLayoutInflater()Landroid/view/LayoutInflater;
 
     move-result-object v1
 
-    const v2, 0x10900b4
+    const v2, #layout@resolver_grid#t
 
     const/4 v3, 0x0
 
@@ -670,10 +634,10 @@
 
     iput-object v1, v9, Lcom/android/internal/app/AlertController$AlertParams;->mView:Landroid/view/View;
 
-    .line 161
+    .line 142
     iget-object v1, v9, Lcom/android/internal/app/AlertController$AlertParams;->mView:Landroid/view/View;
 
-    const v2, 0x102035a
+    const v2, #id@resolver_grid#t
 
     invoke-virtual {v1, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -683,19 +647,19 @@
 
     iput-object v1, p0, Lcom/android/internal/app/ResolverActivity;->mGrid:Landroid/widget/GridView;
 
-    .line 162
+    .line 143
     iget-object v1, p0, Lcom/android/internal/app/ResolverActivity;->mGrid:Landroid/widget/GridView;
 
     iget-object v2, p0, Lcom/android/internal/app/ResolverActivity;->mAdapter:Lcom/android/internal/app/ResolverActivity$ResolveListAdapter;
 
     invoke-virtual {v1, v2}, Landroid/widget/GridView;->setAdapter(Landroid/widget/ListAdapter;)V
 
-    .line 163
+    .line 144
     iget-object v1, p0, Lcom/android/internal/app/ResolverActivity;->mGrid:Landroid/widget/GridView;
 
     invoke-virtual {v1, p0}, Landroid/widget/GridView;->setOnItemClickListener(Landroid/widget/AdapterView$OnItemClickListener;)V
 
-    .line 164
+    .line 145
     iget-object v1, p0, Lcom/android/internal/app/ResolverActivity;->mGrid:Landroid/widget/GridView;
 
     new-instance v2, Lcom/android/internal/app/ResolverActivity$ItemLongClickListener;
@@ -704,50 +668,29 @@
 
     invoke-virtual {v1, v2}, Landroid/widget/GridView;->setOnItemLongClickListener(Landroid/widget/AdapterView$OnItemLongClickListener;)V
 
-    .line 167
-    iget-object v1, p0, Lcom/android/internal/app/ResolverActivity;->mGrid:Landroid/widget/GridView;
+    .line 147
+    if-eqz p6, :cond_3
 
-    invoke-virtual {v1}, Landroid/widget/GridView;->getContext()Landroid/content/Context;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Landroid/content/Context;->isIdeaUITheme()Z
-
-    move-result v1
-
-    if-eqz v1, :cond_4
-
-    .line 168
-    iget-object v1, p0, Lcom/android/internal/app/ResolverActivity;->mGrid:Landroid/widget/GridView;
-
-    const v2, 0x106000d
-
-    invoke-virtual {v1, v2}, Landroid/widget/GridView;->setSelector(I)V
-
-    .line 172
-    :cond_4
-    if-eqz p6, :cond_5
-
-    .line 173
+    .line 148
     iget-object v1, p0, Lcom/android/internal/app/ResolverActivity;->mGrid:Landroid/widget/GridView;
 
     const/4 v2, 0x1
 
     invoke-virtual {v1, v2}, Landroid/widget/GridView;->setChoiceMode(I)V
 
-    .line 176
-    :cond_5
+    .line 151
+    :cond_3
     invoke-virtual {p0}, Lcom/android/internal/app/ResolverActivity;->resizeGrid()V
 
-    .line 187
-    :goto_3
+    .line 162
+    :goto_2
     invoke-virtual {p0}, Lcom/android/internal/app/ResolverActivity;->setupAlert()V
 
-    .line 189
+    .line 164
     if-eqz p6, :cond_1
 
-    .line 190
-    const v1, 0x102027b
+    .line 165
+    const v1, #id@button_bar#t
 
     invoke-virtual {p0, v1}, Lcom/android/internal/app/ResolverActivity;->findViewById(I)Landroid/view/View;
 
@@ -755,17 +698,17 @@
 
     check-cast v10, Landroid/view/ViewGroup;
 
-    .line 191
+    .line 166
     .local v10, buttonLayout:Landroid/view/ViewGroup;
-    if-eqz v10, :cond_8
+    if-eqz v10, :cond_6
 
-    .line 192
+    .line 167
     const/4 v1, 0x0
 
     invoke-virtual {v10, v1}, Landroid/view/ViewGroup;->setVisibility(I)V
 
-    .line 193
-    const v1, 0x102035b
+    .line 168
+    const v1, #id@button_always#t
 
     invoke-virtual {v10, v1}, Landroid/view/ViewGroup;->findViewById(I)Landroid/view/View;
 
@@ -775,8 +718,8 @@
 
     iput-object v1, p0, Lcom/android/internal/app/ResolverActivity;->mAlwaysButton:Landroid/widget/Button;
 
-    .line 194
-    const v1, 0x102035c
+    .line 169
+    const v1, #id@button_once#t
 
     invoke-virtual {v10, v1}, Landroid/view/ViewGroup;->findViewById(I)Landroid/view/View;
 
@@ -786,16 +729,16 @@
 
     iput-object v1, p0, Lcom/android/internal/app/ResolverActivity;->mOnceButton:Landroid/widget/Button;
 
-    goto/16 :goto_2
+    goto :goto_1
 
-    .line 177
+    .line 152
     .end local v10           #buttonLayout:Landroid/view/ViewGroup;
-    :cond_6
+    :cond_4
     const/4 v1, 0x1
 
-    if-ne v11, v1, :cond_7
+    if-ne v11, v1, :cond_5
 
-    .line 178
+    .line 153
     iget-object v1, p0, Lcom/android/internal/app/ResolverActivity;->mAdapter:Lcom/android/internal/app/ResolverActivity$ResolveListAdapter;
 
     const/4 v2, 0x0
@@ -806,28 +749,28 @@
 
     invoke-virtual {p0, v1}, Lcom/android/internal/app/ResolverActivity;->startActivity(Landroid/content/Intent;)V
 
-    .line 179
+    .line 154
     iget-object v1, p0, Lcom/android/internal/app/ResolverActivity;->mPackageMonitor:Lcom/android/internal/content/PackageMonitor;
 
     invoke-virtual {v1}, Lcom/android/internal/content/PackageMonitor;->unregister()V
 
-    .line 180
+    .line 155
     const/4 v1, 0x0
 
     iput-boolean v1, p0, Lcom/android/internal/app/ResolverActivity;->mRegistered:Z
 
-    .line 181
+    .line 156
     invoke-virtual {p0}, Lcom/android/internal/app/ResolverActivity;->finish()V
 
-    goto/16 :goto_2
+    goto/16 :goto_1
 
-    .line 184
-    :cond_7
+    .line 159
+    :cond_5
     invoke-virtual {p0}, Lcom/android/internal/app/ResolverActivity;->getResources()Landroid/content/res/Resources;
 
     move-result-object v1
 
-    const v2, 0x10403d2
+    const v2, #string@noApplications#t
 
     invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getText(I)Ljava/lang/CharSequence;
 
@@ -835,16 +778,16 @@
 
     iput-object v1, v9, Lcom/android/internal/app/AlertController$AlertParams;->mMessage:Ljava/lang/CharSequence;
 
-    goto :goto_3
+    goto :goto_2
 
-    .line 196
+    .line 171
     .restart local v10       #buttonLayout:Landroid/view/ViewGroup;
-    :cond_8
+    :cond_6
     const/4 v1, 0x0
 
     iput-boolean v1, p0, Lcom/android/internal/app/ResolverActivity;->mAlwaysUseOption:Z
 
-    goto/16 :goto_2
+    goto/16 :goto_1
 .end method
 
 .method protected onIntentSelected(Landroid/content/pm/ResolveInfo;Landroid/content/Intent;Z)V

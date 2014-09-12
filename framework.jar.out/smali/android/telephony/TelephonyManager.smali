@@ -1490,20 +1490,6 @@
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
     .line 2261
-    if-ltz p1, :cond_0
-
-    iget-object v0, p0, Landroid/telephony/TelephonyManager;->PHONE_SUBINFO_SERVICE:[Ljava/lang/String;
-
-    array-length v0, v0
-
-    if-lt p1, v0, :cond_1
-
-    .line 2263
-    :cond_0
-    const/4 p1, 0x0
-
-    .line 2266
-    :cond_1
     iget-object v0, p0, Landroid/telephony/TelephonyManager;->PHONE_SUBINFO_SERVICE:[Ljava/lang/String;
 
     aget-object v0, v0, p1

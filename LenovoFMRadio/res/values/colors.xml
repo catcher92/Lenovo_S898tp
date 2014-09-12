@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="screenONColor">#ff1d3d65</color>
+    <color name="screenOFFColor">#ff4b4c4d</color>
+</resources>

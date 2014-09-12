@@ -116,9 +116,27 @@
 
 .field public static final GEMINI_DEFAULT_SIM_MODE:Ljava/lang/String; = "persist.radio.default_sim_mode"
 
+.field public static final GEMINI_DEFAULT_SIM_PROP:Ljava/lang/String; = "persist.radio.default_sim"
+
 .field public static final GEMINI_GPRS_TRANSFER_TYPE:Ljava/lang/String; = "gemini.gprs.transfer.type"
 
+.field public static final GEMINI_SIM_1:I = 0x0
+
+.field public static final GEMINI_SIM_2:I = 0x1
+
+.field public static final GEMINI_SIM_ID_KEY:Ljava/lang/String; = "simId"
+
+.field public static final GEMINI_SIP_CALL:I = -0x1
+
 .field public static final IS_VT_CALL:Ljava/lang/String; = "isVtCall"
+
+.field public static final LTE_ON_CDMA_FALSE:I = 0x0
+
+.field public static final LTE_ON_CDMA_TRUE:I = 0x1
+
+.field public static final LTE_ON_CDMA_UNKNOWN:I = -0x1
+
+.field public static final MULTI_SIM_ID_KEY:Ljava/lang/String; = "simid"
 
 .field public static final NT_MODE_CDMA:I = 0x4
 
@@ -139,6 +157,16 @@
 .field public static final NT_MODE_WCDMA_ONLY:I = 0x2
 
 .field public static final NT_MODE_WCDMA_PREF:I = 0x0
+
+.field public static final PHONE_TYPE_CDMA:I = 0x2
+
+.field public static final PHONE_TYPE_GEMINI:I = 0x4
+
+.field public static final PHONE_TYPE_GSM:I = 0x1
+
+.field public static final PHONE_TYPE_NONE:I = 0x0
+
+.field public static final PHONE_TYPE_SIP:I = 0x3
 
 .field public static final PREFERRED_CDMA_SUBSCRIPTION:I = 0x1
 
@@ -189,6 +217,28 @@
 .field public static final REASON_VOICE_CALL_ENDED:Ljava/lang/String; = "2GVoiceCallEnded"
 
 .field public static final REASON_VOICE_CALL_STARTED:Ljava/lang/String; = "2GVoiceCallStarted"
+
+.field public static final SIM_INDICATOR_ABSENT:I = 0x0
+
+.field public static final SIM_INDICATOR_CONNECTED:I = 0x7
+
+.field public static final SIM_INDICATOR_INVALID:I = 0x3
+
+.field public static final SIM_INDICATOR_LOCKED:I = 0x2
+
+.field public static final SIM_INDICATOR_NORMAL:I = 0x5
+
+.field public static final SIM_INDICATOR_RADIOOFF:I = 0x1
+
+.field public static final SIM_INDICATOR_ROAMING:I = 0x6
+
+.field public static final SIM_INDICATOR_ROAMINGCONNECTED:I = 0x8
+
+.field public static final SIM_INDICATOR_SEARCHING:I = 0x4
+
+.field public static final SIM_INDICATOR_UNKNOWN:I = -0x1
+
+.field public static final TOTAL_SIM_COLOR_COUNT:I = 0x4
 
 .field public static final TTY_MODE_FULL:I = 0x1
 

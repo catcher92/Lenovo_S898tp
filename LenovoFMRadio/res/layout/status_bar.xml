@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:layout_width="fill_parent" android:layout_height="wrap_content" android:minHeight="?android:listPreferredItemHeight"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:id="@id/left_layout" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="12.0dip" android:layout_alignParentLeft="true" android:layout_centerVertical="true">
+        <ImageView android:id="@id/status_icon" android:layout_width="38.0dip" android:layout_height="38.0dip" android:src="@drawable/ic_launcher_fmradio" />
+    </LinearLayout>
+    <LinearLayout android:id="@id/right_layout" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="12.0dip" android:layout_marginRight="9.0dip" android:layout_alignParentRight="true" android:layout_centerVertical="true">
+        <ImageButton android:id="@id/status_button_last" android:background="?android:selectableItemBackground" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/ic_appwidget_fm_last" />
+        <ImageView android:id="@id/status_button_play" android:background="?android:selectableItemBackground" android:layout_width="41.0dip" android:layout_height="41.0dip" android:src="@drawable/status_bar_stop" />
+        <ImageView android:id="@id/status_button_next" android:background="?android:selectableItemBackground" android:layout_width="41.0dip" android:layout_height="41.0dip" android:layout_marginLeft="5.0dip" android:src="@drawable/status_bar_next" />
+        <ImageView android:id="@id/status_button_appexit" android:background="?android:selectableItemBackground" android:layout_width="41.0dip" android:layout_height="41.0dip" android:layout_marginLeft="4.0dip" android:src="@drawable/status_bar_close" />
+    </LinearLayout>
+    <LinearLayout android:orientation="vertical" android:id="@id/middle_layout" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_marginLeft="22.0dip" android:layout_weight="1.0" android:layout_toLeftOf="@id/right_layout" android:layout_toRightOf="@id/left_layout" android:layout_centerVertical="true">
+        <TextView android:textSize="16.0sp" android:ellipsize="end" android:id="@id/status_application" android:focusable="true" android:focusableInTouchMode="true" android:layout_width="fill_parent" android:layout_height="wrap_content" android:singleLine="true" style="@android:style/TextAppearance.StatusBar.EventContent.Title" />
+        <TextView android:textSize="12.0sp" android:ellipsize="end" android:id="@id/status_info" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="5.0dip" android:singleLine="true" style="@android:style/TextAppearance.StatusBar.EventContent" />
+    </LinearLayout>
+</RelativeLayout>

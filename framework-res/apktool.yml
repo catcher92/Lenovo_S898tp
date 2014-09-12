@@ -4,7 +4,7 @@ isFrameworkApk: true
 usesFramework:
   ids:
   - 3
-  tag: vendor_S898t+
+  tag: vendor_test
 sdkInfo:
   minSdkVersion: '17'
   targetSdkVersion: '17'

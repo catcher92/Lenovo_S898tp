@@ -18,9 +18,7 @@
     const/high16 v3, 0x2
 
     .line 38
-    invoke-static {p1}, Lcom/lenovo/ideaui/hook/IdeaUI_HookBaseErrorDialog;->BaseErrorDialog(Landroid/content/Context;)I
-
-    move-result v1
+    const v1, #style@Theme.Dialog.AppError#t
 
     invoke-direct {p0, p1, v1}, Landroid/app/AlertDialog;-><init>(Landroid/content/Context;I)V
 

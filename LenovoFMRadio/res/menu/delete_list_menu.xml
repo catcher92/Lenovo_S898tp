@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:icon="@*android:drawable/checkbox_off_background" android:id="@id/selectall" android:title="@string/selectall" android:showAsAction="ifRoom|withText" android:actionLayout="@layout/delete_list_item" />
+    <item android:icon="@drawable/menu_delete" android:id="@id/deleteall" android:title="@string/delete" />
+</menu>

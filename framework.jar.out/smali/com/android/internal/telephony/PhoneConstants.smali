@@ -63,6 +63,8 @@
 
 .field public static final CFU_QUERY_TYPE_PROP:Ljava/lang/String; = "persist.ril.cfu.querytype"
 
+.field public static final CTA_CFU_QUERY_TYPE_DEF_VALUE:Ljava/lang/String; = "1"
+
 .field public static final DATA_APN_KEY:Ljava/lang/String; = "apn"
 
 .field public static final DATA_APN_TYPE_KEY:Ljava/lang/String; = "apnType"

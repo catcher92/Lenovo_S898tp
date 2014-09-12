@@ -34,22 +34,22 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 4275
+    .line 4316
     invoke-direct {p0, p1, p2, p3}, Landroid/widget/PopupWindow;-><init>(Landroid/view/View;II)V
 
-    .line 4269
+    .line 4310
     iput-boolean v0, p0, Landroid/widget/Editor$ErrorPopup;->mAbove:Z
 
-    .line 4271
+    .line 4312
     iput v0, p0, Landroid/widget/Editor$ErrorPopup;->mPopupInlineErrorBackgroundId:I
 
-    .line 4272
+    .line 4313
     iput v0, p0, Landroid/widget/Editor$ErrorPopup;->mPopupInlineErrorAboveBackgroundId:I
 
-    .line 4276
+    .line 4317
     iput-object p1, p0, Landroid/widget/Editor$ErrorPopup;->mView:Landroid/widget/TextView;
 
-    .line 4280
+    .line 4321
     iget v0, p0, Landroid/widget/Editor$ErrorPopup;->mPopupInlineErrorBackgroundId:I
 
     const/16 v1, 0xde
@@ -60,14 +60,14 @@
 
     iput v0, p0, Landroid/widget/Editor$ErrorPopup;->mPopupInlineErrorBackgroundId:I
 
-    .line 4282
+    .line 4323
     iget-object v0, p0, Landroid/widget/Editor$ErrorPopup;->mView:Landroid/widget/TextView;
 
     iget v1, p0, Landroid/widget/Editor$ErrorPopup;->mPopupInlineErrorBackgroundId:I
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setBackgroundResource(I)V
 
-    .line 4283
+    .line 4324
     return-void
 .end method
 
@@ -77,10 +77,10 @@
     .parameter "index"
 
     .prologue
-    .line 4302
+    .line 4343
     if-nez p1, :cond_0
 
-    .line 4303
+    .line 4344
     iget-object v1, p0, Landroid/widget/Editor$ErrorPopup;->mView:Landroid/widget/TextView;
 
     invoke-virtual {v1}, Landroid/widget/TextView;->getContext()Landroid/content/Context;
@@ -93,7 +93,7 @@
 
     move-result-object v0
 
-    .line 4305
+    .line 4346
     .local v0, styledAttributes:Landroid/content/res/TypedArray;
     const/4 v1, 0x0
 
@@ -101,10 +101,10 @@
 
     move-result p1
 
-    .line 4306
+    .line 4347
     invoke-virtual {v0}, Landroid/content/res/TypedArray;->recycle()V
 
-    .line 4308
+    .line 4349
     .end local v0           #styledAttributes:Landroid/content/res/TypedArray;
     :cond_0
     return p1
@@ -117,13 +117,13 @@
     .parameter "above"
 
     .prologue
-    .line 4286
+    .line 4327
     iput-boolean p1, p0, Landroid/widget/Editor$ErrorPopup;->mAbove:Z
 
-    .line 4288
+    .line 4329
     if-eqz p1, :cond_0
 
-    .line 4289
+    .line 4330
     iget v0, p0, Landroid/widget/Editor$ErrorPopup;->mPopupInlineErrorAboveBackgroundId:I
 
     const/16 v1, 0xdf
@@ -134,7 +134,7 @@
 
     iput v0, p0, Landroid/widget/Editor$ErrorPopup;->mPopupInlineErrorAboveBackgroundId:I
 
-    .line 4297
+    .line 4338
     :goto_0
     iget-object v1, p0, Landroid/widget/Editor$ErrorPopup;->mView:Landroid/widget/TextView;
 
@@ -145,10 +145,10 @@
     :goto_1
     invoke-virtual {v1, v0}, Landroid/widget/TextView;->setBackgroundResource(I)V
 
-    .line 4299
+    .line 4340
     return-void
 
-    .line 4293
+    .line 4334
     :cond_0
     iget v0, p0, Landroid/widget/Editor$ErrorPopup;->mPopupInlineErrorBackgroundId:I
 
@@ -162,7 +162,7 @@
 
     goto :goto_0
 
-    .line 4297
+    .line 4338
     :cond_1
     iget v0, p0, Landroid/widget/Editor$ErrorPopup;->mPopupInlineErrorBackgroundId:I
 
@@ -178,24 +178,24 @@
     .parameter "force"
 
     .prologue
-    .line 4313
+    .line 4354
     invoke-super/range {p0 .. p5}, Landroid/widget/PopupWindow;->update(IIIIZ)V
 
-    .line 4315
+    .line 4356
     invoke-virtual {p0}, Landroid/widget/Editor$ErrorPopup;->isAboveAnchor()Z
 
     move-result v0
 
-    .line 4316
+    .line 4357
     .local v0, above:Z
     iget-boolean v1, p0, Landroid/widget/Editor$ErrorPopup;->mAbove:Z
 
     if-eq v0, v1, :cond_0
 
-    .line 4317
+    .line 4358
     invoke-virtual {p0, v0}, Landroid/widget/Editor$ErrorPopup;->fixDirection(Z)V
 
-    .line 4319
+    .line 4360
     :cond_0
     return-void
 .end method

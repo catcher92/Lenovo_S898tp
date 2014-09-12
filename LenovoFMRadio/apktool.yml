@@ -1,0 +1,12 @@
+version: 1.5.2
+apkFileName: LenovoFMRadio.apk
+isFrameworkApk: false
+usesFramework:
+  ids:
+  - 1
+sdkInfo:
+  targetSdkVersion: '10'
+packageInfo:
+  cur_package: com.lenovo.fm
+  orig_package: com.lenovo.fm
+compressionType: false

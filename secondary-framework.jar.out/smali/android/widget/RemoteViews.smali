@@ -58,10 +58,6 @@
 
 
 # instance fields
-.field private bIsnotification:Z
-
-.field private fontPath:Ljava/lang/String;
-
 .field private mActions:Ljava/util/ArrayList;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -169,13 +165,7 @@
     .line 142
     iput-boolean v5, p0, Landroid/widget/RemoteViews;->mIsWidgetCollectionChild:Z
 
-    .line 147
-    iput-boolean v5, p0, Landroid/widget/RemoteViews;->bIsnotification:Z
-
-    .line 148
-    iput-object v7, p0, Landroid/widget/RemoteViews;->fontPath:Ljava/lang/String;
-
-    .line 1524
+    .line 1511
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v2
@@ -593,12 +583,6 @@
     iput-boolean v1, p0, Landroid/widget/RemoteViews;->mIsWidgetCollectionChild:Z
 
     .line 147
-    iput-boolean v1, p0, Landroid/widget/RemoteViews;->bIsnotification:Z
-
-    .line 148
-    iput-object v2, p0, Landroid/widget/RemoteViews;->fontPath:Ljava/lang/String;
-
-    .line 1492
     if-eqz p1, :cond_0
 
     if-nez p2, :cond_1
@@ -724,12 +708,6 @@
     iput-boolean v2, p0, Landroid/widget/RemoteViews;->mIsWidgetCollectionChild:Z
 
     .line 147
-    iput-boolean v2, p0, Landroid/widget/RemoteViews;->bIsnotification:Z
-
-    .line 148
-    iput-object v1, p0, Landroid/widget/RemoteViews;->fontPath:Ljava/lang/String;
-
-    .line 1466
     iput-object p1, p0, Landroid/widget/RemoteViews;->mPackage:Ljava/lang/String;
 
     .line 1467
@@ -1299,117 +1277,59 @@
 .end method
 
 .method public apply(Landroid/content/Context;Landroid/view/ViewGroup;Landroid/widget/RemoteViews$OnClickHandler;)Landroid/view/View;
-    .locals 7
+    .locals 6
     .parameter "context"
     .parameter "parent"
     .parameter "handler"
 
     .prologue
-    .line 2268
+    .line 2255
     invoke-direct {p0, p1}, Landroid/widget/RemoteViews;->getRemoteViewsToApply(Landroid/content/Context;)Landroid/widget/RemoteViews;
 
-    move-result-object v4
+    move-result-object v3
 
-    .line 2272
-    .local v4, rvToApply:Landroid/widget/RemoteViews;
+    .line 2259
+    .local v3, rvToApply:Landroid/widget/RemoteViews;
     invoke-direct {p0, p1}, Landroid/widget/RemoteViews;->prepareContext(Landroid/content/Context;)Landroid/content/Context;
 
     move-result-object v0
 
-    .line 2274
+    .line 2261
     .local v0, c:Landroid/content/Context;
-    const-string v5, "layout_inflater"
+    const-string v4, "layout_inflater"
 
-    invoke-virtual {v0, v5}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
+    invoke-virtual {v0, v4}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
 
     move-result-object v1
 
     check-cast v1, Landroid/view/LayoutInflater;
 
-    .line 2277
+    .line 2264
     .local v1, inflater:Landroid/view/LayoutInflater;
     invoke-virtual {v1, v0}, Landroid/view/LayoutInflater;->cloneInContext(Landroid/content/Context;)Landroid/view/LayoutInflater;
 
     move-result-object v1
 
-    .line 2278
+    .line 2265
     invoke-virtual {v1, p0}, Landroid/view/LayoutInflater;->setFilter(Landroid/view/LayoutInflater$Filter;)V
 
-    .line 2280
-    invoke-virtual {v4}, Landroid/widget/RemoteViews;->getLayoutId()I
+    .line 2267
+    invoke-virtual {v3}, Landroid/widget/RemoteViews;->getLayoutId()I
 
-    move-result v5
+    move-result v4
 
-    const/4 v6, 0x0
+    const/4 v5, 0x0
 
-    invoke-virtual {v1, v5, p2, v6}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;Z)Landroid/view/View;
-
-    move-result-object v3
-
-    .line 2282
-    .local v3, result:Landroid/view/View;
-    invoke-direct {v4, v3, p2, p3}, Landroid/widget/RemoteViews;->performApply(Landroid/view/View;Landroid/view/ViewGroup;Landroid/widget/RemoteViews$OnClickHandler;)V
-
-    .line 2284
-    iget-boolean v5, p0, Landroid/widget/RemoteViews;->bIsnotification:Z
-
-    if-eqz v5, :cond_0
-
-    .line 2285
-    iget-object v5, p0, Landroid/widget/RemoteViews;->fontPath:Ljava/lang/String;
-
-    if-nez v5, :cond_1
-
-    .line 2286
-    invoke-virtual {p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
-
-    move-result-object v5
-
-    invoke-virtual {v5}, Landroid/content/res/Resources;->getConfiguration()Landroid/content/res/Configuration;
-
-    invoke-static {}, Landroid/content/res/Configuration;->getFontPath()Ljava/lang/String;
-
-    move-result-object v5
-
-    iput-object v5, p0, Landroid/widget/RemoteViews;->fontPath:Ljava/lang/String;
-
-    .line 2287
-    invoke-virtual {p0, v3}, Landroid/widget/RemoteViews;->updateFont(Landroid/view/View;)V
-
-    .line 2298
-    :cond_0
-    :goto_0
-    return-object v3
-
-    .line 2289
-    :cond_1
-    invoke-virtual {p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
-
-    move-result-object v5
-
-    invoke-virtual {v5}, Landroid/content/res/Resources;->getConfiguration()Landroid/content/res/Configuration;
-
-    invoke-static {}, Landroid/content/res/Configuration;->getFontPath()Ljava/lang/String;
+    invoke-virtual {v1, v4, p2, v5}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;Z)Landroid/view/View;
 
     move-result-object v2
 
-    .line 2290
-    .local v2, path:Ljava/lang/String;
-    iget-object v5, p0, Landroid/widget/RemoteViews;->fontPath:Ljava/lang/String;
+    .line 2269
+    .local v2, result:Landroid/view/View;
+    invoke-direct {v3, v2, p2, p3}, Landroid/widget/RemoteViews;->performApply(Landroid/view/View;Landroid/view/ViewGroup;Landroid/widget/RemoteViews$OnClickHandler;)V
 
-    invoke-virtual {v5, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v5
-
-    if-nez v5, :cond_0
-
-    .line 2291
-    iput-object v2, p0, Landroid/widget/RemoteViews;->fontPath:Ljava/lang/String;
-
-    .line 2292
-    invoke-virtual {p0, v3}, Landroid/widget/RemoteViews;->updateFont(Landroid/view/View;)V
-
-    goto :goto_0
+    .line 2271
+    return-object v2
 .end method
 
 .method public clone()Landroid/widget/RemoteViews;
@@ -1718,112 +1638,60 @@
 .end method
 
 .method public reapply(Landroid/content/Context;Landroid/view/View;Landroid/widget/RemoteViews$OnClickHandler;)V
-    .locals 4
+    .locals 3
     .parameter "context"
     .parameter "v"
     .parameter "handler"
 
     .prologue
-    .line 2315
+    .line 2288
     invoke-direct {p0, p1}, Landroid/widget/RemoteViews;->getRemoteViewsToApply(Landroid/content/Context;)Landroid/widget/RemoteViews;
-
-    move-result-object v1
-
-    .line 2320
-    .local v1, rvToApply:Landroid/widget/RemoteViews;
-    invoke-direct {p0}, Landroid/widget/RemoteViews;->hasLandscapeAndPortraitLayouts()Z
-
-    move-result v2
-
-    if-eqz v2, :cond_0
-
-    .line 2321
-    invoke-virtual {p2}, Landroid/view/View;->getId()I
-
-    move-result v2
-
-    invoke-virtual {v1}, Landroid/widget/RemoteViews;->getLayoutId()I
-
-    move-result v3
-
-    if-eq v2, v3, :cond_0
-
-    .line 2322
-    new-instance v2, Ljava/lang/RuntimeException;
-
-    const-string v3, "Attempting to re-apply RemoteViews to a view that that does not share the same root layout id."
-
-    invoke-direct {v2, v3}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;)V
-
-    throw v2
-
-    .line 2327
-    :cond_0
-    invoke-direct {p0, p1}, Landroid/widget/RemoteViews;->prepareContext(Landroid/content/Context;)Landroid/content/Context;
-
-    .line 2328
-    invoke-virtual {p2}, Landroid/view/View;->getParent()Landroid/view/ViewParent;
-
-    move-result-object v2
-
-    check-cast v2, Landroid/view/ViewGroup;
-
-    invoke-direct {v1, p2, v2, p3}, Landroid/widget/RemoteViews;->performApply(Landroid/view/View;Landroid/view/ViewGroup;Landroid/widget/RemoteViews$OnClickHandler;)V
-
-    .line 2330
-    iget-boolean v2, p0, Landroid/widget/RemoteViews;->bIsnotification:Z
-
-    if-eqz v2, :cond_1
-
-    .line 2331
-    iget-object v2, p0, Landroid/widget/RemoteViews;->fontPath:Ljava/lang/String;
-
-    if-nez v2, :cond_2
-
-    .line 2332
-    invoke-virtual {p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Landroid/content/res/Resources;->getConfiguration()Landroid/content/res/Configuration;
-
-    invoke-static {}, Landroid/content/res/Configuration;->getFontPath()Ljava/lang/String;
-
-    move-result-object v2
-
-    iput-object v2, p0, Landroid/widget/RemoteViews;->fontPath:Ljava/lang/String;
-
-    .line 2342
-    :cond_1
-    :goto_0
-    return-void
-
-    .line 2334
-    :cond_2
-    invoke-virtual {p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Landroid/content/res/Resources;->getConfiguration()Landroid/content/res/Configuration;
-
-    invoke-static {}, Landroid/content/res/Configuration;->getFontPath()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 2335
-    .local v0, path:Ljava/lang/String;
-    iget-object v2, p0, Landroid/widget/RemoteViews;->fontPath:Ljava/lang/String;
+    .line 2293
+    .local v0, rvToApply:Landroid/widget/RemoteViews;
+    invoke-direct {p0}, Landroid/widget/RemoteViews;->hasLandscapeAndPortraitLayouts()Z
 
-    invoke-virtual {v2, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    move-result v1
+
+    if-eqz v1, :cond_0
+
+    .line 2294
+    invoke-virtual {p2}, Landroid/view/View;->getId()I
+
+    move-result v1
+
+    invoke-virtual {v0}, Landroid/widget/RemoteViews;->getLayoutId()I
 
     move-result v2
 
-    if-nez v2, :cond_1
+    if-eq v1, v2, :cond_0
 
-    .line 2336
-    invoke-virtual {p0, p2}, Landroid/widget/RemoteViews;->updateFont(Landroid/view/View;)V
+    .line 2295
+    new-instance v1, Ljava/lang/RuntimeException;
 
-    goto :goto_0
+    const-string v2, "Attempting to re-apply RemoteViews to a view that that does not share the same root layout id."
+
+    invoke-direct {v1, v2}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;)V
+
+    throw v1
+
+    .line 2300
+    :cond_0
+    invoke-direct {p0, p1}, Landroid/widget/RemoteViews;->prepareContext(Landroid/content/Context;)Landroid/content/Context;
+
+    .line 2301
+    invoke-virtual {p2}, Landroid/view/View;->getParent()Landroid/view/ViewParent;
+
+    move-result-object v1
+
+    check-cast v1, Landroid/view/ViewGroup;
+
+    invoke-direct {v0, p2, v1, p3}, Landroid/widget/RemoteViews;->performApply(Landroid/view/View;Landroid/view/ViewGroup;Landroid/widget/RemoteViews$OnClickHandler;)V
+
+    .line 2302
+    return-void
 .end method
 
 .method public removeAllViews(I)V
@@ -1831,7 +1699,7 @@
     .parameter "viewId"
 
     .prologue
-    .line 1727
+    .line 1714
     new-instance v0, Landroid/widget/RemoteViews$ViewGroupAction;
 
     const/4 v1, 0x0
@@ -2362,19 +2230,6 @@
     return-void
 .end method
 
-.method public setNotification()V
-    .locals 1
-
-    .prologue
-    .line 154
-    const/4 v0, 0x1
-
-    iput-boolean v0, p0, Landroid/widget/RemoteViews;->bIsnotification:Z
-
-    .line 155
-    return-void
-.end method
-
 .method public setOnClickFillInIntent(ILandroid/content/Intent;)V
     .locals 1
     .parameter "viewId"
@@ -2819,82 +2674,6 @@
     invoke-direct {p0, v0}, Landroid/widget/RemoteViews;->addAction(Landroid/widget/RemoteViews$Action;)V
 
     .line 1746
-    return-void
-.end method
-
-.method updateFont(Landroid/view/View;)V
-    .locals 5
-    .parameter "v"
-
-    .prologue
-    .line 2455
-    if-eqz p1, :cond_1
-
-    .line 2456
-    instance-of v4, p1, Landroid/view/ViewGroup;
-
-    if-eqz v4, :cond_0
-
-    move-object v3, p1
-
-    .line 2457
-    check-cast v3, Landroid/view/ViewGroup;
-
-    .line 2458
-    .local v3, vg:Landroid/view/ViewGroup;
-    invoke-virtual {v3}, Landroid/view/ViewGroup;->getChildCount()I
-
-    move-result v1
-
-    .line 2459
-    .local v1, size:I
-    const/4 v0, 0x0
-
-    .local v0, i:I
-    :goto_0
-    if-ge v0, v1, :cond_1
-
-    .line 2460
-    invoke-virtual {v3, v0}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
-
-    move-result-object v4
-
-    invoke-virtual {p0, v4}, Landroid/widget/RemoteViews;->updateFont(Landroid/view/View;)V
-
-    .line 2459
-    add-int/lit8 v0, v0, 0x1
-
-    goto :goto_0
-
-    .line 2462
-    .end local v0           #i:I
-    .end local v1           #size:I
-    .end local v3           #vg:Landroid/view/ViewGroup;
-    :cond_0
-    instance-of v4, p1, Landroid/widget/TextView;
-
-    if-eqz v4, :cond_1
-
-    .line 2463
-    iget-object v4, p0, Landroid/widget/RemoteViews;->fontPath:Ljava/lang/String;
-
-    invoke-static {v4}, Landroid/graphics/Typeface;->createThemeFont(Ljava/lang/String;)Landroid/graphics/Typeface;
-
-    move-result-object v2
-
-    .line 2464
-    .local v2, tf:Landroid/graphics/Typeface;
-    if-eqz v2, :cond_1
-
-    .line 2465
-    check-cast p1, Landroid/widget/TextView;
-
-    .end local p1
-    invoke-virtual {p1, v2}, Landroid/widget/TextView;->setTypeface(Landroid/graphics/Typeface;)V
-
-    .line 2469
-    .end local v2           #tf:Landroid/graphics/Typeface;
-    :cond_1
     return-void
 .end method
 

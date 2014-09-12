@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:textSize="22.0sp" android:textStyle="normal" android:textColor="?android:textColorPrimary" android:id="@id/title" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="12.0sp" android:layout_marginTop="12.0sp" android:text="@string/color_settings" />
+    <TextView android:textAppearance="?android:textAppearanceSmall" android:textStyle="normal" android:textColor="?android:textColorPrimary" android:id="@id/message" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="12.0sp" android:text="@string/multiselect_alert_info" />
+</LinearLayout>

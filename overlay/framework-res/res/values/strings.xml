@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <add-resource type="string" name="reboot_confirm_question" />
+    <string name="reboot_confirm_question">Would you like to reboot?</string>
+</resources>
+    

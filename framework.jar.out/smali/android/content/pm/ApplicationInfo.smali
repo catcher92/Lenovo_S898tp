@@ -607,7 +607,7 @@
 
     .line 710
     :try_start_0
-    iget-object v3, p0, Landroid/content/pm/PackageItemInfo;->packageName:Ljava/lang/String;
+    iget-object v3, p0, Landroid/content/pm/ApplicationInfo;->packageName:Ljava/lang/String;
 
     const/4 v4, 0x0
 
@@ -1389,7 +1389,7 @@
 
     move-result-object v0
 
-    const v1, 0x1080592
+    const v1, #android:drawable@sym_app_on_sd_unavailable_icon#t
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
@@ -1418,7 +1418,7 @@
     if-eqz v1, :cond_0
 
     .line 677
-    iget-object v1, p0, Landroid/content/pm/PackageItemInfo;->packageName:Ljava/lang/String;
+    iget-object v1, p0, Landroid/content/pm/ApplicationInfo;->packageName:Ljava/lang/String;
 
     iget v2, p0, Landroid/content/pm/ApplicationInfo;->descriptionRes:I
 
@@ -1474,7 +1474,7 @@
 
     move-result-object v0
 
-    iget-object v1, p0, Landroid/content/pm/PackageItemInfo;->packageName:Ljava/lang/String;
+    iget-object v1, p0, Landroid/content/pm/ApplicationInfo;->packageName:Ljava/lang/String;
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 

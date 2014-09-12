@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="light_breath_cycle_entries">
+        <item>15 minute</item>
+        <item>30 minutes</item>
+        <item>60 minutes</item>
+        <item>90 minutes</item>
+    </string-array>
+    <string-array name="light_breath_cycle_values">
+        <item>15</item>
+        <item>30</item>
+        <item>60</item>
+        <item>90</item>
+    </string-array>
+    <string-array name="light_color_entries">
+        <item>color 1</item>
+        <item>color 2</item>
+        <item>color 3</item>
+        <item>color 4</item>
+        <item>color 5</item>
+        <item>color 6</item>
+        <item>color 7</item>
+    </string-array>
+    <string-array name="light_color_values">
+        <item>1</item>
+        <item>2</item>
+        <item>4</item>
+        <item>8</item>
+        <item>16</item>
+        <item>32</item>
+        <item>64</item>
+    </string-array>
+    <array name="def_light_confirm_values">
+        <item>true</item>
+        <item>true</item>
+        <item>true</item>
+        <item>true</item>
+        <item>true</item>
+        <item>true</item>
+        <item>true</item>
+        <item>true</item>
+        <item>false</item>
+        <item>false</item>
+        <item>true</item>
+        <item>true</item>
+        <item>true</item>
+    </array>
+    <integer-array name="def_light_color_values">
+        <item>15</item>
+        <item>0</item>
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+        <item>4</item>
+        <item>8</item>
+        <item>112</item>
+        <item>16</item>
+        <item>32</item>
+        <item>0</item>
+        <item>1</item>
+        <item>0</item>
+    </integer-array>
+</resources>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="light_breath_cycle_entries">
+        <item>15分钟</item>
+        <item>30分钟</item>
+        <item>60分钟</item>
+        <item>90分钟</item>
+    </string-array>
+    <string-array name="light_color_entries">
+        <item>月白</item>
+        <item>樱桃粉</item>
+        <item>海棠红</item>
+        <item>绛紫</item>
+        <item>黛紫色</item>
+        <item>湖蓝</item>
+        <item>柠檬黄</item>
+    </string-array>
+</resources>

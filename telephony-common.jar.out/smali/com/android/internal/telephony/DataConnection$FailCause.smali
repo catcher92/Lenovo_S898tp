@@ -1368,7 +1368,7 @@
 
 
 # virtual methods
-.method getErrorCode()I
+.method public getErrorCode()I
     .locals 1
 
     .prologue

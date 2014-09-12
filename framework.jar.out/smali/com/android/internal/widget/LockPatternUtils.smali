@@ -1656,40 +1656,37 @@
 
     const/4 v1, 0x0
 
-    .line 454
     if-nez p1, :cond_0
 
-    .line 455
     invoke-virtual {p0}, Lcom/android/internal/widget/LockPatternUtils;->deleteGallery()V
 
-    .line 457
     invoke-virtual {p0}, Lcom/android/internal/widget/LockPatternUtils;->clearVoiceUnlock()V
 
-    .line 459
     :cond_0
     const/high16 v0, 0x1
 
     invoke-virtual {p0, v1, v0}, Lcom/android/internal/widget/LockPatternUtils;->saveLockPassword(Ljava/lang/String;I)V
 
-    .line 460
     const/4 v0, 0x0
 
     invoke-virtual {p0, v0}, Lcom/android/internal/widget/LockPatternUtils;->setLockPatternEnabled(Z)V
 
-    .line 461
     invoke-virtual {p0, v1}, Lcom/android/internal/widget/LockPatternUtils;->saveLockPattern(Ljava/util/List;)V
 
-    .line 462
-    const-string/jumbo v0, "lockscreen.password_type"
+    const-string v0, "lockscreen.password_type"
 
     invoke-direct {p0, v0, v2, v3}, Lcom/android/internal/widget/LockPatternUtils;->setLong(Ljava/lang/String;J)V
 
-    .line 463
-    const-string/jumbo v0, "lockscreen.password_type_alternate"
+    const-string v0, "lockscreen.password_type_alternate"
 
     invoke-direct {p0, v0, v2, v3}, Lcom/android/internal/widget/LockPatternUtils;->setLong(Ljava/lang/String;J)V
 
-    .line 464
+    const-string v0, "lockscreen.lockmode_type"
+
+    const-wide/16 v1, 0x2
+
+    invoke-direct {p0, v0, v1, v2}, Lcom/android/internal/widget/LockPatternUtils;->setLong(Ljava/lang/String;J)V
+
     return-void
 .end method
 
@@ -2688,7 +2685,7 @@
 
     move-result-object v0
 
-    const v1, 0x1110030
+    const v1, #android:bool@config_voice_capable#t
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getBoolean(I)Z
 
@@ -2708,7 +2705,7 @@
 
     move-result-object v0
 
-    const v1, 0x1110029
+    const v1, #android:bool@config_enable_emergency_call_while_sim_locked#t
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getBoolean(I)Z
 
@@ -3021,7 +3018,7 @@
 
     move-result-object v0
 
-    const v1, 0x1110028
+    const v1, #android:bool@config_enable_puk_unlock_screen#t
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getBoolean(I)Z
 
@@ -4879,34 +4876,27 @@
 
     if-eqz p3, :cond_0
 
-    .line 1354
     invoke-virtual {p1, v5}, Landroid/widget/Button;->setVisibility(I)V
 
-    .line 1361
     const/4 v6, 0x2
 
     if-ne p2, v6, :cond_2
 
-    .line 1363
-    const v3, 0x10402ec
+    const v3, #android:string@lockscreen_return_to_call#t
 
-    .line 1364
     .local v3, textId:I
     if-eqz p5, :cond_1
 
-    const v2, 0x1080084
+    const v2, #android:drawable@stat_sys_phone_call#t
 
-    .line 1365
     .local v2, phoneCallIcon:I
     :goto_0
     invoke-virtual {p1, v2, v5, v5, v5}, Landroid/widget/Button;->setCompoundDrawablesWithIntrinsicBounds(IIII)V
 
-    .line 1371
     .end local v2           #phoneCallIcon:I
     :goto_1
     if-eqz p4, :cond_5
 
-    .line 1372
     iget-object v5, p0, Lcom/android/internal/widget/LockPatternUtils;->mContext:Landroid/content/Context;
 
     invoke-virtual {v5}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
@@ -4953,21 +4943,17 @@
     :cond_1
     move v2, v5
 
-    .line 1364
     goto :goto_0
 
-    .line 1367
     .end local v3           #textId:I
     :cond_2
-    const v3, 0x10402eb
+    const v3, #android:string@lockscreen_emergency_call#t
 
-    .line 1368
     .restart local v3       #textId:I
     if-eqz p5, :cond_3
 
-    const v0, 0x10802ca
+    const v0, #android:drawable@ic_emergency#t
 
-    .line 1369
     .local v0, emergencyIcon:I
     :goto_4
     invoke-virtual {p1, v0, v5, v5, v5}, Landroid/widget/Button;->setCompoundDrawablesWithIntrinsicBounds(IIII)V
@@ -5076,4 +5062,79 @@
 
     .line 1212
     return-void
+.end method
+
+.method public saveLockPassword(Ljava/lang/String;IZ)V
+    .locals 6
+    .parameter "password"
+    .parameter "quality"
+    .parameter "isFallback"
+
+    .prologue
+    const/4 v4, 0x0
+
+    invoke-direct {p0}, Lcom/android/internal/widget/LockPatternUtils;->getCurrentOrCallingUserId()I
+
+    move-result v5
+
+    move-object v0, p0
+
+    move-object v1, p1
+
+    move v2, p2
+
+    move v3, p3
+
+    invoke-virtual/range {v0 .. v5}, Lcom/android/internal/widget/LockPatternUtils;->saveLockPassword(Ljava/lang/String;IZLjava/lang/String;I)V
+
+    return-void
+.end method
+
+.method public saveLockPattern(Ljava/util/List;Z)V
+    .locals 1
+    .parameter
+    .parameter "isFallback"
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Ljava/util/List",
+            "<",
+            "Lcom/android/internal/widget/LockPatternView$Cell;",
+            ">;Z)V"
+        }
+    .end annotation
+
+    .prologue
+    .local p1, pattern:Ljava/util/List;,"Ljava/util/List<Lcom/android/internal/widget/LockPatternView$Cell;>;"
+    const/4 v0, 0x0
+
+    invoke-virtual {p0, p1, p2, v0}, Lcom/android/internal/widget/LockPatternUtils;->saveLockPattern(Ljava/util/List;ZLjava/lang/String;)V
+
+    return-void
+.end method
+
+.method public setTactileFeedbackEnabled(Z)V
+    .locals 4
+    .parameter "enabled"
+
+    .prologue
+    iget-object v1, p0, Lcom/android/internal/widget/LockPatternUtils;->mContentResolver:Landroid/content/ContentResolver;
+
+    const-string v2, "haptic_feedback_enabled"
+
+    if-eqz p1, :cond_0
+
+    const/4 v0, 0x1
+
+    :goto_0
+    const/4 v3, -0x2
+
+    invoke-static {v1, v2, v0, v3}, Landroid/provider/Settings$System;->putIntForUser(Landroid/content/ContentResolver;Ljava/lang/String;II)Z
+
+    return-void
+
+    :cond_0
+    const/4 v0, 0x0
+
+    goto :goto_0
 .end method

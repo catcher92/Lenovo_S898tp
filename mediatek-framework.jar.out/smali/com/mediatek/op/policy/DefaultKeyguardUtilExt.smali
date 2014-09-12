@@ -34,3 +34,23 @@
 
     return v0
 .end method
+
+.method public shouldShowEmergencyBtnForVoiceOn()Z
+    .locals 1
+
+    .prologue
+    .line 71
+    const/4 v0, 0x0
+
+    return v0
+.end method
+
+.method public updateNewEventControllerVisibility(Landroid/view/View;I)V
+    .locals 0
+    .parameter "viewContainer"
+    .parameter "newEventViewId"
+
+    .prologue
+    .line 76
+    return-void
+.end method

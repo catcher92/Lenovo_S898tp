@@ -15617,109 +15617,53 @@
 .end method
 
 .method public setDefaultNameForNewSIM(Ljava/lang/String;)V
-    .locals 9
+    .locals 7
     .parameter "strName"
 
     .prologue
-    const/4 v8, 0x0
-
     .line 1814
-    const/4 v3, 0x0
+    const/4 v2, 0x0
 
     .line 1816
-    .local v3, simInfoUpdate:Lcom/mediatek/common/telephony/ISimInfoUpdate;
+    .local v2, simInfoUpdate:Lcom/mediatek/common/telephony/ISimInfoUpdate;
     :try_start_0
-    const-class v4, Lcom/mediatek/common/telephony/ISimInfoUpdate;
+    const-class v3, Lcom/mediatek/common/telephony/ISimInfoUpdate;
 
-    const/4 v5, 0x1
+    const/4 v4, 0x1
 
-    new-array v5, v5, [Ljava/lang/Object;
+    new-array v4, v4, [Ljava/lang/Object;
 
-    const/4 v6, 0x0
+    const/4 v5, 0x0
 
-    const/4 v7, 0x1
+    const/4 v6, 0x1
 
-    invoke-static {v7}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+    invoke-static {v6}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
-    move-result-object v7
+    move-result-object v6
 
-    aput-object v7, v5, v6
+    aput-object v6, v4, v5
 
-    invoke-static {v4, v5}, Lcom/mediatek/common/MediatekClassFactory;->createInstance(Ljava/lang/Class;[Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {v3, v4}, Lcom/mediatek/common/MediatekClassFactory;->createInstance(Ljava/lang/Class;[Ljava/lang/Object;)Ljava/lang/Object;
 
-    move-result-object v4
+    move-result-object v3
 
-    move-object v0, v4
+    move-object v0, v3
 
     check-cast v0, Lcom/mediatek/common/telephony/ISimInfoUpdate;
 
-    move-object v3, v0
+    move-object v2, v0
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 1821
+    .line 1820
     :goto_0
-    if-eqz p1, :cond_2
+    iget-object v3, p0, Lcom/android/internal/telephony/gsm/SIMRecords;->mContext:Landroid/content/Context;
 
-    .line 1822
-    invoke-virtual {p1, v8}, Ljava/lang/String;->charAt(I)C
+    iget v4, p0, Lcom/android/internal/telephony/gsm/SIMRecords;->mSimId:I
 
-    move-result v2
+    invoke-interface {v2, v3, p1, v4}, Lcom/mediatek/common/telephony/ISimInfoUpdate;->setDefaultNameForNewSimAdp(Landroid/content/Context;Ljava/lang/String;I)V
 
-    .line 1823
-    .local v2, firstCharOfName:C
-    const/16 v4, 0x4e00
-
-    if-lt v2, v4, :cond_0
-
-    const v4, 0x9fbf
-
-    if-le v2, v4, :cond_1
-
-    :cond_0
-    const/16 v4, 0x3400
-
-    if-lt v2, v4, :cond_2
-
-    const/16 v4, 0x4dbf
-
-    if-gt v2, v4, :cond_2
-
-    .line 1824
-    :cond_1
-    new-instance v4, Ljava/lang/StringBuilder;
-
-    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
-
-    invoke-virtual {v4, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v4
-
-    const-string/jumbo v5, "\u5361"
-
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v4
-
-    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object p1
-
-    .line 1825
-    const-string/jumbo v4, "setDefaultNameForNewSIM name add card!!"
-
-    invoke-virtual {p0, v4}, Lcom/android/internal/telephony/gsm/SIMRecords;->log(Ljava/lang/String;)V
-
-    .line 1829
-    .end local v2           #firstCharOfName:C
-    :cond_2
-    iget-object v4, p0, Lcom/android/internal/telephony/gsm/SIMRecords;->mContext:Landroid/content/Context;
-
-    iget v5, p0, Lcom/android/internal/telephony/gsm/SIMRecords;->mSimId:I
-
-    invoke-interface {v3, v4, p1, v5}, Lcom/mediatek/common/telephony/ISimInfoUpdate;->setDefaultNameForNewSimAdp(Landroid/content/Context;Ljava/lang/String;I)V
-
-    .line 1830
+    .line 1821
     return-void
 
     .line 1817

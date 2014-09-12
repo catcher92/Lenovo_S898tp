@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <CheckBoxPreference android:title="@string/swing_key" android:key="swing_lock" android:summary="@string/swing_lock_summary"/>
+</PreferenceScreen>

@@ -6,6 +6,14 @@
 .implements Landroid/os/Parcelable;
 
 
+# annotations
+.annotation system Ldalvik/annotation/MemberClasses;
+    value = {
+        Landroid/content/pm/ActivityInfo$BaiduInjector;
+    }
+.end annotation
+
+
 # static fields
 .field public static final CONFIG_DENSITY:I = 0x1000
 
@@ -38,6 +46,8 @@
 .field public static final CONFIG_SKIN:I = -0x80000000
 
 .field public static final CONFIG_SMALLEST_SCREEN_SIZE:I = 0x800
+
+.field public static final CONFIG_THEME:I = -0x80000000
 
 .field public static final CONFIG_TOUCHSCREEN:I = 0x8
 
@@ -439,6 +449,10 @@
 
     .line 452
     :cond_1
+    invoke-static {p0, v1}, Landroid/content/pm/ActivityInfo$BaiduInjector;->setOutputBaidu(II)I
+
+    move-result v1
+
     return v1
 .end method
 
@@ -734,7 +748,7 @@
 
     .prologue
     .line 464
-    iget-object v0, p0, Landroid/content/pm/ComponentInfo;->applicationInfo:Landroid/content/pm/ApplicationInfo;
+    iget-object v0, p0, Landroid/content/pm/ActivityInfo;->applicationInfo:Landroid/content/pm/ApplicationInfo;
 
     iget v0, v0, Landroid/content/pm/ApplicationInfo;->targetSdkVersion:I
 
@@ -772,7 +786,7 @@
     return v0
 
     :cond_0
-    iget-object v0, p0, Landroid/content/pm/ComponentInfo;->applicationInfo:Landroid/content/pm/ApplicationInfo;
+    iget-object v0, p0, Landroid/content/pm/ActivityInfo;->applicationInfo:Landroid/content/pm/ApplicationInfo;
 
     iget v0, v0, Landroid/content/pm/ApplicationInfo;->theme:I
 
@@ -812,7 +826,7 @@
 
     move-result-object v0
 
-    iget-object v1, p0, Landroid/content/pm/PackageItemInfo;->name:Ljava/lang/String;
+    iget-object v1, p0, Landroid/content/pm/ActivityInfo;->name:Ljava/lang/String;
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 

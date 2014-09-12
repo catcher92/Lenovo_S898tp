@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <attr name="ticks" format="integer" />
+    <attr name="numRotations" format="integer" />
+    <attr name="smallTicks" format="integer" />
+    <attr name="bigTicks" format="integer" />
+    <attr name="valueIndicatorColor" format="reference|color" />
+    <attr name="bigIndicatorColor" format="reference|color" />
+    <attr name="smallIndicatorColor" format="reference|color" />
+</resources>
