@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+	联想超级相机配置项，此文件应置入/system/etc目录，请按照各项comments进行设置。
+-->
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- 是否支持超级夜景 true:打开此功能；false:关闭此功能-->
+    <item name="is_previewlight_supported" type="bool">true</item>
+</resources>

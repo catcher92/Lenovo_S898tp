@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Theme.DeviceDefault.Light.DialogWhenLarge" parent="@lenovo:style/Theme.DeviceDefault.Light.DialogWhenLarge" />
+    <style name="Theme.DeviceDefault.Light.DialogWhenLarge.NoActionBar" parent="@lenovo:style/Theme.DeviceDefault.Light.DialogWhenLarge.NoActionBar" />
+</resources>
